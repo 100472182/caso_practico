@@ -1,0 +1,130 @@
+
+
+/*Clase utilizada para la barra de navegacion*/
+.barra_de_navegacion{
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    top: 0px;
+    position: absolute;
+    max-height: 150px;
+}
+
+.barra_de_navegacion img {
+    width: 10%;
+    height: auto;
+}
+
+.barra_de_navegacion div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 220px;
+
+}
+
+#idioma{
+    margin-left: 400px;
+}
+
+.barra_de_navegacion a{
+    display: flex;
+    align-items: center;
+    background-color: orange;
+    border-radius: 30px;
+    padding: 10px;
+    text-decoration: none;
+    height: 70%;
+    margin-left: 230px;
+}
+
+.barra_de_navegacion nav{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+}
+
+.barra_de_navegacion nav p{
+    font-size: 30px;
+}
+
+
+/* El resto del codigo*/
+.primer-section{
+    margin-top: 180px
+}
+
+/*El formulario de registro*/
+.formulario{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    height: 900px;
+    align-items: center;
+
+}
+
+#sitio-bartolomeo{
+    height: 100%;
+    max-width: 100%;
+}
+#perfil-no-usuario{
+    width: 20%;
+    margin-top: 80px;
+}
+#formulario-registro{
+    padding: 10px;
+    background-color: rgb(233, 189, 107);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    height: 800px;
+    width: 60%;
+    border-radius: 30px;
+}
+
+.formulario-registro{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#registro{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.campos{
+    background-color: blanchedalmond;
+    display: flex;
+    padding-left: 40px;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 40px;
+}
+
+
+
+/*Los botones*/
+#botones-registro{
+display: flex;
+   justify-content: space-between;
+   padding: 5px;
+}
+
+.formulario button{
+    background-color: rgb(173, 134, 60);
+    border-radius: 30px;
+    font-size: 30px;
+}
+
+
+body{
+    background-color: orange;
+}

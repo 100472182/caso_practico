@@ -2,62 +2,85 @@
 <html lang="es">
 <head>
     <title>Bartolomeo</title>
-    <link rel="stylesheet" href="style/style1.css">
+    <link rel="stylesheet" href="style/registro.css">
     <meta charset="UTF-8">
 </head>
 <body>
-    <header>
+    <header class="barra_de_navegacion">
         <!-- Cabecera-->
-        <div>
+        
+       
             <!-- Imagen Bartolomeo-->
-        </div>
+            <img id = "logo-bartolomeo "src="../images/logo-bartolomeo.png" alt= "Logo Bartolomeo">
         <nav>
             <!-- Menú de navegación-->
-            <div>
+           
                 <!-- Caja Realizar Pedido-->
-            </div>
-            <div>
-                <!-- Caja Reserva de Mesa-->
-            </div>
-            <div>
-                <!-- Caja Ver Carta-->
-            </div>
-            <div>
+                <div id="botones-nav">
+                    <a href="#Pedido">
+                            <p>Haz tu pedido</p>
+                    </a>
+                    <!-- Caja Reserva de Mesa-->
+                    <a href="Reserva">
+                        <p>Reserva tu mesa</p>
+                    </a>
+                    <!-- Caja Ver Carta-->
+                    <a href="Carta">
+                        <p>Nuestra carta</p>
+                    </a>
+                </div>
+                <div id = "idioma">  
                 <!-- Caja Selección Idioma-->
-            </div>
+                <a >
+                    <p>ES</p>
+                </a>
+                </div>
         </nav>
     </header>
-    <div>
-        <!-- Imagen del restaurante-->
-    </div>
-    <section>
-        <!-- Registro-->
-        <div>
-            <!-- Formulario de Registro-->
+
+
+    <section class="primer-section">
+        <!-- Registro-->    
+            <!-- Imagen usuario-->
+        <article class="formulario">
+        
+            <img id= "sitio-bartolomeo" src="../images/sitio-bartolomeo.jpg">
             <div>
-                <!-- Imagen usuario-->
+                <div id = "registro">
+                    <h5>Registro</h5>
+                </div>
+                <div class="formulario-registro ">
+                    <div id = "formulario-registro">
+                        
+                        <img id = "perfil-no-usuario"src="../images/registro-usuario-removebg-preview.png">
+                        <form action="#" method="post">
+                            
+                            <input type="text" id="Correo" class="campos" name="correo" placeholder="Correo electrónico" required>
+                            
+                            <input type="tel" id="contraseña" class="campos" name="contraseña" placeholder="Contraseña" required>
+                            
+                            <input type="tel" id="nombre_apellidos" class="campos" name="nombre_apellidos" placeholder="Nombre y Apellido(s)" required>
+
+                            <input type="tel" id="telefono" class="campos" name="telefono" placeholder="Teléfono" required>
+                    
+                            <input type="text" id="direccion" class = "campos" name="direccion" placeholder="Dirección" required>
+                            
+                            <div id = "botones-registro">
+                                <div>
+                                    <button id="enviar">Enviar</button>
+                                </div>
+                                <div>
+                                    <button id="cancelar">Cancelar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div>
-                <!-- Campo de Correo Electrónico-->
-            </div>
-            <div>
-                <!-- Campo de Contraseña-->
-            </div>
-            <div>
-                <!-- Campo de Nombre y Apellidos-->
-            </div>
-            <div>
-                <!-- Campo de Teléfono-->
-            </div>
-            <div>
-                <!-- Campo de Dirección-->
-            </div>
-            <div>
-                <!-- Botón Cancelar-->
-            </div>
-            <div>
-                <!-- Botón Enviar-->
-            </div>
-        </div>
+        </article>  
     </section>
+
+</body>
+</html>
+    
     
