@@ -70,7 +70,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top:10%
+    margin-top: 2%;
 }
 
 #box_inicio_sesion_2{
@@ -119,6 +119,7 @@
     margin-top: 10px;
     font-size: 3rem;
     border-radius: 30px;
+    background-color: orange;
     
 }
 
@@ -159,6 +160,14 @@
     left:92%;
 }
 
+#primer_section h6{
+    text-align: center;
+}
+
+h6{
+    font-size: 8rem;
+    margin: 10px;
+}
 
 body{
 }
