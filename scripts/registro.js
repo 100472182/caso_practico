@@ -31,7 +31,7 @@ function validar_correo (){
         alert("correo electrónico incorrecto.")
         return false;
     }
-    return True
+    return true;
 }
 
 //Funcion que valida la password para el registro
@@ -83,7 +83,7 @@ function validar_tlfn(){
         alert("Número de teléfono incorrecto. Debe tener 9 dígitos.")
         return false;
     }
-    return True;
+    return true; 
 }
 
 //Funcion que valida la direccion para el registro
@@ -100,7 +100,7 @@ function validar_direccion(){
          alert("Dirección incorrecta")
          return false;
      }
-     return True;
+     return true;
  }
 
 //Funcion que comprueba si un campo esta vacio
@@ -129,14 +129,14 @@ function revisar_campos_vacios() {
     //DIRECCION
     var dir = document.getElementById("direccion").value;
     if (!campo_vacio(dir, "Direccion")){return false;}
+    return true;
 }
 
 //Funcion que valida todos los campos a rellenar en el registro de cuenta
  function validar_campos(){
     
     //Comprobar que se han rellenado todos los campos 
-    if (!revisar_campos_vacios()){return false}
-    
+    if (!revisar_campos_vacios()){return false;}
     //Comprobar que los valores insertados son correctos
     //CORREO
     let bool_correo = validar_correo();

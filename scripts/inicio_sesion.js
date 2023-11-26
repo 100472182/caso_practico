@@ -100,3 +100,67 @@ function validar_campos() {
 }
 
 
+
+//---------------------------------COOKIES----------------------------------------------------------------------
+//Funcion para almacenar las cookies
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+//Funcion para guardar las cookies en el formato correcto
+function saveFormData() {
+    let correo = document.getElementById("correo").value;
+    let password = document.getElementById("password").value;
+    let name_surname = document.getElementById("nombre_apellidos").value;
+    let telefono = document.getElementById("telefono").value;
+    let direccion = document.getElementById("direccion").value;
+    // Guardar los datos en cookies
+    setCookie(correo+"_password", password, 7);
+    setCookie(correo+"_telefono", telefono, 7)
+    setCookie(correo+"_direccion", direccion, 7)
+    setCookie(correo+"_name_surname", name_surname,7);
+    setCookie(correo+"_correo", correo, 7);
+
+    
+    return true; // Esto permite que el formulario se envíe
+}
+
+//Funcion que comprueba si existe al menos un usuario y si existe, recibe al ultimo usuario que se haya registrado
+function checkCookie() {    
+    let user = getNameCookie();
+    if (user != "") {
+        alert('Bienvenido ' + user);
+    }
+}
+
+//Funcion que obtiene informacion de las cookies, en concreto el nombre del ultimo usuario registrado
+function getNameCookie() {
+    const cookies = document.cookie.split(';'); // separa las cookies
+    const last_cookie = cookies.pop(); // Obtiene la última cookie
+    
+    if (last_cookie) {
+        const cookie_correo = last_cookie.split('_')[0].trim(); // Extrae el correo de la cookie
+        let user = getCookie(cookie_correo+"_name_surname");
+        return user;
+    }
+    return ""; // Si no hay cookies, devuelve null
+}
+
+//Funcion que obtiene las cookies de la base de datos
+function getCookie(cname) {
+    let name = cname + "=";
+    let ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
