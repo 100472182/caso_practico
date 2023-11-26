@@ -2,6 +2,8 @@
 
 
 $(document).ready(function() {
+    $("body").fadeIn(500) 
+
 
     $("#cancelar").click(function() {
         $('input[type="text"]').val('');     
@@ -110,8 +112,8 @@ function campo_vacio(clave, nombre){
     return true;
 }
 
- //Funcion que revisa si todos los campos estan vacios
- function revisar_campos_vacios() {
+//Funcion que revisa si todos los campos estan vacios
+function revisar_campos_vacios() {
     //CORREO
     var correo = document.getElementById("correo").value;
     if (!campo_vacio(correo, "Correo")){return false;}

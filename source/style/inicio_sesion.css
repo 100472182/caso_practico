@@ -118,6 +118,7 @@
 #botones-inicio button{
     margin-top: 10px;
     font-size: 3rem;
+    padding: 5px;
     border-radius: 30px;
     background-color: orange;
     
