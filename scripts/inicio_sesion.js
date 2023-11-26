@@ -95,9 +95,53 @@ function validar_campos() {
     if (!bool_password) {
         return false;
     }
+    validar_inicio_sesion();
 
-    //Cambiamos a la pestaña registro
-    window.location.href="../source/reserva.html"
-    
     return true;
+}
+
+//Esta funcion comprueba si el usuario y la password insertada son correctas
+function validar_inicio_sesion(){
+    //Valores insertados en los campos
+    let correo= document.getElementById("correo").value;
+    let password= document.getElementById("password").value;
+
+    //Valores en la base de datos
+    let correo_bd= getCookie(correo + "_correo");
+    let password_bd= getCookie(correo + "_password");
+
+    //Compruebo si coinciden
+    if (correo_bd !== ""){
+        if (correo === correo_bd , password === password_bd){
+            let user= getCookie(correo + "_name_surname");
+            alert("Bienbenido " + user);
+            //Cambiamos a la pestaña registro
+            window.location.href="../source/reserva.html"
+            return true;
+        }
+
+        alert("Usuario y/o contraseña incorreco(s)");
+        return false;
+    }
+    alert("Esta cuenta no existe. Regístrese");
+    return false;
+}
+
+
+//-----------------------------------COOKIES----------------------------------------------
+
+//Funcion que obtiene las cookies de la base de datos
+function getCookie(cname) {
+    let name = cname + "=";
+    let ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }
