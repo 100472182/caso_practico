@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/82e1991057.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+
     <title>Bartolomeo</title>
     <link rel="stylesheet" href="style/registro.css">
     <meta charset="UTF-8">
@@ -53,17 +58,17 @@
                     <div id = "formulario-registro">
                         
                         <img id = "perfil-no-usuario"src="../images/registro-usuario-removebg-preview.png">
-                        <form action="#" method="post">
+                        <form action="#" method="post" name="myForm">
                             
-                            <input type="text" id="Correo" class="campos" name="correo" placeholder="Correo electrónico" required>
+                            <input type="text" id="correo" class="campos" name="correo" placeholder="Correo electrónico" >
                             
-                            <input type="tel" id="contraseña" class="campos" name="contraseña" placeholder="Contraseña" required>
+                            <input type="text" id="password" class="campos" name="contraseña" placeholder="Contraseña" >
                             
-                            <input type="tel" id="nombre_apellidos" class="campos" name="nombre_apellidos" placeholder="Nombre y Apellido(s)" required>
+                            <input type="text" id="nombre_apellidos" class="campos" name="nombre_apellidos" placeholder="Nombre y Apellido(s)" >
 
-                            <input type="tel" id="telefono" class="campos" name="telefono" placeholder="Teléfono" required>
+                            <input type="text" id="telefono" class="campos" name="telefono" placeholder="Teléfono" >
                     
-                            <input type="text" id="direccion" class = "campos" name="direccion" placeholder="Dirección" required>
+                            <input type="text" id="direccion" class = "campos" name="direccion" placeholder="Dirección" >
                             
                             <div id = "botones-registro">
                                 <div>
@@ -79,7 +84,7 @@
             </div>
         </article>  
     </section>
-
+    <script src="../scripts/registro.js"></script>
 </body>
 </html>
     
