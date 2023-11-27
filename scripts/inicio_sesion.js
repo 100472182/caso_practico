@@ -8,12 +8,65 @@ $(document).ready(function () {
         validar_campos();
     });
 
-    $("#registrar").click(function (event) {
+    $("#registrar").click(function () {
         event.preventDefault();
         $("body").fadeOut(500, function () {
             window.location.href = "../source/registro.html";
         });
     });
+
+    
+    $("#idiomas-btn").click(function () {
+        $("#idiomas-menu").slideToggle();
+    });
+
+    $("#idiomas-menu a").click(function (event) {
+        event.preventDefault();
+        // Obtener el texto del enlace seleccionado
+        var selectedLanguage = $(this).text();
+        
+        // Actualizar el texto del botón de idiomas
+        $("#idiomas-btn").text(selectedLanguage);
+        
+        // Cerrar el menú desplegable
+        $("#idiomas-menu").slideUp();
+
+        // Aquí puedes agregar la lógica para cambiar el contenido de la página según la opción seleccionada
+        //alert("Seleccionaste: " + selectedLanguage);
+        
+        //Conversion al ingles
+        
+        if(selectedLanguage==="ES") {/*Navegacion*/
+            $("#hacer_pedido").text("Haz tu pedido");
+            $("#hacer_reserva").text("Reserva tu mesa");
+            $("#nuestra_carta").text("Nuestra carta");
+
+            /*El inicio de sesion*/
+            $("#title_iniciar").text("Iniciar sesión");
+            $("#correo").attr("placeholder", "Correo electrónico");
+            $("#password").attr("placeholder", "Contraseña");
+
+            /*Botones*/
+            $("#iniciar").text("Iniciar");
+            $("#registrar").text("Registrar");
+        }
+        else if (selectedLanguage ==="EN"){
+            /*Navegacion*/
+            $("#hacer_pedido").text("Make your order");
+            $("#hacer_reserva").text("Reserve your table");
+            $("#nuestra_carta").text("Our menu");
+
+            /*El inicio de sesion*/
+            $("#title_iniciar").text("Start session");
+            $("#correo").attr("placeholder", "Email");
+            $("#password").attr("placeholder", "Password");
+
+            /*Botones*/
+            $("#iniciar").text("Log in");
+            $("#registrar").text("Sign up");
+        }
+    });
+
 });
 
 //Funcion que valida el correo electronico para el registro
@@ -144,4 +197,19 @@ function getCookie(cname) {
         }
     }
     return "";
+}
+
+//----------------------------------Menu de hamburguesa-------------------------
+
+
+
+/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+function change_language() {
+    var x = document.getElementById("idiomas");
+    if (x.style.display === "flex") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "flex";
+    }
+    alert("Termino")
 }

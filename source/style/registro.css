@@ -1,5 +1,3 @@
-
-
 /*Clase utilizada para la barra de navegacion*/
 
 .barra_de_navegacion{
@@ -49,23 +47,41 @@ li a{
     border-radius: 33px;
 }
 
-#idiomas{
-    display: flex;
-    width: 100%;
-    justify-content: right;
-    align-items: center;
+#idiomas-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #3f3c3c;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    top:80%;
 }
-#idiomas a{
-    display: flex;
+  
+#idiomas-menu a {
+    padding: 8px;
     text-decoration: none;
-    margin-right: 40px;
     font-size: 3rem;
     color: orange;
-    
+    display: block; /*Los elementos aparecen en columna*/
 }
 
+#idiomas-btn{
+    font-size: 3rem;
+    color: orange;
+    background-color: black;
+    text-decoration: none;
+    border: none;
+    font-family: "Times New Roman", Times, serif;}
+  
+#idiomas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 
-/* El resto del codigo*/
+/* Registro de cuenta*/
 .primer-section{
     margin-top: 120px;
 }

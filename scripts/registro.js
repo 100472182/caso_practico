@@ -14,6 +14,65 @@ $(document).ready(function() {
         event.preventDefault();
         validar_campos();
     });
+
+    $("#idiomas-btn").click(function () {
+        $("#idiomas-menu").slideToggle();
+    });
+
+    $("#idiomas-menu a").click(function (event) {
+        event.preventDefault();
+        // Obtener el texto del enlace seleccionado
+        var selectedLanguage = $(this).text();
+        
+        // Actualizar el texto del botón de idiomas
+        $("#idiomas-btn").text(selectedLanguage);
+        
+        // Cerrar el menú desplegable
+        $("#idiomas-menu").slideUp();
+
+        // Aquí puedes agregar la lógica para cambiar el contenido de la página según la opción seleccionada
+        //alert("Seleccionaste: " + selectedLanguage);
+        
+        //Conversion al ingles
+        
+        if(selectedLanguage==="ES") {/*Navegacion*/
+            /*Navegacion*/
+            $("#hacer_pedido").text("Haz tu reserva");
+            $("#hacer_reserva").text("Reserva tu mesa");
+            $("#nuestra_carta").text("Nuestra carta");
+
+            /*El registro de sesion*/
+            $("#title_registro").text("Registro");
+            $("#correo").attr("placeholder", "Correo electrónico");
+            $("#password").attr("placeholder", "Contraseña");
+            $("#nombre_apellidos").attr("placeholder", "Nombre y apellido(s)");
+            $("#telefono").attr("placeholder", "Teléfono");
+            $("#direccion").attr("placeholder", "Dirección");
+
+            /*Botones*/
+            $("#iniciar").text("Iniciar");
+            $("#cancelar").text("Cancelar");
+        }
+        else if (selectedLanguage ==="EN"){
+            /*Navegacion*/
+            $("#hacer_pedido").text("Make your order");
+            $("#hacer_reserva").text("Reserve your table");
+            $("#nuestra_carta").text("Our menu");
+
+            /*El registro de sesion*/
+            $("#title_registro").text("Register");
+            $("#correo").attr("placeholder", "Email");
+            $("#password").attr("placeholder", "Password");
+            $("#nombre_apellidos").attr("placeholder", "Name and surname(s)");
+            $("#telefono").attr("placeholder", "Phone number");
+            $("#direccion").attr("placeholder", "Address");
+
+            /*Botones*/
+            $("#iniciar").text("Sing up");
+            $("#cancelar").text("Cancel");
+        }
+    });
+
 });
 
 //Funcion que valida el correo electronico para el registro

@@ -46,21 +46,40 @@ li a{
     border-radius: 33px;
 }
 
-#idiomas{
-    display: flex;
-    width: 100%;
-    justify-content: right;
-    align-items: center;
+
+#idiomas-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #3f3c3c;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    top:80%;
 }
-#idiomas a{
-    display: flex;
+  
+#idiomas-menu a {
+    padding: 8px;
     text-decoration: none;
-    margin-right: 40px;
     font-size: 3rem;
     color: orange;
-    
+    display: block; /*Los elementos aparecen en columna*/
 }
 
+#idiomas-btn{
+    font-size: 3rem;
+    color: orange;
+    background-color: black;
+    text-decoration: none;
+    border: none;
+    font-family: "Times New Roman", Times, serif;}
+  
+#idiomas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 
 
 /*Inicio de sesion*/
@@ -115,11 +134,12 @@ li a{
     padding-left: 10px;
 }
 
-#button_enviar{
+#button_iniciar{
     margin-left: 25px;
 }
+
 #button_registrar{
-    margin-left: 30%;
+    margin-left: 35%;
 }
 
 #registrar{
@@ -150,7 +170,7 @@ li a{
 
 .circulo-fondo {
     position: fixed;
-    bottom: 5%;
+    bottom: 0%;
     left: 0%;
     transform: translateX(-50%);
     width: 400px; /* Diámetro del círculo */
@@ -180,7 +200,4 @@ li a{
 h6{
     font-size: 3rem;
     margin: 10px;
-}
-
-body{
 }

@@ -17,12 +17,16 @@
         <img id = "logo_bartolomeo"src="../images/logo-bartolomeo.png" alt= "Logo Bartolomeo">
 
         <ul>
-            <li><a href="./pedidos.html">Haz tu pedido</a></li>
-            <li><a href="./reserva.html">Reserva tu mesa</a></li>
-            <li><a href="#carta">Nuestra carta</a></li> <!--Enlace a drive de la carta---------------------------------->
+            <li><a id= "hacer_pedido" href="./pedidos.html">Haz tu pedido</a></li>
+            <li><a id= "hacer_reserva" href="./reserva.html">Reserva tu mesa</a></li>
+            <li><a id= "nuestra_carta" href="#carta">Nuestra carta</a></li> <!--Enlace a drive de la carta---------------------------------->
         </ul>
         <div id="idiomas">
-            <a href="#es">ES</a>
+            <button id="idiomas-btn">ES</button>
+            <div id="idiomas-menu">
+              <a href="#spanish">ES</a>
+              <a href="#english">EN</a>
+            </div>
         </div>
 
 
@@ -30,7 +34,7 @@
   
     <section id = "primer_section">
        <article>
-        <h6>Iniciar Sesion</h6>
+        <h6 id="title_iniciar">Iniciar Sesion</h6>
         <div id="box_inicio_sesion_1">
             <div id="box_inicio_sesion_2">
                 <img id = "image_user"src="../images/Inicio sesión usuario.png">
@@ -40,11 +44,11 @@
                 </div>
 
                 <div id = "botones-inicio">
-                    <div id="button_enviar">
-                        <button id="enviar">Enviar</button>
+                    <div id="button_iniciar">
+                        <button id="iniciar">Iniciar</button>
                     </div>
                     <div id = "button_registrar">
-                        <button id="registrar">Regístrate</button>
+                        <button id="registrar">Registrar</button>
                     </div>
                 </div>
             </div>
