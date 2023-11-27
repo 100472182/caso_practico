@@ -10,6 +10,7 @@
     width: 100%;
     top:0;
     max-height: 110px;
+    margin:0
 }
 
 
@@ -66,60 +67,75 @@ li a{
 
 /* El resto del codigo*/
 .primer-section{
-    margin-top: 160px
+    margin-top: 120px;
 }
 
 /*El formulario de registro*/
+/*La mitad derecha del formulario*/
+
+/*La imagen de la  izquierda*/
+#sitio-bartolomeo{
+      display:flex;
+      justify-content: center;
+      align-items: center;  
+}
+
+#sitio-bartolomeo img{
+    max-width: 95%;
+    border-radius: 10px;    
+}
+
 .formulario{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    height: 900px;
     align-items: center;
 
 }
-
-#sitio-bartolomeo{
-    height: 100%;
-    max-width: 100%;
-}
+/*El div de la foto de perfil del usuario descono*/
 #perfil-no-usuario{
-    width: 20%;
-    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    
 }
-#formulario-registro{
-    padding: 10px;
-    background-color: rgb(233, 189, 107);
+
+/*Utilizado para contener al formulario*/
+#perfil-no-usuario img{
+    width: 25%;
+}
+/*Contiene */
+#input-registro{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    height: 800px;
+    justify-content: center;
+    height: 440px;
     width: 60%;
+    background-color: rgb(233, 189, 107);
     border-radius: 30px;
 }
-
-.formulario-registro{
+/*Contenido en input-registro.Contiene la imagen del usuario, los inputs a rellenar y los botones*/
+.formulario_2{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
+/*Utilizado para centrar el texto Registro*/
 #registro{
     display: flex;
     justify-content: center;
-    font-size: 40px;
 }
 
+/*Los campos a rellenar*/
 .campos{
     background-color: blanchedalmond;
     display: flex;
-    padding-left: 40px;
     border-radius: 30px;
     margin: 5px;
-    font-size: 40px;
+    font-size: 2rem;
+    padding-left: 10px;
 }
-
-
 
 /*Los botones*/
 #botones-registro{
@@ -135,7 +151,8 @@ display: flex;
 }
 h5{
     font-size: 4rem;
-    margin: 15px;
+    margin: 10px;
+    margin-top: 0;
 }
 
 body{
