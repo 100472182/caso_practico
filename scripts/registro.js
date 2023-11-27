@@ -130,6 +130,18 @@ function revisar_campos_vacios() {
     return true;
 }
 
+//Funcion que comprueba si una cuenta ya existe.
+function check_account(){
+//Comprobamos que la cuenta a registrar no existe en la base de datos
+    correo = document.getElementById("correo").value;
+    let correo_aux = getCookie(correo +"_correo");
+    if (correo_aux !== ""){
+        alert("Esta cuenta de correo ya existe. Inicie sesión.")
+        return false;
+    }
+    return true;
+}
+
 //Funcion que valida todos los campos a rellenar en el registro de cuenta
 function validar_campos(){
     
@@ -165,6 +177,9 @@ function validar_campos(){
     if (!bool_dir) {
         return false;
     }
+    //Comprobamos si existe ya la cuenta a registrar
+    if (!check_account()){return false;}
+    
     //Guardamos los datos en cookies
     saveFormData();
     window.location.href="../source/reserva.html"
