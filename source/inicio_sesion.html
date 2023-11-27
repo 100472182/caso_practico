@@ -11,36 +11,23 @@
 </head>
 <body>
     <header class="barra_de_navegacion">
-        <!-- Cabecera-->
-        
+        <!--Cabecera de la pagina-->
+        <!--La imagen de bartolomeo-->
        
-            <!-- Imagen Bartolomeo-->
-            <img id = "logo-bartolomeo "src="../images/logo-bartolomeo.png" alt= "Logo Bartolomeo">
-        <nav>
-            <!-- Menú de navegación-->
-           
-                <!-- Caja Realizar Pedido-->
-                <div id="botones-nav">
-                    <a href="#Pedido">
-                            <p>Haz tu pedido</p>
-                    </a>
-                    <!-- Caja Reserva de Mesa-->
-                    <a href="Reserva">
-                        <p>Reserva tu mesa</p>
-                    </a>
-                    <!-- Caja Ver Carta-->
-                    <a href="Carta">
-                        <p>Nuestra carta</p>
-                    </a>
-                </div>
-                <div id = "idioma">  
-                <!-- Caja Selección Idioma-->
-                <a >
-                    <p>ES</p>
-                </a>
-                </div>
-        </nav>
+        <img id = "logo_bartolomeo"src="../images/logo-bartolomeo.png" alt= "Logo Bartolomeo">
+
+        <ul>
+            <li><a href="./pedidos.html">Haz tu pedido</a></li>
+            <li><a href="./reserva.html">Reserva tu mesa</a></li>
+            <li><a href="#carta">Nuestra carta</a></li> <!--Enlace a drive de la carta---------------------------------->
+        </ul>
+        <div id="idiomas">
+            <a href="#es">ES</a>
+        </div>
+
+
     </header>
+  
     <section id = "primer_section">
        <article>
         <h6>Iniciar Sesion</h6>
@@ -53,7 +40,7 @@
                 </div>
 
                 <div id = "botones-inicio">
-                    <div>
+                    <div id="button_enviar">
                         <button id="enviar">Enviar</button>
                     </div>
                     <div id = "button_registrar">

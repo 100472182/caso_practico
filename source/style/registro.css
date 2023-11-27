@@ -1,62 +1,72 @@
 
 
 /*Clase utilizada para la barra de navegacion*/
+
 .barra_de_navegacion{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
     background-color: black;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    padding: 5px;
-    top: 0px;
-    position: absolute;
-    max-height: 150px;
+    position: fixed;
+    width: 100%;
+    top:0;
+    max-height: 110px;
 }
 
-.barra_de_navegacion img {
-    width: 10%;
-    height: auto;
+
+#logo_bartolomeo{
+    max-width: 100%;
+    width: auto;
+    max-height: 110px;
 }
 
-.barra_de_navegacion div{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: 220px;
-
+.barra_de_navegacion p{
+    max-width: 20%;
+    background-color: red;
 }
 
-#idioma{
-    margin-left: 400px;
+.barra_de_navegacion ul{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column: span 3;
+    list-style: none;
 }
-
-.barra_de_navegacion a{
+ul li{
     display: flex;
     align-items: center;
-    background-color: orange;
-    border-radius: 30px;
-    padding: 10px;
+    justify-content: center;
+}
+
+li a{
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    height: 70%;
-    margin-left: 230px;
+    color: black;
+    background-color: orange;
+    height: 50%;
+    font-size: 2rem;
+    padding: 20px;
+    border-radius: 33px;
 }
 
-.barra_de_navegacion nav{
+#idiomas{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    width: 100%;
+    justify-content: right;
     align-items: center;
-    width: 90%;
 }
-
-.barra_de_navegacion nav p{
-    font-size: 30px;
+#idiomas a{
+    display: flex;
+    text-decoration: none;
+    margin-right: 40px;
+    font-size: 3rem;
+    color: orange;
+    
 }
 
 
 /* El resto del codigo*/
 .primer-section{
-    margin-top: 180px
+    margin-top: 160px
 }
 
 /*El formulario de registro*/

@@ -1,60 +1,67 @@
 /*Clase utilizada para la barra de navegacion*/
+
 .barra_de_navegacion{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
     background-color: black;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    padding: 5px;
-    top: 0px;
-    position: absolute;
-    max-height: 150px;
+    position: fixed;
+    width: 100%;
+    top:0;
+    max-height: 110px;
 }
 
-.barra_de_navegacion img {
-    width: 10%;
-    height: auto;
+
+#logo_bartolomeo{
+    max-width: 100%;
+    width: auto;
+    max-height: 110px;
 }
 
-.barra_de_navegacion div{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: 220px;
-
+.barra_de_navegacion p{
+    max-width: 20%;
+    background-color: red;
 }
 
-#idioma{
-    margin-left: 400px;
+.barra_de_navegacion ul{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column: span 3;
+    list-style: none;
 }
-
-.barra_de_navegacion a{
+ul li{
     display: flex;
     align-items: center;
-    background-color: orange;
-    border-radius: 30px;
-    padding: 10px;
+    justify-content: center;
+}
+
+li a{
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    height: 70%;
-    margin-left: 230px;
+    color: black;
+    background-color: orange;
+    height: 50%;
+    font-size: 2rem;
+    padding: 20px;
+    border-radius: 33px;
 }
 
-.barra_de_navegacion nav{
+#idiomas{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    width: 100%;
+    justify-content: right;
     align-items: center;
-    width: 90%;
+}
+#idiomas a{
+    display: flex;
+    text-decoration: none;
+    margin-right: 40px;
+    font-size: 3rem;
+    color: orange;
+    
 }
 
-.barra_de_navegacion nav p{
-    font-size: 30px;
-}
 
-
-#box_inicio_sesion img{
-    max-width: 10%;
-}
 
 /*Inicio de sesion*/
 
@@ -63,7 +70,8 @@
 }
 
 #image_user{
-    width: 30%;
+    max-height: 4%;
+    width: 15%;
 }
 
 #box_inicio_sesion_1{
@@ -79,7 +87,8 @@
     align-items: center;
     background-color: rgb(218, 177, 102);
     border-radius: 30px;
-    padding: 30px;
+    padding: 10px;
+    max-height: 300px;
 
 }
 #box_inicio_sesion_2 input{
@@ -92,7 +101,7 @@
 }
 #campos_inicio_sesion input{
     margin: 20px;
-    font-size: 4rem;
+    font-size: 2rem;
 }
 
 #botones-inicio{
@@ -106,8 +115,11 @@
     padding-left: 10px;
 }
 
+#button_enviar{
+    margin-left: 25px;
+}
 #button_registrar{
-    justify-content: right;
+    margin-left: 30%;
 }
 
 #registrar{
@@ -117,7 +129,7 @@
 
 #botones-inicio button{
     margin-top: 10px;
-    font-size: 3rem;
+    font-size: 1.5rem;
     padding: 5px;
     border-radius: 30px;
     background-color: orange;
@@ -131,20 +143,20 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 600px; /* Ajusta la altura según tus necesidades */
+    height: 250px; /* Ajusta la altura según tus necesidades */
     background-color: orange; /* Color del rectángulo */
     z-index: -1; /* Coloca el rectángulo detrás del contenido */
 }
 
 .circulo-fondo {
     position: fixed;
-    bottom: 20%;
+    bottom: 5%;
     left: 0%;
     transform: translateX(-50%);
-    width: 600px; /* Diámetro del círculo */
-    height: 600px; /* Diámetro del círculo */
+    width: 400px; /* Diámetro del círculo */
+    height: 400px; /* Diámetro del círculo */
     border-radius: 50%; /* Forma el círculo */
-    background-color: orange; /* Color del círculo */
+    background-color: orange;
     z-index: -1; /* Coloca el círculo detrás del contenido */
 }
 
@@ -166,7 +178,7 @@
 }
 
 h6{
-    font-size: 8rem;
+    font-size: 3rem;
     margin: 10px;
 }
 
