@@ -8,7 +8,6 @@
     width: 100%;
     top:0;
     max-height: 110px;
-    margin:0
 }
 
 
@@ -18,10 +17,6 @@
     max-height: 110px;
 }
 
-.barra_de_navegacion p{
-    max-width: 20%;
-    background-color: red;
-}
 
 .barra_de_navegacion ul{
     display: grid;
@@ -40,7 +35,7 @@ li a{
     align-items: center;
     text-decoration: none;
     color: black;
-    background-color: orange;
+    background-color: #F2A121;
     height: 50%;
     font-size: 2rem;
     padding: 20px;
@@ -55,19 +50,20 @@ li a{
     position: absolute;
     z-index: 1;
     top:80%;
+    border-radius: 10px;
 }
   
 #idiomas-menu a {
     padding: 8px;
     text-decoration: none;
     font-size: 3rem;
-    color: orange;
+    color: #C0732B;
     display: block; /*Los elementos aparecen en columna*/
 }
 
 #idiomas-btn{
     font-size: 3rem;
-    color: orange;
+    color: #F2A121;
     background-color: black;
     text-decoration: none;
     border: none;
@@ -127,7 +123,7 @@ li a{
     justify-content: center;
     height: 440px;
     width: 60%;
-    background-color: rgb(233, 189, 107);
+    background-color: #FBE0B5;
     border-radius: 30px;
 }
 /*Contenido en input-registro.Contiene la imagen del usuario, los inputs a rellenar y los botones*/
@@ -141,16 +137,19 @@ li a{
 #registro{
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 /*Los campos a rellenar*/
 .campos{
-    background-color: blanchedalmond;
+    background-color: white;
     display: flex;
+    margin: 7px;
+    padding-left: 25px;
     border-radius: 30px;
-    margin: 5px;
+    border: none;
+    font-family: "Times New Roman", Times, serif;
     font-size: 2rem;
-    padding-left: 10px;
 }
 
 /*Los botones*/
@@ -161,9 +160,14 @@ display: flex;
 }
 
 .formulario button{
-    background-color: rgb(173, 134, 60);
+    background-color: #C0732B;
     border-radius: 30px;
     font-size: 30px;
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+    padding: 7px;
+    border: none;
+
 }
 h5{
     font-size: 4rem;
@@ -172,5 +176,5 @@ h5{
 }
 
 body{
-    background-color: orange;
+    background-color: #F9D7A0;
 }

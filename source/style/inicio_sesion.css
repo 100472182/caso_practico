@@ -17,11 +17,6 @@
     max-height: 110px;
 }
 
-.barra_de_navegacion p{
-    max-width: 20%;
-    background-color: red;
-}
-
 .barra_de_navegacion ul{
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -39,7 +34,7 @@ li a{
     align-items: center;
     text-decoration: none;
     color: black;
-    background-color: orange;
+    background-color: #F2A121;
     height: 50%;
     font-size: 2rem;
     padding: 20px;
@@ -55,19 +50,20 @@ li a{
     position: absolute;
     z-index: 1;
     top:80%;
+    border-radius: 10px;
 }
   
 #idiomas-menu a {
     padding: 8px;
     text-decoration: none;
     font-size: 3rem;
-    color: orange;
+    color: #C0732B;
     display: block; /*Los elementos aparecen en columna*/
 }
 
 #idiomas-btn{
     font-size: 3rem;
-    color: orange;
+    color: #F2A121;
     background-color: black;
     text-decoration: none;
     border: none;
@@ -85,7 +81,7 @@ li a{
 /*Inicio de sesion*/
 
 #primer_section{
-    margin-top: 180px;
+    margin-top: 125px;
 }
 
 #image_user{
@@ -104,7 +100,7 @@ li a{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(218, 177, 102);
+    background-color: #FBE0B5;
     border-radius: 30px;
     padding: 10px;
     max-height: 300px;
@@ -120,7 +116,11 @@ li a{
 }
 #campos_inicio_sesion input{
     margin: 20px;
+    margin-bottom: 10px;
     font-size: 2rem;
+    border-radius: 30px;
+    border: none;
+    font-family: "Times New Roman", Times, serif;
 }
 
 #botones-inicio{
@@ -136,7 +136,7 @@ li a{
 }
 
 #button_iniciar{
-    margin-left: 25px;
+    margin-left: 30px;
 }
 
 #button_registrar{
@@ -146,18 +146,20 @@ li a{
 }
 
 #registrar{
-    margin-right: 40px;
+    margin-right: 50px;
 }
 
 
 #botones-inicio button{
-    margin-top: 10px;
     font-size: 1.5rem;
-    padding: 5px;
     border-radius: 30px;
-    background-color: orange;
-    
+    background-color: #C0732B;
+    padding: 7px;
+    border: none;
+    color: white;
+    font-family: "Times New Roman", Times, serif;
 }
+
 
 
 /*Las figuras de fondo*/
@@ -167,7 +169,7 @@ li a{
     left: 0;
     width: 100%;
     height: 250px; /* Ajusta la altura según tus necesidades */
-    background-color: orange; /* Color del rectángulo */
+    background-color: #C0732B; /* Color del rectángulo */
     z-index: -1; /* Coloca el rectángulo detrás del contenido */
 }
 
@@ -179,7 +181,7 @@ li a{
     width: 400px; /* Diámetro del círculo */
     height: 400px; /* Diámetro del círculo */
     border-radius: 50%; /* Forma el círculo */
-    background-color: orange;
+    background-color: #C0732B;
     z-index: -1; /* Coloca el círculo detrás del contenido */
 }
 
@@ -203,4 +205,8 @@ li a{
 h6{
     font-size: 3rem;
     margin: 10px;
+}
+
+body{
+    background-color: #F9D7A0;
 }

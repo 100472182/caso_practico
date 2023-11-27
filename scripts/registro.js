@@ -2,19 +2,19 @@
 //import { saveFormData, checkCookie } from "./cookies.";
 
 $(document).ready(function() {
-    $("body").fadeIn(500) 
 
-
+    /*Los botones para iniciar o registrar la sesion*/
     $("#cancelar").click(function() {
         $('input[type="text"]').val('');     
         event.preventDefault();
     });
     //Ejecuta la funcion validar
-    $("#enviar").click(function() {
+    $("#registrar").click(function() {
         event.preventDefault();
         validar_campos();
     });
 
+    /*Menu de hamburguesa para seleccionar el idioma*/
     $("#idiomas-btn").click(function () {
         $("#idiomas-menu").slideToggle();
     });
@@ -68,11 +68,10 @@ $(document).ready(function() {
             $("#direccion").attr("placeholder", "Address");
 
             /*Botones*/
-            $("#iniciar").text("Sing up");
+            $("#registrar").text("Sing up");
             $("#cancelar").text("Cancel");
         }
     });
-
 });
 
 //Funcion que valida el correo electronico para el registro

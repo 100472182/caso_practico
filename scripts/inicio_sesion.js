@@ -1,9 +1,17 @@
 // Importo las funciones necesarias de registro.js
-//import { validar_correo, validar_password, campo_vacio } from './registro';
+//import { validar_correo, validar_password, campo_vacio } from "./registro";
 
 $(document).ready(function () {
+    /*Oculta los caracteres insertados en la password*/ 
+    $("#password").on("input", function() {
+        var valor = $(this).val();
+        var mascara = "*".repeat(valor.length);
+        $(this).val(mascara).attr("data-real-value", valor);
+      });
 
-    $("#enviar").click(function () {
+
+    /*Los botones para iniciar o registrar la sesion*/
+    $("#iniciar").click(function () {
         event.preventDefault();
         validar_campos();
     });
@@ -15,7 +23,7 @@ $(document).ready(function () {
         });
     });
 
-    
+    /*Menu de hamburguesa para seleccionar el idioma*/
     $("#idiomas-btn").click(function () {
         $("#idiomas-menu").slideToggle();
     });
@@ -90,8 +98,7 @@ function validar_correo (){
 //Funcion que valida la password para el registro
 function validar_password(){
     //Obtiene el elemento de entrada por su id
-    var inputPassword= document.getElementById("password");
-    var valorPassword = inputPassword.value;
+    var valorPassword =  $("#password").attr("data-real-value");
 
     //Expresion regular que debe seguir la password del usuario
     const pattern_password= /^(?=.*[A-Z])(?=.*\d).{8,}$/;
@@ -122,7 +129,7 @@ function revisar_campos_vacios() {
         return false;
     }
     // PASSWORD
-    var password = document.getElementById("password").value;
+    var password =  $("#password").attr("data-real-value");
     if (!campo_vacio(password, "Contraseña")) {
         return false;
     }
@@ -157,7 +164,7 @@ function validar_campos() {
 function validar_inicio_sesion(){
     //Valores insertados en los campos
     let correo= document.getElementById("correo").value;
-    let password= document.getElementById("password").value;
+    let password= $("#password").attr("data-real-value");
 
     //Valores en la base de datos
     let correo_bd= getCookie(correo + "_correo");
@@ -186,10 +193,10 @@ function validar_inicio_sesion(){
 //Funcion que obtiene las cookies de la base de datos
 function getCookie(cname) {
     let name = cname + "=";
-    let ca = document.cookie.split(';');
+    let ca = document.cookie.split(";");
     for(let i = 0; i < ca.length; i++) {
         let c = ca[i];
-        while (c.charAt(0) == ' ') {
+        while (c.charAt(0) == " ") {
             c = c.substring(1);
         }
         if (c.indexOf(name) == 0) {
@@ -211,5 +218,4 @@ function change_language() {
     } else {
       x.style.display = "flex";
     }
-    alert("Termino")
 }
