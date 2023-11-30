@@ -1,19 +1,80 @@
 // Importo las funciones necesarias de registro.js
-//import { validar_correo, validar_password, campo_vacio } from './registro';
+//import { validar_correo, validar_password, campo_vacio } from "./registro";
 
 $(document).ready(function () {
+    /*Oculta los caracteres insertados en la password*/ 
+    $("#password").on("input", function() {
+        var valor = $(this).val();
+        var mascara = "*".repeat(valor.length);
+        $(this).val(mascara).attr("data-real-value", valor);
+      });
 
-    $("#enviar").click(function () {
+
+    /*Los botones para iniciar o registrar la sesion*/
+    $("#iniciar").click(function () {
         event.preventDefault();
         validar_campos();
     });
 
-    $("#registrar").click(function (event) {
+    $("#registrar").click(function () {
         event.preventDefault();
         $("body").fadeOut(500, function () {
             window.location.href = "../source/registro.html";
         });
     });
+
+    /*Menu de hamburguesa para seleccionar el idioma*/
+    $("#idiomas-btn").click(function () {
+        $("#idiomas-menu").slideToggle();
+    });
+
+    $("#idiomas-menu a").click(function (event) {
+        event.preventDefault();
+        // Obtener el texto del enlace seleccionado
+        var selectedLanguage = $(this).text();
+        
+        // Actualizar el texto del botón de idiomas
+        $("#idiomas-btn").text(selectedLanguage);
+        
+        // Cerrar el menú desplegable
+        $("#idiomas-menu").slideUp();
+
+        // Aquí puedes agregar la lógica para cambiar el contenido de la página según la opción seleccionada
+        //alert("Seleccionaste: " + selectedLanguage);
+        
+        //Conversion al ingles
+        
+        if(selectedLanguage==="ES") {/*Navegacion*/
+            $("#hacer_pedido").text("Haz tu pedido");
+            $("#hacer_reserva").text("Reserva tu mesa");
+            $("#nuestra_carta").text("Nuestra carta");
+
+            /*El inicio de sesion*/
+            $("#title_iniciar").text("Iniciar sesión");
+            $("#correo").attr("placeholder", "Correo electrónico");
+            $("#password").attr("placeholder", "Contraseña");
+
+            /*Botones*/
+            $("#iniciar").text("Iniciar");
+            $("#registrar").text("Registrar");
+        }
+        else if (selectedLanguage ==="EN"){
+            /*Navegacion*/
+            $("#hacer_pedido").text("Make your order");
+            $("#hacer_reserva").text("Reserve your table");
+            $("#nuestra_carta").text("Our menu");
+
+            /*El inicio de sesion*/
+            $("#title_iniciar").text("Start session");
+            $("#correo").attr("placeholder", "Email");
+            $("#password").attr("placeholder", "Password");
+
+            /*Botones*/
+            $("#iniciar").text("Log in");
+            $("#registrar").text("Sign up");
+        }
+    });
+
 });
 
 //Funcion que valida el correo electronico para el registro
@@ -37,8 +98,7 @@ function validar_correo (){
 //Funcion que valida la password para el registro
 function validar_password(){
     //Obtiene el elemento de entrada por su id
-    var inputPassword= document.getElementById("password");
-    var valorPassword = inputPassword.value;
+    var valorPassword =  $("#password").attr("data-real-value");
 
     //Expresion regular que debe seguir la password del usuario
     const pattern_password= /^(?=.*[A-Z])(?=.*\d).{8,}$/;
@@ -69,7 +129,7 @@ function revisar_campos_vacios() {
         return false;
     }
     // PASSWORD
-    var password = document.getElementById("password").value;
+    var password =  $("#password").attr("data-real-value");
     if (!campo_vacio(password, "Contraseña")) {
         return false;
     }
@@ -104,7 +164,7 @@ function validar_campos() {
 function validar_inicio_sesion(){
     //Valores insertados en los campos
     let correo= document.getElementById("correo").value;
-    let password= document.getElementById("password").value;
+    let password= $("#password").attr("data-real-value");
 
     //Valores en la base de datos
     let correo_bd= getCookie(correo + "_correo");
@@ -133,10 +193,10 @@ function validar_inicio_sesion(){
 //Funcion que obtiene las cookies de la base de datos
 function getCookie(cname) {
     let name = cname + "=";
-    let ca = document.cookie.split(';');
+    let ca = document.cookie.split(";");
     for(let i = 0; i < ca.length; i++) {
         let c = ca[i];
-        while (c.charAt(0) == ' ') {
+        while (c.charAt(0) == " ") {
             c = c.substring(1);
         }
         if (c.indexOf(name) == 0) {
@@ -144,4 +204,18 @@ function getCookie(cname) {
         }
     }
     return "";
+}
+
+//----------------------------------Menu de hamburguesa-------------------------
+
+
+
+/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+function change_language() {
+    var x = document.getElementById("idiomas");
+    if (x.style.display === "flex") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "flex";
+    }
 }

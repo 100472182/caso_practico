@@ -12,35 +12,27 @@
 </head>
 <body>
     <header class="barra_de_navegacion">
-        <!-- Cabecera-->
-        
-       
-            <!-- Imagen Bartolomeo-->
-            <img id = "logo-bartolomeo "src="../images/logo-bartolomeo.png" alt= "Logo Bartolomeo">
-        <nav>
-            <!-- Menú de navegación-->
-           
-                <!-- Caja Realizar Pedido-->
-                <div id="botones-nav">
-                    <a href="#Pedido">
-                            <p>Haz tu pedido</p>
-                    </a>
-                    <!-- Caja Reserva de Mesa-->
-                    <a href="Reserva">
-                        <p>Reserva tu mesa</p>
-                    </a>
-                    <!-- Caja Ver Carta-->
-                    <a href="Carta">
-                        <p>Nuestra carta</p>
-                    </a>
-                </div>
-                <div id = "idioma">  
-                <!-- Caja Selección Idioma-->
-                <a >
-                    <p>ES</p>
-                </a>
-                </div>
-        </nav>
+        <!--Cabecera de la pagina-->
+        <!--La imagen de bartolomeo-->
+        <div id= "reducido" >
+            <a href="./home.html">
+                <img id = "logo_bartolomeo"src="../images/logo-bartolomeo.png" alt= "Logo Bartolomeo">
+            </a>
+        </div>
+        <ul>
+            <li><a id= "hacer_pedido" href="./pedidos.html">Haz tu pedido</a></li>
+            <li><a id= "hacer_reserva" href="./reserva.html">Reserva tu mesa</a></li>
+            <li><a id= "nuestra_carta" href="#carta">Nuestra carta</a></li> <!--Enlace a drive de la carta---------------------------------->
+        </ul>
+        <div id="idiomas">
+            <button id="idiomas-btn">ES</button>
+            <div id="idiomas-menu">
+              <a href="#spanish">ES</a>
+              <a href="#english">EN</a>
+            </div>
+        </div>
+
+
     </header>
 
 
@@ -48,16 +40,18 @@
         <!-- Registro-->    
             <!-- Imagen usuario-->
         <article class="formulario">
-        
-            <img id= "sitio-bartolomeo" src="../images/sitio-bartolomeo.jpg">
-            <div>
+            <div id="sitio-bartolomeo">
+                <img id= "sitio-bartolomeo" src="../images/sitio-bartolomeo.png" alt= "Restaurante Bartolomeo">
+            </div>
+            <div id="formulario_registro">
                 <div id = "registro">
-                    <h5>Registro</h5>
+                    <h5 id="title_registro">Registro</h5>
                 </div>
-                <div class="formulario-registro ">
-                    <div id = "formulario-registro">
-                        
-                        <img id = "perfil-no-usuario"src="../images/registro-usuario-removebg-preview.png">
+                <div class="formulario_2 ">
+                    <div id = "input-registro">
+                        <div id = "perfil-no-usuario">
+                            <img src="../images/registro-usuario-removebg-preview.png">
+                        </div>
                         <form action="#" method="post" name="myForm">
                             
                             <input type="text" id="correo" class="campos" name="correo" placeholder="Correo electrónico" >
@@ -72,7 +66,7 @@
                             
                             <div id = "botones-registro">
                                 <div>
-                                    <button id="enviar">Enviar</button>
+                                    <button id="registrar">Registrar</button>
                                 </div>
                                 <div>
                                     <button id="cancelar">Cancelar</button>
