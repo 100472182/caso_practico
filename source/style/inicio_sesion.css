@@ -20,6 +20,10 @@
     max-width: 100%;
 }
 
+#logo_bartolomeo:hover{
+    transform: scale(1.1); /*aumentamos su tamaño*/
+}
+
 /*Los enlaces del  navegador*/
 .barra_de_navegacion ul{
     display: grid;
@@ -31,7 +35,7 @@
 ul li{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /*-------------------Esto podemos cambiarlo a left y asi destaca el 95% 5%*---------------------------------*/
 }
 
 /*Cada enlace*/
@@ -46,6 +50,10 @@ li a{
     padding: 10px;
     border-radius: 33px;
     box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+li a:hover{
+    transform: scale(1.1); /*aumentamos su tamaño*/
 }
 
 /*Desplegable y boton de idiomas*/
@@ -88,7 +96,10 @@ li a{
     font-family: "Times New Roman", Times, serif;
 }
 
-
+button:hover{
+    transform: scale(1.1); /*aumentamos su tamaño*/
+    cursor: pointer; /*Cambia el cursor a una mano*/
+}
 
 /*Inicio de sesion*/
 
