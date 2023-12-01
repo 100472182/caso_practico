@@ -24,7 +24,7 @@ $(document).ready(function() {
         
         if(selectedLanguage==="ES") {/*Navegacion*/
             /*Navegacion*/
-            $("#hacer_pedido").text("Haz tu reserva");
+            $("#hacer_pedido").text("Haz tu pedido");
             $("#hacer_reserva").text("Reserva tu mesa");
             $("#nuestra_carta").text("Nuestra carta");
         }
