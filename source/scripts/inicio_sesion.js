@@ -6,14 +6,15 @@ $(document).ready(function () {
     $("#password").on("input", function() {
         var valor = $(this).val();
         var mascara = "*".repeat(valor.length);
+        /*var mascara= valor;*/
         $(this).val(mascara).attr("data-real-value", valor);
-      });
+    });
 
 
     /*Los botones para iniciar o registrar la sesion*/
     $("#iniciar").click(function () {
         event.preventDefault();
-        validar_campos();
+        validar_campos_i();
     });
 
     $("#registrar").click(function () {
@@ -63,36 +64,17 @@ $(document).ready(function () {
 
 });
 
-//Funcion que valida el correo electronico para el registro
-function validar_correo (){
-    //Obtiene el elemento de entrada por su id
-    var inputcorreo= document.getElementById("correo");
-    var valorcorreo= inputcorreo.value;
-
-    //Expresion regular que debe seguir el correo
-    const pattern_correo = /^[A-Za-z0-9+_.-]+@[A-Za-z0-9+_.-]+\.[A-Za-z]{2,3}$/;
-
-    //Comprueba si el correo sigue la expresion regular
-    if (!pattern_correo.test(valorcorreo)){
-        //Notifica al usuario
-        alert("correo electrónico incorrecto.")
-        return false;
-    }
-    return true;
-}
 
 //Funcion que valida la password para el registro
-function validar_password(){
+function validar_password_i(){
     //Obtiene el elemento de entrada por su id
     var valorPassword =  $("#password").attr("data-real-value");
-
     //Expresion regular que debe seguir la password del usuario
     const pattern_password= /^(?=.*[A-Z])(?=.*\d).{8,}$/;
     
     //Comprueba si las password sigue la expresion regular
     if (!pattern_password.test(valorPassword)){
-        alert("La contraseña no cumple con los requisitos. Debe tener al menos una letra \
-        mayúscula, al menos un número y 8 caracteres");
+        alert("La contraseña no cumple con los requisitos. Debe tener al menos una letra mayúscula, al menos un número y 8 caracteres");
         return false;
     }
     return true;
@@ -108,14 +90,16 @@ function campo_vacio(clave, nombre){
 }
 
 // Función que revisa si todos los campos están vacíos
-function revisar_campos_vacios() {
+function revisar_campos_vacios_i() {
     // CORREO
     var correo = document.getElementById("correo").value;
     if (!campo_vacio(correo, "Correo")) {
         return false;
     }
     // PASSWORD
+    alert("Antes de password")
     var password =  $("#password").attr("data-real-value");
+    alert("Despues de password", password)
     if (!campo_vacio(password, "Contraseña")) {
         return false;
     }
@@ -124,9 +108,9 @@ function revisar_campos_vacios() {
 }
 
 // Función que valida todos los campos a rellenar en el inicio de sesión de la cuenta
-function validar_campos() {
+function validar_campos_i() {
     // Comprobar que se han rellenado todos los campos
-    if (!revisar_campos_vacios()) {
+    if (!revisar_campos_vacios_i()) {
         return false;
     }
 
@@ -137,7 +121,7 @@ function validar_campos() {
         return false;
     }
     // PASSWORD
-    let bool_password = validar_password();
+    let bool_password = validar_password_i();
     if (!bool_password) {
         return false;
     }
@@ -160,7 +144,6 @@ function validar_inicio_sesion(){
     if (correo_bd !== ""){
         if (correo === correo_bd , password === password_bd){
             let user= getCookie(correo + "_name_surname");
-            alert("Bienbenido " + user);
             //Cambiamos a la pestaña registro
             window.location.href="../source/reserva.html"
             return true;
@@ -173,35 +156,3 @@ function validar_inicio_sesion(){
     return false;
 }
 
-
-//-----------------------------------COOKIES----------------------------------------------
-
-//Funcion que obtiene las cookies de la base de datos
-function getCookie(cname) {
-    let name = cname + "=";
-    let ca = document.cookie.split(";");
-    for(let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == " ") {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-
-//----------------------------------Menu de hamburguesa-------------------------
-
-
-
-/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
-function change_language() {
-    var x = document.getElementById("idiomas");
-    if (x.style.display === "flex") {
-      x.style.display = "none";
-    } else {
-      x.style.display = "flex";
-    }
-}
