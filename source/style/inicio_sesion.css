@@ -1,111 +1,7 @@
-/*Clase utilizada para la barra de navegacion*/
-
-.barra_de_navegacion{
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    background-color: #333333;
-    position: fixed;
-    width: 100%;
-    top:0;
-    height: 10%;
-}
-
-#reducido{
-    max-height: 100%;
-    overflow: hidden;
-}
-/*El logo del navegador*/
-#logo_bartolomeo{
-    max-height: 85%;
-    max-width: 100%;
-}
-
-#logo_bartolomeo:hover{
-    transform: scale(1.1); /*aumentamos su tamaño*/
-}
-
-/*Los enlaces del  navegador*/
-.barra_de_navegacion ul{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-column: span 3;
-    list-style: none;
-}
-/*La lista de enlaces*/
-ul li{
-    display: flex;
-    align-items: center;
-    justify-content: center; /*-------------------Esto podemos cambiarlo a left y asi destaca el 95% 5%*---------------------------------*/
-}
-
-/*Cada enlace*/
-li a{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-    background-color: #F2A121;
-    height: 50%;
-    font-size: 1.2rem;
-    padding: 10px;
-    border-radius: 33px;
-    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.3);
-}
-
-li a:hover{
-    transform: scale(1.1); /*aumentamos su tamaño*/
-}
-
-/*Desplegable y boton de idiomas*/
-#idiomas {
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items:end;
-    padding-right: 10%;
-}
-/*Los idiomas del navegador*/
-#idiomas-menu {
-    display: none;
-    flex-direction: column;
-    background-color: black;
-    padding: 10px;
-    position: absolute;
-    z-index: 1;
-    top:80%;
-    border-radius: 10px;
-    right: 1%;
-}
-
-/*Cada idioma del navegador*/
-#idiomas-menu a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: #C0732B;
-    display: block; /*Los elementos aparecen en columna*/
-}
-
-/*El idioma elegido*/
-#idiomas-btn{
-    font-size: 1.5em;
-    color: #F2A121;
-    background-color: #333333;
-    text-decoration: none;
-    border: none;
-    font-family: "Times New Roman", Times, serif;
-}
-
-button:hover{
-    transform: scale(1.1); /*aumentamos su tamaño*/
-    cursor: pointer; /*Cambia el cursor a una mano*/
-}
 
 /*Inicio de sesion*/
 
-#primer_section{
-    margin-top: 6%;
-}
+
 
 #image_user{
     max-height: 4%;
@@ -230,6 +126,3 @@ h6{
     margin: 10px;
 }
 
-body{
-    background-color: #F9D7A0;
-}

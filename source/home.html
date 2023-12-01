@@ -3,38 +3,34 @@
 <head>
     <title>Bartolomeo</title>
     <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="style/shared.css">
     <meta charset="UTF-8">
 </head>
 <body>
-    <header id="barra-de-navegacion">
-        <nav>
-            <img id="logo-bartolomeo" src="../images/logo-bartolomeo.png" alt= "Logo Bartolomeo">
-            <div id="botones-nav">
-                <!-- Poner enlaces en la barra de navegación-->
-                <a class="boton-nav">
-                    <div>
-                        <p>Haz tu pedido</p>
-                    </div>
-                </a>
-                <a class="boton-nav">
-                    <div>
-                        <p>Reserva tu mesa</p>
-                    </div>   
-                </a>
-                <a class="boton-nav">
-                    <div>
-                        <p>Nuestra carta</p>
-                    </div>                    
-                </a>
+    <header class="barra_de_navegacion">
+        <!--Cabecera de la pagina-->
+        <!--La imagen de bartolomeo-->
+        <div id= "reducido" >
+            <a href="./home.html">
+                <img id = "logo_bartolomeo"src="../images/logo-bartolomeo.png" alt= "Logo Bartolomeo">
+            </a>
+        </div>
+        <ul>
+            <li><a id= "hacer_pedido" href="./pedidos.html">Haz tu pedido</a></li>
+            <li><a id= "hacer_reserva" href="./reserva.html">Reserva tu mesa</a></li>
+            <li><a id= "nuestra_carta" href="#carta">Nuestra carta</a></li> <!--Enlace a drive de la carta---------------------------------->
+        </ul>
+        <div id="idiomas">
+            <button id="idiomas-btn">ES</button>
+            <div id="idiomas-menu">
+              <a href="#spanish">ES</a>
+              <a href="#english">EN</a>
             </div>
-            <div id="idioma">  
-                <a>
-                    <p>ES</p>
-                </a>
-            </div>
-        </nav>
+        </div>
+
+
     </header>
-    <section>
+    <section id="primer_section">
         <!-- Poner mas imagenes grandes y luego galería-->
         <img id="sitio-bartolomeo" src="../images/sitio-bartolomeo.png" alt= "Sitio Bartolomeo">
     </section>
