@@ -14,11 +14,6 @@ $(document).ready(function() {
         validar_campos();
     });
 
-    /*Menu de hamburguesa para seleccionar el idioma*/
-    $("#idiomas-btn").click(function () {
-        $("#idiomas-menu").slideToggle();
-    });
-
     $("#idiomas-menu a").click(function (event) {
         event.preventDefault();
         // Obtener el texto del enlace seleccionado
@@ -36,11 +31,7 @@ $(document).ready(function() {
         //Conversion al ingles
         
         if(selectedLanguage==="ES") {/*Navegacion*/
-            /*Navegacion*/
-            $("#hacer_pedido").text("Haz tu reserva");
-            $("#hacer_reserva").text("Reserva tu mesa");
-            $("#nuestra_carta").text("Nuestra carta");
-
+            
             /*El registro de sesion*/
             $("#title_registro").text("Registro");
             $("#correo").attr("placeholder", "Correo electrónico");
@@ -54,11 +45,6 @@ $(document).ready(function() {
             $("#cancelar").text("Cancelar");
         }
         else if (selectedLanguage ==="EN"){
-            /*Navegacion*/
-            $("#hacer_pedido").text("Make your order");
-            $("#hacer_reserva").text("Reserve your table");
-            $("#nuestra_carta").text("Our menu");
-
             /*El registro de sesion*/
             $("#title_registro").text("Register");
             $("#correo").attr("placeholder", "Email");
