@@ -10,17 +10,15 @@
 </head>
 <body>
     <header class="barra_de_navegacion">
-        <!--Cabecera de la pagina-->
-        <!--La imagen de bartolomeo-->
         <div id= "reducido" >
             <a href="./home.html">
                 <img id = "logo_bartolomeo"src="../images/logo-bartolomeo.png" alt= "Logo Bartolomeo">
             </a>
         </div>
         <ul>
-            <li><a id= "hacer_pedido" href="./pedidos.html">Haz tu pedido</a></li>
-            <li><a id= "hacer_reserva" href="./reserva.html">Reserva tu mesa</a></li>
-            <li><a id= "nuestra_carta" href="#carta">Nuestra carta</a></li> <!--Enlace a drive de la carta---------------------------------->
+            <li><a id= "hacer_pedido" href="./inicio_sesion.html">Haz tu pedido</a></li>
+            <li><a id= "hacer_reserva" href="./inicio_sesion.html">Reserva tu mesa</a></li>
+            <li><a id= "nuestra_carta" href="./CARTA-VERANO-2023.pdf">Nuestra carta</a></li>
         </ul>
         <div id="idiomas">
             <button id="idiomas-btn">ES</button>
@@ -29,12 +27,16 @@
               <a href="#english">EN</a>
             </div>
         </div>
-
-
     </header>
-    <section id="primer_section">
-        <!-- Poner mas imagenes grandes y luego galería-->
-        <img id="sitio-bartolomeo" src="../images/sitio-bartolomeo.png" alt= "Sitio Bartolomeo">
+    <section id="espacio-header" class="fondo-home">
+        <img class="img-galeria-grande" src="../images/galeria1.png" alt= "galeria1">
+        <img class="img-galeria-grande" src="../images/galeria2.jpg" alt= "galeria2">
+        <img class="img-galeria-grande" src="../images/galeria3.jpg" alt= "galeria3">
+        <img class="img-galeria-grande" src="../images/galeria4.jpg" alt= "galeria4">
+        <img class="img-galeria-grande" src="../images/galeria5.jpg" alt= "galeria5">
+        <img class="img-galeria-grande" src="../images/galeria6.png" alt= "galeria6">
+        <img id="flecha-left" src="../images/flecha.png" alt="flecha-left">
+        <img id="flecha-right" src="../images/flecha.png" alt="flecha-right">
     </section>
     <section class="fondo-home">
         <article id="descripcion-txt">
@@ -63,8 +65,7 @@
         <div id="fondo-boton-pedido">
             <p>¡Haz tu pedido aquí!</p>
         </div>
-        <!-- Poner enlace a hacer pedido-->
-        <a id="boton-pedido">
+        <a href="./inicio_sesion.html" id="boton-pedido">
             <p>¡Haz tu pedido aquí!</p>
         </a>
         <div id="haz-tu-reserva">
@@ -84,8 +85,7 @@
         <div id="fondo-boton-reserva">
             <p>¡Haz tu reserva aquí!</p>
         </div>
-        <!-- Poner enlace a hacer reserva-->
-        <a id="boton-reserva">
+        <a href="./inicio_sesion.html" id="boton-reserva">
             <p>¡Haz tu reserva aquí!</p>
         </a>
     </section>
@@ -104,7 +104,9 @@
             <div class="linea-horizontal-bottom"><p class="no-mostrar">vacio</p></div>
             <div class="cuadro-marco"><p class="no-mostrar">vacio</p></div>
         </div>
-        <img id="imagen-novedades" src="../images/logo-bartolomeo.png" alt= "imagen novedades">
+        <div id="cuadro-imagen-novedades">
+            <img id="imagen-novedades" src="../images/logo-bartolomeo.png" alt= "imagen novedades">
+        </div>
     </section>
     <section class="fondo-home">
         <div id="platos">
@@ -126,17 +128,15 @@
             <div class="linea-horizontal-bottom-long"><p class="no-mostrar">vacio</p></div>
             <div class="cuadro-marco"><p class="no-mostrar">vacio</p></div>
         </div>
-        <!-- Poner enlace a ver carta-->
         <div id="fondo-boton-carta">
             <p>Ver la carta</p>
         </div>
-        <a id="boton-carta">
+        <a id="boton-carta" href="./CARTA-VERANO-2023.pdf">
             <p>Ver la carta</p>
         </a>
     </section>
     <section class="fondo-home">
         <div id="contactanos">
-            <!-- Poner vinculos al correo y al mapa-->
             <div class="cuadro-marco"><p class="no-mostrar">vacio</p></div>
             <div class="linea-horizontal-top-long"><p class="no-mostrar">vacio</p></div>
             <div class="cuadro-marco"><p class="no-mostrar">vacio</p></div>
@@ -147,10 +147,10 @@
                 <p id="telf">+34 912 19 09 52</p>
                 <p id="direccion">Calle del General Pardiñas 36, 28001, Madrid</p>
             </article>
-            <a>
+            <a href="bartolomeokitchen@gmail.com">
                 <img id="logo-correo" src="../images/logo-correo.png" alt= "Logo Correo">
             </a>
-            <a>
+            <a href="https://maps.app.goo.gl/EVeMCwaGzXtHeh8g7">
                 <img id="logo-mapa" src="../images/logo-mapa.png" alt= "Logo Mapa">
             </a>
             <div class="cuadro-marco despejar"><p class="no-mostrar">vacio</p></div>
@@ -177,20 +177,21 @@
     
     <footer>
         <!-- Agregar todos los enlaces-->
-        <a>
+        <a href="https://www.facebook.com/bartolomeokitchen/">
             <img class="img-footer" src="../images/logo_fb.png" alt= "Logo Facebook">
         </a>
-        <a>
+        <a href="https://www.instagram.com/bartolomeokitchen/">
             <img class="img-footer" src="../images/logo_ig.png" alt= "Logo Instagram">
         </a>
-        <a>
+        <a href="https://maps.app.goo.gl/EVeMCwaGzXtHeh8g7">
             <img class="img-footer" src="../images/logo_gm.jpg" alt= "Logo Google Maps">
         </a>
-        <a>
+        <a href="./politica.html">
             <p id="pol-priv">Política de Privacidad</p>
         </a>
     </footer>
     
     <script src="./scripts/shared.js"></script>
+    <script src="./scripts/home.js"></script>
 </body>
 </html>
