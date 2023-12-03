@@ -1,0 +1,130 @@
+* {box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#barra_progreso{
+    padding-top:20vh;
+    width: 100%;
+    display: flex;
+    align-items:center; /* Centra verticalmente */
+    justify-content: space-around; /* Centra horizontalmente */
+    height: 20vh;
+    position: relative;
+}
+.nodo {
+    width: 15vmin;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    
+}
+.barra {
+    flex:1;
+    width: 70%;
+    height: 12.5%;
+    position:absolute;
+    z-index: 1;
+}
+
+[id*="progreso_barra"]{
+    
+    background-color: #EB7D10;
+    
+}
+[id*="nodo"]{
+    background-color:#EB7D10;
+}
+.img_nodo{
+    margin-top: 13%;
+    margin-left: 19%;
+    height: 70%;
+}
+#img_nodo_tarjeta{
+    height: 60%;
+    margin-top: 18%;
+    margin-left: 17.5%;
+}
+#sect_pedidos{
+    width: 100%;
+    height: auto;
+    background-color: #F9D7A0;
+}
+.contenedor{
+    border-radius: 10px;
+    background-color: #D48D39;
+}
+#control_pedido{
+    width:22.5%;
+    position:fixed;
+    top: 27.5%;
+    left:76%;
+}
+#control_pedido ul{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:5%;
+    margin: 1%;
+}
+#control_pedido li{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+
+}
+#img_cesta{
+    width: 70%;
+}
+#img_tarjeta{
+    width: 80%;
+}
+#filtros{
+    margin-top:7.5%;
+    margin-left: 1%;
+    margin-right: 1%;
+    display: flex;
+    overflow-x: auto;
+    width: 98%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+[id*="filtro_"]{
+    background-color:#904E00 ;
+    color:white;
+    border-radius: 40px;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-align: center;
+    font-size: 1.2rem;
+    min-width: 20%;
+}
+#productos{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
+    margin:5%;
+    gap: 4%;
+    width: 90%;
+}
+.producto{
+    text-align: center;
+
+}
+.producto h3{
+    padding-top: 10%;
+    min-height: 25%;
+    font-size: 1.2rem;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.imagen_producto{
+    margin-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 4%;
+    width: 90%;
+    border-radius: 25px;
+}
