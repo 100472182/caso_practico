@@ -97,9 +97,7 @@ function revisar_campos_vacios_i() {
         return false;
     }
     // PASSWORD
-    alert("Antes de password")
     var password =  $("#password").attr("data-real-value");
-    alert("Despues de password", password)
     if (!campo_vacio(password, "Contraseña")) {
         return false;
     }

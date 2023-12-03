@@ -56,6 +56,13 @@
     justify-content: center;
     margin-bottom: 20px;
 }
+/*El formulario a rellenar*/
+#form-formulario{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100%;
+}
 
 /*Los campos a rellenar*/
 .campos{
@@ -71,15 +78,28 @@
 
 /*Los botones*/
 #botones-registro{
-display: flex;
-   justify-content: space-between;
-   padding: 5px;
+    display: flex;
+    justify-content: space-between; /* Espacio entre los botones */
+    width: 95%;
+    margin-top: 7px;
 }
 
+/*El boton de registrar*/
+#registrar{
+    width: fit-content;
+    align-items: left;
+}
+
+/*El boton de cancelar*/
+#cancelar{
+    width: fit-content;
+    text-align: end;
+}
+/*Los botones del formulario*/
 .formulario button{
     background-color: #C0732B;
     border-radius: 30px;
-    font-size: 30px;
+    font-size: 1.7rem;
     color: white;
     font-family: "Times New Roman", Times, serif;
     padding: 7px;
@@ -92,3 +112,73 @@ h5{
     margin-top: 0;
 }
 
+
+/*El triangulo*/
+#triangulo{
+    display: none;
+}
+
+
+/*--------------------------------Responsive------------------------------------------------*/
+
+/*Responsive ajustados a la resolucion de una tablet*/
+
+/*@media only screen and (max-width:768px){
+
+
+}*/
+
+/*Responsive ajustados a la resolucion de un móvil*/
+@media only screen and (max-width:600px){  
+
+    /*El triangulo*/
+    #triangulo{
+        display: unset;
+        position:absolute;
+        z-index: -1;
+        width:0;
+        height: 0;
+        border-right: 98vw solid transparent;
+        border-bottom: 90vh solid #C0732B; /* Puedes cambiar el color aquí */
+        bottom: 0;
+    }
+
+    /*Desaparece la imagen del sitio*/
+    #sitio-bartolomeo{
+        display: none
+    }
+
+    /*Eliminar la columna de la izquierda, solo una para el formulario*/
+    .formulario{
+        display: flex;
+        align-items: center;    
+    }
+
+    #input-registro{
+        width: 90%;
+        height: min-content;
+        height: 65vh;
+    }
+
+    #form-formulario{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    /*Ajustamos tamaño de los campos a rellenar*/
+    .campos{
+        font-size: 1.5rem;
+        max-width: 85%;
+    }
+
+    .formulario button{
+        font-size: 1rem;
+    }
+
+    #botones-registro{
+        width: 94%;
+    }
+
+}

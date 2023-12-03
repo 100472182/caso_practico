@@ -107,5 +107,27 @@ button:hover{
 }
 
 body{
-    background-color: #F9D7A0;
+    background-color:#F9D7A0;
+}
+
+
+/*Responsive ajustados a la resolucion de una tablet*/
+
+/*@media only screen and (max-width:768px){
+
+
+}*/
+
+/*Responsive ajustados a la resolucion de un móvil*/
+@media only screen and (max-width:600px){  
+    /*Modifico margen al primer section*/
+    #primer_section{
+        margin-top: 18%;
+    }
+    /*Modifico tamaño del nav*/
+    li a{
+        font-size: 0.6rem;
+        padding: 5px;
+    }
+
 }

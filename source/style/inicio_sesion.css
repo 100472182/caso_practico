@@ -20,8 +20,8 @@
     border-radius: 30px;
     padding: 10px;
     max-height: 300px;
-
 }
+
 #box_inicio_sesion_2 input{
     padding-left: 20px;
 }
@@ -123,3 +123,58 @@ h6{
     margin: 10px;
 }
 
+/*El triangulo*/
+#triangulo{
+    display: none;
+}
+
+
+
+/*--------------------------------Responsive------------------------------------------------*/
+
+/*Responsive ajustados a la resolucion de una tablet*/
+
+/*@media only screen and (max-width:768px){
+
+
+}*/
+
+/*Responsive ajustados a la resolucion de un móvil*/
+@media only screen and (max-width:600px){  
+    /*Los circulos y el rectangulo desaparecen desaparecen*/
+    .circulo-fondo,.rectangulo-fondo{
+        display: none;
+    }
+    
+    #box_inicio_sesion_1{
+        margin-top: 8%;
+    }
+
+    #box_inicio_sesion_2{
+        /*max-height: 300px;*/
+        max-height: none;
+        max-width: 90%;
+    }
+
+    #campos_inicio_sesion{
+        max-width: 80%;
+        margin-top: 4%;
+        width: 100%;
+    }
+
+    #botones-inicio{
+        margin-top: 4%;
+    }
+
+    /*El triangulo*/
+    #triangulo{
+        display: unset;
+        position:absolute;
+        z-index: -1;
+        width:0;
+        height: 0;
+        border-right: 98vw solid transparent;
+        border-bottom: 90vh solid #C0732B; /* Puedes cambiar el color aquí */
+        bottom: 0;
+    }
+}
