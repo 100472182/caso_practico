@@ -2,33 +2,58 @@
 <html lang="es">
 <head>
     <title>Bartolomeo</title>
-    <link rel="stylesheet" href="style/style1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/82e1991057.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/reserva.css">
+    <link rel="stylesheet" href="style/shared.css">
     <meta charset="UTF-8">
 </head>
 <body>
-    <header>
-        <!-- Cabecera-->
-        <div>
-            <!-- Imagen Bartolomeo-->
+    <header class="barra_de_navegacion">
+        <div id= "reducido" >
+            <a href="./home.html">
+                <img id = "logo_bartolomeo"src="../images/logo-bartolomeo.png" alt= "Logo Bartolomeo">
+            </a>
         </div>
-        <nav>
-            <!-- Menú de navegación-->
-            <div>
-                <!-- Caja Realizar Pedido-->
+        <ul>
+            <li><a id= "hacer_pedido" href="./inicio_sesion.html">Haz tu pedido</a></li>
+            <li><a id= "hacer_reserva" href="./inicio_sesion.html">Reserva tu mesa</a></li>
+            <li><a id= "nuestra_carta" href="./CARTA-VERANO-2023.pdf">Nuestra carta</a></li>
+        </ul>
+        <div id="idiomas">
+            <button id="idiomas-btn">ES</button>
+            <div id="idiomas-menu">
+              <a href="#spanish">ES</a>
+              <a href="#english">EN</a>
             </div>
-            <div>
-                <!-- Caja Reserva de Mesa-->
-            </div>
-            <div>
-                <!-- Caja Ver Carta-->
-            </div>
-            <div>
-                <!-- Caja Selección Idioma-->
-            </div>
-        </nav>
-        
+        </div>
     </header>
-    <section>
+    <section class="contenedor"> 
+        <div class="elemento-contenedor dos-columnas">
+            <ul id="fecha" class="desplegable">
+                <li><h6>Fecha</h6></li>
+            </ul>
+        </div>
+        <div class="elemento-contenedor">
+            <ul id="fecha" class="desplegable">
+                <li><h6>Personas</h6></li>
+            </ul>
+        </div>
+        <div class="elemento-contenedor">
+            <ul id="fecha" class="desplegable">
+                <li><h6>Horas Disponibles</h6></li>
+            </ul>
+        </div>
+        <div class="dos-columnas">
+            <ul id="horarios">
+                <li><h5>Horarios</h5></li>
+            </ul>
+        </div>
+
+
+
+
+
         <!-- Reserva-->
         <section>
             <!-- Seleccionar momento de reserva-->
@@ -82,4 +107,6 @@
             <!-- Caja Reserva realizada-->
         </div>
     </section>
+    <script src="./scripts/shared.js"></script>
+    <script src="./scripts/reserva.js"></script
 </body>
