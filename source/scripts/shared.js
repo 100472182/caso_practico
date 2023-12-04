@@ -116,8 +116,7 @@ function saveFormData() {
 
 
 //Funcion que comprueba si existe al menos un usuario y si existe, recibe al ultimo usuario que se haya registrado
-function checkCookie() {    
-    let user = getNameCookie();
+function checkCookie(user) {    
     if (user != "") {
         alert('Bienvenido ' + user);
     }

@@ -115,8 +115,10 @@ function validar_inicio_sesion(){
     if (correo_bd !== ""){
         if (correo === correo_bd , password === password_bd){
             let user= getCookie(correo + "_name_surname");
+            
             //Cambiamos a la pestaña registro
             window.location.href="../source/reserva.html"
+            checkCookie(user);
             return true;
         }
         alert("Usuario y/o contraseña incorreco(s)");

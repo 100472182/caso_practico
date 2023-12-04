@@ -186,7 +186,7 @@ function validar_campos_r(){
     //Guardamos los datos en cookies
     saveFormData();
     window.location.href="../source/reserva.html"
-    checkCookie();//-----------------Esto debe ir en reservar----------------------
+    checkCookie($("#nombre_apellidos").val());
     return true;
  }
 
