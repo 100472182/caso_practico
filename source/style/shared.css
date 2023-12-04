@@ -15,6 +15,7 @@
     max-height: 100%;
     overflow: hidden;
 }
+
 /*El logo del navegador*/
 #logo_bartolomeo{
     max-height: 85%;
@@ -113,10 +114,18 @@ body{
 
 /*Responsive ajustados a la resolucion de una tablet*/
 
-/*@media only screen and (max-width:768px){
+@media only screen and (max-width:768px){
+    /*Modifico margen al primer section*/
+    #primer_section{
+        margin-top: 10%;
+    }
 
-
-}*/
+    /*Modifico tamaño del nav*/
+    li a{
+        font-size: 1rem;
+        padding: 5px;
+    }
+}
 
 /*Responsive ajustados a la resolucion de un móvil*/
 @media only screen and (max-width:600px){  
@@ -124,10 +133,10 @@ body{
     #primer_section{
         margin-top: 18%;
     }
+
     /*Modifico tamaño del nav*/
     li a{
         font-size: 0.6rem;
         padding: 5px;
     }
-
 }
