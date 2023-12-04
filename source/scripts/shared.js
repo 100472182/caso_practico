@@ -57,6 +57,7 @@ function validar_correo (){
     return true;
 }
 
+
 //Funcion que valida la password para el registro
 function validar_password(){
     //Obtiene el elemento de entrada por su id

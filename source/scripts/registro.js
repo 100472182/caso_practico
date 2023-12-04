@@ -1,6 +1,9 @@
 /*Formulario para el registro de los usuarios*/
 //import { saveFormData, checkCookie } from "./cookies.";
 
+//El idioma por defecto
+var selectedLanguage= "ES"
+
 $(document).ready(function() {
 
     /*Los botones para iniciar o registrar la sesion*/
@@ -28,39 +31,42 @@ $(document).ready(function() {
         // Aquí puedes agregar la lógica para cambiar el contenido de la página según la opción seleccionada
         //alert("Seleccionaste: " + selectedLanguage);
         
-        //Conversion al ingles
-        
-        if(selectedLanguage==="ES") {/*Navegacion*/
-            
-            /*El registro de sesion*/
-            $("#title_registro").text("Registro");
-            $("#correo").attr("placeholder", "Correo electrónico");
-            $("#password").attr("placeholder", "Contraseña");
-            $("#nombre_apellidos").attr("placeholder", "Nombre y apellido(s)");
-            $("#telefono").attr("placeholder", "Teléfono");
-            $("#direccion").attr("placeholder", "Dirección");
-
-            /*Botones*/
-            $("#iniciar").text("Iniciar");
-            $("#cancelar").text("Cancelar");
-        }
-        else if (selectedLanguage ==="EN"){
-            /*El registro de sesion*/
-            $("#title_registro").text("Register");
-            $("#correo").attr("placeholder", "Email");
-            $("#password").attr("placeholder", "Password");
-            $("#nombre_apellidos").attr("placeholder", "Name and surname(s)");
-            $("#telefono").attr("placeholder", "Phone number");
-            $("#direccion").attr("placeholder", "Address");
-
-            /*Botones*/
-            $("#registrar").text("Sing up");
-            $("#cancelar").text("Cancel");
-        }
+        //Cambiar de idioma
+        cambiarIdioma_reg(selectedLanguage);
+    
     });
 });
 
+//Funcion que cambia de idioma la pestaña registro
+function cambiarIdioma_reg(selectedLanguage){
+    
+    if(selectedLanguage==="ES") {/*Navegacion*/
+        /*El registro de sesion*/
+        $("#title_registro").text("Registro");
+        $("#correo").attr("placeholder", "Correo electrónico");
+        $("#password").attr("placeholder", "Contraseña");
+        $("#nombre_apellidos").attr("placeholder", "Nombre y apellido(s)");
+        $("#telefono").attr("placeholder", "Teléfono");
+        $("#direccion").attr("placeholder", "Dirección");
 
+        /*Botones*/
+        $("#registrar").text("Iniciar");
+        $("#cancelar").text("Cancelar");
+    }
+    else if (selectedLanguage ==="EN"){
+        /*El registro de sesion*/
+        $("#title_registro").text("Register");
+        $("#correo").attr("placeholder", "Email");
+        $("#password").attr("placeholder", "Password");
+        $("#nombre_apellidos").attr("placeholder", "Name and surname(s)");
+        $("#telefono").attr("placeholder", "Phone number");
+        $("#direccion").attr("placeholder", "Address");
+
+        /*Botones*/
+        $("#registrar").text("Sing up");
+        $("#cancelar").text("Cancel");
+    }
+}
 
 //Funcion que valida nombre y apellido(s) para el registro
 function validar_nombre_apellido(){
@@ -111,7 +117,6 @@ function validar_direccion(){
     return true;
 }
 
-
 //Funcion que revisa si todos los campos estan vacios
 function revisar_campos_vacios_r() {
     //CORREO
@@ -151,25 +156,21 @@ function validar_campos_r(){
     if (!revisar_campos_vacios_r()){return false;}
     //Comprobar que los valores insertados son correctos
     //CORREO
-    //alert("antes de correo")
     let bool_correo = validar_correo();
     if (!bool_correo) {
         return false;
     }
     //PASSWORD
-    //alert("antes de password")
     let bool_password = validar_password();
     if (!bool_password) {
         return false;
     }
     //NOMBRE Y APELLIDO(S)
-    //alert("antes de name surname")
     let bool_nameSurname = validar_nombre_apellido();
     if (!bool_nameSurname) {
         return false;
     }
     //TELEFONO
-    //alert("antes de telefono")
     let bool_tlfn = validar_tlfn();
     if (!bool_tlfn) {
         return false;

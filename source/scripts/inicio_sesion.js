@@ -4,15 +4,6 @@
 var selectedLanguage= "ES"
 
 $(document).ready(function () {
-    /*Oculta los caracteres insertados en la password*/ 
-    $("#password").on("input", function() {
-        var valor = $(this).val();
-        var mascara = "*".repeat(valor.length);
-        /*var mascara= valor;*/
-        $(this).val(mascara).attr("data-real-value", valor);
-    });
-
-
     /*Los botones para iniciar o registrar la sesion*/
     $("#iniciar").click(function () {
         event.preventDefault();
@@ -29,7 +20,6 @@ $(document).ready(function () {
             else if (selectedLanguage==="EN") {
                 window.location.href = "../source/registro_en.html";
             }
-
         });
     });
 
@@ -44,55 +34,34 @@ $(document).ready(function () {
         // Cerrar el menú desplegable
         $("#idiomas-menu").slideUp();
 
-        //Conversion al ingles
-        
-        if(selectedLanguage==="ES") {/*Navegacion*/
-            /*El inicio de sesion*/
-            $("#title_iniciar").text("Iniciar sesión");
-            $("#correo").attr("placeholder", "Correo electrónico");
-            $("#password").attr("placeholder", "Contraseña");
+        //Cambiar de idioma 
+        cambiarIdioma_ini(selectedLanguage);
 
-            /*Botones*/
-            $("#iniciar").text("Iniciar");
-            $("#registrar").text("Registrar");
-        }
-        else if (selectedLanguage ==="EN"){
-            /*El inicio de sesion*/
-            $("#title_iniciar").text("Start session");
-            $("#correo").attr("placeholder", "Email");
-            $("#password").attr("placeholder", "Password");
-
-            /*Botones*/
-            $("#iniciar").text("Log in");
-            $("#registrar").text("Sign up");
-        }
     });
-
 });
 
+//Funcion que cambia de idioma la pestaña inicio_sesion
+function cambiarIdioma_ini(selectedLanguage){
+    if(selectedLanguage==="ES") {/*Navegacion*/
+        /*El inicio de sesion*/
+        $("#title_iniciar").text("Iniciar sesión");
+        $("#correo").attr("placeholder", "Correo electrónico");
+        $("#password").attr("placeholder", "Contraseña");
 
-//Funcion que valida la password para el registro
-function validar_password_i(){
-    //Obtiene el elemento de entrada por su id
-    var valorPassword =  $("#password").attr("data-real-value");
-    //Expresion regular que debe seguir la password del usuario
-    const pattern_password= /^(?=.*[A-Z])(?=.*\d).{8,}$/;
-    
-    //Comprueba si las password sigue la expresion regular
-    if (!pattern_password.test(valorPassword)){
-        alert("La contraseña no cumple con los requisitos. Debe tener al menos una letra mayúscula, al menos un número y 8 caracteres");
-        return false;
+        /*Botones*/
+        $("#iniciar").text("Iniciar");
+        $("#registrar").text("Registrar");
     }
-    return true;
-}
+    else if (selectedLanguage ==="EN"){
+        /*El inicio de sesion*/
+        $("#title_iniciar").text("Start session");
+        $("#correo").attr("placeholder", "Email");
+        $("#password").attr("placeholder", "Password");
 
-//Funcion que comprueba si un campo esta vacio
-function campo_vacio(clave, nombre){
-    if (clave==""){
-        alert(nombre + " debe estar rellenado")
-        return false;
+        /*Botones*/
+        $("#iniciar").text("Log in");
+        $("#registrar").text("Sign up");
     }
-    return true;
 }
 
 // Función que revisa si todos los campos están vacíos
@@ -103,11 +72,10 @@ function revisar_campos_vacios_i() {
         return false;
     }
     // PASSWORD
-    var password =  $("#password").attr("data-real-value");
+    var password =  $("#password").val();
     if (!campo_vacio(password, "Contraseña")) {
         return false;
     }
-
     return true;
 }
 
@@ -117,7 +85,6 @@ function validar_campos_i() {
     if (!revisar_campos_vacios_i()) {
         return false;
     }
-
     // Comprobar que los valores insertados son correctos
     // CORREO
     let bool_correo = validar_correo();
@@ -125,7 +92,7 @@ function validar_campos_i() {
         return false;
     }
     // PASSWORD
-    let bool_password = validar_password_i();
+    let bool_password = validar_password();
     if (!bool_password) {
         return false;
     }
@@ -137,8 +104,8 @@ function validar_campos_i() {
 //Esta funcion comprueba si el usuario y la password insertada son correctas
 function validar_inicio_sesion(){
     //Valores insertados en los campos
-    let correo= document.getElementById("correo").value;
-    let password= $("#password").attr("data-real-value");
+    let correo= $("#correo").val();
+    let password= $("#password").val();
 
     //Valores en la base de datos
     let correo_bd= getCookie(correo + "_correo");
@@ -152,7 +119,6 @@ function validar_inicio_sesion(){
             window.location.href="../source/reserva.html"
             return true;
         }
-
         alert("Usuario y/o contraseña incorreco(s)");
         return false;
     }
