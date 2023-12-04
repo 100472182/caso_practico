@@ -1,5 +1,7 @@
 // Importo las funciones necesarias de registro.js
-//import { validar_correo, validar_password, campo_vacio } from "./registro";
+
+//El idioma por defecto
+var selectedLanguage= "ES"
 
 $(document).ready(function () {
     /*Oculta los caracteres insertados en la password*/ 
@@ -20,14 +22,21 @@ $(document).ready(function () {
     $("#registrar").click(function () {
         event.preventDefault();
         $("body").fadeOut(500, function () {
-            window.location.href = "../source/registro.html";
+            //Comprobar si la siguiente ventana debe estar en castellano o en ingles
+            if (selectedLanguage==="ES"){
+                window.location.href = "../source/registro.html";
+            }
+            else if (selectedLanguage==="EN") {
+                window.location.href = "../source/registro_en.html";
+            }
+
         });
     });
 
     $("#idiomas-menu a").click(function (event) {
         event.preventDefault();
         // Obtener el texto del enlace seleccionado
-        var selectedLanguage = $(this).text();
+        selectedLanguage = $(this).text();
         
         // Actualizar el texto del botón de idiomas
         $("#idiomas-btn").text(selectedLanguage);
@@ -35,9 +44,6 @@ $(document).ready(function () {
         // Cerrar el menú desplegable
         $("#idiomas-menu").slideUp();
 
-        // Aquí puedes agregar la lógica para cambiar el contenido de la página según la opción seleccionada
-        //alert("Seleccionaste: " + selectedLanguage);
-        
         //Conversion al ingles
         
         if(selectedLanguage==="ES") {/*Navegacion*/
