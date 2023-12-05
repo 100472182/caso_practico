@@ -1,5 +1,16 @@
 
 /*Inicio de sesion*/
+
+#primer_section_inicio{
+    margin-top: 25vh;
+}
+
+#title_iniciar_div{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
 #image_user{
     max-height: 4%;
     width: 15%;
@@ -10,6 +21,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 2%;
+    height: 45vh;
 }
 
 #box_inicio_sesion_2{
@@ -19,7 +31,7 @@
     background-color: #FBE0B5;
     border-radius: 30px;
     padding: 10px;
-    max-height: 300px;
+    width: 40vw;
 }
 
 #box_inicio_sesion_2 input{
@@ -29,9 +41,10 @@
 #campos_inicio_sesion{
     display: flex;
     flex-direction: column;
+    width: 90%;
 }
 #campos_inicio_sesion input{
-    margin: 20px;
+    margin: 2%;
     margin-bottom: 10px;
     font-size: 2rem;
     border-radius: 30px;
@@ -40,29 +53,21 @@
 }
 
 #botones-inicio{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    margin: 10px
-}
-#botones-inicio div{
     display: flex;
-    width: 100%;
-    padding-left: 10px;
-}
-
-#button_iniciar{
-    margin-left: 30px;
+    justify-content: space-between;
+    width: 87%;
+    margin-top: 2%;
 }
 
 #button_registrar{
     /*margin-left: 35%;*/
     display: flex;
     justify-content: right;
+
 }
 
 #registrar{
-    margin-right: 50px;
+    margin-right: 0px;
 }
 
 
@@ -134,10 +139,40 @@ h6{
 
 /*Responsive ajustados a la resolucion de una tablet*/
 
-/*@media only screen and (max-width:768px){
+@media only screen and (max-width:768px){
+    
+    #image_user{
+        max-height: 10%;
+        width: 30%;
+    }
 
+    /*El box para iniciar la sesion*/
+    #box_inicio_sesion_2{
+        align-self: flex-start;
+        padding: 10px;
+        width: 70vw;
+    }
 
-}*/
+    /*Los campos a rellenar*/
+    #campos_inicio_sesion{
+        width: 80%;
+    }
+
+    #campos_inicio_sesion input{
+        font-size: 1.5rem;
+    }
+
+    /*Los botontes iniciar o cancelar*/
+    #botones-inicio{
+        width: 78%;
+    }
+
+    #botones-inicio button{
+        font-size: 1.2rem;
+        padding: 5px;
+    }
+}
+
 
 /*Responsive ajustados a la resolucion de un móvil*/
 @media only screen and (max-width:600px){  
@@ -145,25 +180,33 @@ h6{
     .circulo-fondo,.rectangulo-fondo{
         display: none;
     }
-    
-    #box_inicio_sesion_1{
-        margin-top: 8%;
-    }
 
+    /*El box para iniciar la sesion*/
     #box_inicio_sesion_2{
-        /*max-height: 300px;*/
-        max-height: none;
-        max-width: 90%;
+        align-self: flex-start;
+        padding: 10px;
+        width: 60vw;
     }
 
+    /*Los campos a rellenar*/
     #campos_inicio_sesion{
-        max-width: 80%;
         margin-top: 4%;
         width: 100%;
     }
+    
+    #campos_inicio_sesion input{
+        margin: 2%;
+        font-size: 1.3rem; 
+    }
 
+    /*Los botontes iniciar o cancelar*/
     #botones-inicio{
-        margin-top: 4%;
+        width: 95%;
+    }
+
+    #botones-inicio button{
+        font-size: 0.9rem;
+        padding: 4px;
     }
 
     /*El triangulo*/

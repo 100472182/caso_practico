@@ -1,4 +1,3 @@
-
 /* Registro de cuenta*/
 /*El formulario de registro*/
 /*La mitad derecha del formulario*/
@@ -20,17 +19,18 @@
     align-items: center;
 
 }
+
 /*El div de la foto de perfil del usuario descono*/
 #perfil-no-usuario{
     display: flex;
-    justify-content: center;
-    
+    justify-content: center;  
 }
 
 /*Utilizado para contener al formulario*/
 #perfil-no-usuario img{
     width: 25%;
 }
+
 /*Contiene */
 #input-registro{
     display: flex;
@@ -38,11 +38,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 440px;
+    height: 60vh;
     width: 60%;
     background-color: #FBE0B5;
     border-radius: 30px;
 }
+
 /*Contenido en input-registro.Contiene la imagen del usuario, los inputs a rellenar y los botones*/
 .formulario_2{
     display: flex;
@@ -50,12 +51,14 @@
     align-items: center;
     justify-content: center;
 }
+
 /*Utilizado para centrar el texto Registro*/
 #registro{
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
+
 /*El formulario a rellenar*/
 #form-formulario{
     display: flex;
@@ -74,6 +77,7 @@
     border: none;
     font-family: "Times New Roman", Times, serif;
     font-size: 2rem;
+    max-width: 90%;
 }
 
 /*Los botones*/
@@ -104,14 +108,13 @@
     font-family: "Times New Roman", Times, serif;
     padding: 7px;
     border: none;
-
 }
+
 h5{
     font-size: 4rem;
     margin: 10px;
     margin-top: 0;
 }
-
 
 /*El triangulo*/
 #triangulo{
@@ -123,10 +126,47 @@ h5{
 
 /*Responsive ajustados a la resolucion de una tablet*/
 
-/*@media only screen and (max-width:768px){
+@media only screen and (max-width:768px){
+    
+    /*El tamaño del titulo Registro*/
+    h5{
+        font-size: 2.5rem;
+        margin: 5px;
+    }  
+
+    #input-registro{ 
+        width: 80%;
+        
+    }
+
+    /*Modifico la posicion del formulario*/
+    #form-formulario{
+        padding: 2px;
+        align-self: self-start;
+        
+    }
+
+    /*Los campos a rellenar*/
+    .campos{
+        font-size: 1.2rem;
+        padding-left: 10px;
+        
+    }
+
+    /*Los botones para registrarse*/
+    .formulario button{
+        font-size: 1.2rem;
+        padding: 5px;
+    }
+
+    #botones-registro{
+        width: 94%;
+    }
 
 
-}*/
+
+
+}
 
 /*Responsive ajustados a la resolucion de un móvil*/
 @media only screen and (max-width:600px){  
@@ -138,7 +178,7 @@ h5{
         z-index: -1;
         width:0;
         height: 0;
-        border-right: 98vw solid transparent;
+        border-left: 98vw solid transparent;
         border-bottom: 90vh solid #C0732B; /* Puedes cambiar el color aquí */
         bottom: 0;
     }
@@ -164,7 +204,6 @@ h5{
         display: flex;
         align-items: center;
         flex-direction: column;
-        max-width: 100%;
     }
 
     /*Ajustamos tamaño de los campos a rellenar*/

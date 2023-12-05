@@ -1,6 +1,9 @@
 /*Formulario para el registro de los usuarios*/
 //import { saveFormData, checkCookie } from "./cookies.";
 
+//El idioma por defecto
+var selectedLanguage= $("#idiomas-btn").text();
+
 $(document).ready(function() {
 
     /*Los botones para iniciar o registrar la sesion*/
@@ -24,43 +27,43 @@ $(document).ready(function() {
         
         // Cerrar el menú desplegable
         $("#idiomas-menu").slideUp();
-
-        // Aquí puedes agregar la lógica para cambiar el contenido de la página según la opción seleccionada
-        //alert("Seleccionaste: " + selectedLanguage);
         
-        //Conversion al ingles
-        
-        if(selectedLanguage==="ES") {/*Navegacion*/
-            
-            /*El registro de sesion*/
-            $("#title_registro").text("Registro");
-            $("#correo").attr("placeholder", "Correo electrónico");
-            $("#password").attr("placeholder", "Contraseña");
-            $("#nombre_apellidos").attr("placeholder", "Nombre y apellido(s)");
-            $("#telefono").attr("placeholder", "Teléfono");
-            $("#direccion").attr("placeholder", "Dirección");
-
-            /*Botones*/
-            $("#iniciar").text("Iniciar");
-            $("#cancelar").text("Cancelar");
-        }
-        else if (selectedLanguage ==="EN"){
-            /*El registro de sesion*/
-            $("#title_registro").text("Register");
-            $("#correo").attr("placeholder", "Email");
-            $("#password").attr("placeholder", "Password");
-            $("#nombre_apellidos").attr("placeholder", "Name and surname(s)");
-            $("#telefono").attr("placeholder", "Phone number");
-            $("#direccion").attr("placeholder", "Address");
-
-            /*Botones*/
-            $("#registrar").text("Sing up");
-            $("#cancelar").text("Cancel");
-        }
+        //Cambiar de idioma
+        cambiarIdioma_reg(selectedLanguage);
+    
     });
 });
 
+//Funcion que cambia de idioma la pestaña registro
+function cambiarIdioma_reg(selectedLanguage){
+    
+    if(selectedLanguage==="ES") {/*Navegacion*/
+        /*El registro de sesion*/
+        $("#title_registro").text("Registro");
+        $("#correo").attr("placeholder", "Correo electrónico");
+        $("#password").attr("placeholder", "Contraseña");
+        $("#nombre_apellidos").attr("placeholder", "Nombre y apellido(s)");
+        $("#telefono").attr("placeholder", "Teléfono");
+        $("#direccion").attr("placeholder", "Dirección");
 
+        /*Botones*/
+        $("#registrar").text("Iniciar");
+        $("#cancelar").text("Cancelar");
+    }
+    else if (selectedLanguage ==="EN"){
+        /*El registro de sesion*/
+        $("#title_registro").text("Register");
+        $("#correo").attr("placeholder", "Email");
+        $("#password").attr("placeholder", "Password");
+        $("#nombre_apellidos").attr("placeholder", "Name and surname(s)");
+        $("#telefono").attr("placeholder", "Phone number");
+        $("#direccion").attr("placeholder", "Address");
+
+        /*Botones*/
+        $("#registrar").text("Sing up");
+        $("#cancelar").text("Cancel");
+    }
+}
 
 //Funcion que valida nombre y apellido(s) para el registro
 function validar_nombre_apellido(){
@@ -72,8 +75,14 @@ function validar_nombre_apellido(){
     const pattern_name_surname= /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]+(\s[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]+){0,1}(\s[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]+){0,1}$/;
     
     //Comprueba si nombre y apellido(s) siguen la expresion regular
-    if (!pattern_name_surname.test()){
-        alert("Nombre y apellido(s) incorrectos");
+    if (!pattern_name_surname.test(valorNameSurname)){
+        if ($("#idiomas-btn").text()==="ES"){
+            alert("Nombre y apellido(s) incorrectos");
+        }
+        if ($("#idiomas-btn").text()==="EN"){
+            alert("Incorrect first and last name(s)");
+        }
+
         return false;
     }
     return true;
@@ -90,7 +99,13 @@ function validar_tlfn() {
 
     // Comprueba si el nº de telefono sigue la expresion regular
     if (!pattern_tlfn.test(valorTlfn)) {
-        alert("Número de teléfono incorrecto. Debe tener 9 dígitos.");
+        if ($("#idiomas-btn").text()==="ES"){
+            alert("Número de teléfono incorrecto. Debe tener 9 dígitos.");
+        }
+        if ($("#idiomas-btn").text()==="EN"){
+            alert("Wrong phone number. It must be 9 digits.");
+        }
+
         return false;
     }
     return true;
@@ -105,30 +120,34 @@ function validar_direccion(){
      const pattern_dir= /^[a-zA-Z0-9\s,'.-]+$/;
      //Comprueba si la direccion sigue la expresion regular
     if(!pattern_dir.test(valorDir)){
-         alert("Dirección incorrecta");
+        if ($("#idiomas-btn").text()==="ES"){
+            alert("Dirección incorrecta");
+        }
+        if ($("#idiomas-btn").text()==="EN"){
+            alert("Wrong address");
+        }
          return false;
     }
     return true;
 }
 
-
 //Funcion que revisa si todos los campos estan vacios
 function revisar_campos_vacios_r() {
     //CORREO
     var correo = document.getElementById("correo").value;
-    if (!campo_vacio(correo, "Correo")){return false;}
+    if (!campo_vacio(correo, $("#correo").attr("placeholder"))){return false;}
     //PASSWORD
     var password = document.getElementById("password").value;
-    if(!campo_vacio(password, "Contraseña")){return false;}
+    if(!campo_vacio(password, $("#password").attr("placeholder"))){return false;}
     //NOMBRE Y APELLIDO(S)
     var nameSurname = document.getElementById("nombre_apellidos").value;
-    if (!campo_vacio(nameSurname, "Nombre y Apellido(s)")){return false;}
+    if (!campo_vacio(nameSurname, $("#nombre_apellidos").attr("placeholder"))){return false;}
     //TELEFONO
     var tlfn = document.getElementById("telefono").value;
-    if (!campo_vacio(tlfn, "Telefono")){return false;}
+    if (!campo_vacio(tlfn, $("#telefono").attr("placeholder"))){return false;}
     //DIRECCION
     var dir = document.getElementById("direccion").value;
-    if (!campo_vacio(dir, "Direccion")){return false;}
+    if (!campo_vacio(dir, $("#direccion").attr("placeholder"))){return false;}
     return true;
 }
 
@@ -138,7 +157,12 @@ function check_account(){
     correo = document.getElementById("correo").value;
     let correo_aux = getCookie(correo +"_correo");
     if (correo_aux !== ""){
-        alert("Esta cuenta de correo ya existe. Inicie sesión.")
+        if ($("#idiomas-btn").text()==="ES"){
+            alert("Esta cuenta de correo ya existe. Inicie sesión.");
+        }
+        else if ($("#idiomas-btn").text()==="EN"){
+            alert("This email account already exists. Sign in.");
+        }
         return false;
     }
     return true;
@@ -151,25 +175,21 @@ function validar_campos_r(){
     if (!revisar_campos_vacios_r()){return false;}
     //Comprobar que los valores insertados son correctos
     //CORREO
-    //alert("antes de correo")
     let bool_correo = validar_correo();
     if (!bool_correo) {
         return false;
     }
     //PASSWORD
-    //alert("antes de password")
     let bool_password = validar_password();
     if (!bool_password) {
         return false;
     }
     //NOMBRE Y APELLIDO(S)
-    //alert("antes de name surname")
     let bool_nameSurname = validar_nombre_apellido();
     if (!bool_nameSurname) {
         return false;
     }
     //TELEFONO
-    //alert("antes de telefono")
     let bool_tlfn = validar_tlfn();
     if (!bool_tlfn) {
         return false;
@@ -185,7 +205,7 @@ function validar_campos_r(){
     //Guardamos los datos en cookies
     saveFormData();
     window.location.href="../source/reserva.html"
-    checkCookie();//-----------------Esto debe ir en reservar----------------------
+    checkCookie($("#nombre_apellidos").val());
     return true;
  }
 
