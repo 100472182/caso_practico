@@ -1,7 +1,7 @@
 // Importo las funciones necesarias de registro.js
 
 //El idioma por defecto
-var selectedLanguage= "ES"
+var selectedLanguage= $("#idiomas-btn").text();
 
 $(document).ready(function () {
     /*Los botones para iniciar o registrar la sesion*/
@@ -73,7 +73,7 @@ function revisar_campos_vacios_i() {
     }
     // PASSWORD
     var password =  $("#password").val();
-    if (!campo_vacio(password, $("#pasword").attr("placeholder"))) {
+    if (!campo_vacio(password, $("#password").attr("placeholder"))) {
         return false;
     }
     return true;

@@ -2,7 +2,7 @@
 //import { saveFormData, checkCookie } from "./cookies.";
 
 //El idioma por defecto
-var selectedLanguage= "ES"
+var selectedLanguage= $("#idiomas-btn").text();
 
 $(document).ready(function() {
 
