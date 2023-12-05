@@ -27,9 +27,6 @@ $(document).ready(function() {
         
         // Cerrar el menú desplegable
         $("#idiomas-menu").slideUp();
-
-        // Aquí puedes agregar la lógica para cambiar el contenido de la página según la opción seleccionada
-        //alert("Seleccionaste: " + selectedLanguage);
         
         //Cambiar de idioma
         cambiarIdioma_reg(selectedLanguage);
@@ -78,8 +75,14 @@ function validar_nombre_apellido(){
     const pattern_name_surname= /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]+(\s[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]+){0,1}(\s[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]+){0,1}$/;
     
     //Comprueba si nombre y apellido(s) siguen la expresion regular
-    if (!pattern_name_surname.test()){
-        alert("Nombre y apellido(s) incorrectos");
+    if (!pattern_name_surname.test(valorNameSurname)){
+        if ($("#idiomas-btn").text()==="ES"){
+            alert("Nombre y apellido(s) incorrectos");
+        }
+        if ($("#idiomas-btn").text()==="EN"){
+            alert("Incorrect first and last name(s)");
+        }
+
         return false;
     }
     return true;
@@ -96,7 +99,13 @@ function validar_tlfn() {
 
     // Comprueba si el nº de telefono sigue la expresion regular
     if (!pattern_tlfn.test(valorTlfn)) {
-        alert("Número de teléfono incorrecto. Debe tener 9 dígitos.");
+        if ($("#idiomas-btn").text()==="ES"){
+            alert("Número de teléfono incorrecto. Debe tener 9 dígitos.");
+        }
+        if ($("#idiomas-btn").text()==="EN"){
+            alert("Wrong phone number. It must be 9 digits.");
+        }
+
         return false;
     }
     return true;
@@ -111,7 +120,12 @@ function validar_direccion(){
      const pattern_dir= /^[a-zA-Z0-9\s,'.-]+$/;
      //Comprueba si la direccion sigue la expresion regular
     if(!pattern_dir.test(valorDir)){
-         alert("Dirección incorrecta");
+        if ($("#idiomas-btn").text()==="ES"){
+            alert("Dirección incorrecta");
+        }
+        if ($("#idiomas-btn").text()==="EN"){
+            alert("Wrong address");
+        }
          return false;
     }
     return true;
@@ -121,19 +135,19 @@ function validar_direccion(){
 function revisar_campos_vacios_r() {
     //CORREO
     var correo = document.getElementById("correo").value;
-    if (!campo_vacio(correo, "Correo")){return false;}
+    if (!campo_vacio(correo, $("#correo").attr("placeholder"))){return false;}
     //PASSWORD
     var password = document.getElementById("password").value;
-    if(!campo_vacio(password, "Contraseña")){return false;}
+    if(!campo_vacio(password, $("#password").attr("placeholder"))){return false;}
     //NOMBRE Y APELLIDO(S)
     var nameSurname = document.getElementById("nombre_apellidos").value;
-    if (!campo_vacio(nameSurname, "Nombre y Apellido(s)")){return false;}
+    if (!campo_vacio(nameSurname, $("#nombre_apellidos").attr("placeholder"))){return false;}
     //TELEFONO
     var tlfn = document.getElementById("telefono").value;
-    if (!campo_vacio(tlfn, "Telefono")){return false;}
+    if (!campo_vacio(tlfn, $("#telefono").attr("placeholder"))){return false;}
     //DIRECCION
     var dir = document.getElementById("direccion").value;
-    if (!campo_vacio(dir, "Direccion")){return false;}
+    if (!campo_vacio(dir, $("#direccion").attr("placeholder"))){return false;}
     return true;
 }
 
@@ -143,7 +157,12 @@ function check_account(){
     correo = document.getElementById("correo").value;
     let correo_aux = getCookie(correo +"_correo");
     if (correo_aux !== ""){
-        alert("Esta cuenta de correo ya existe. Inicie sesión.")
+        if ($("#idiomas-btn").text()==="ES"){
+            alert("Esta cuenta de correo ya existe. Inicie sesión.");
+        }
+        else if ($("#idiomas-btn").text()==="EN"){
+            alert("This email account already exists. Sign in.");
+        }
         return false;
     }
     return true;

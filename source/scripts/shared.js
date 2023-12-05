@@ -16,9 +16,6 @@ $(document).ready(function() {
         
         // Cerrar el menú desplegable
         $("#idiomas-menu").slideUp();
-
-        // Aquí puedes agregar la lógica para cambiar el contenido de la página según la opción seleccionada
-        //alert("Seleccionaste: " + selectedLanguage);
         
         //Conversion al ingles
         
@@ -51,7 +48,13 @@ function validar_correo (){
     //Comprueba si el correo sigue la expresion regular
     if (!pattern_correo.test(valorcorreo)){
         //Notifica al usuario
-        alert("Correo electrónico incorrecto.")
+        if ($("#idiomas-btn").text()==="ES"){
+            alert("Correo electrónico incorrecto.")
+        }
+        else if ($("#idiomas-btn").text()==="EN"){
+            alert("Incorrect email.")
+        }
+
         return false;
     }
     return true;
@@ -69,8 +72,13 @@ function validar_password(){
     
     //Comprueba si las password sigue la expresion regular
     if (!pattern_password.test(valorPassword)){
-        alert("La contraseña no cumple con los requisitos. Debe tener al menos una letra mayúscula, al menos un número y 8 caracteres");
-        return false;
+        if ($("#idiomas-btn").text()==="ES"){
+            alert("La contraseña no cumple con los requisitos. Debe tener al menos una letra mayúscula, al menos un número y 8 caracteres");
+        }
+        else if ($("#idiomas-btn").text()==="ES"){
+            alert("The password does not meet the requirements. Must have at least one capital letter, at least one number and 8 characters");
+        }
+            return false;
     }
     return true;
 }
@@ -78,7 +86,12 @@ function validar_password(){
 //Funcion que comprueba si un campo esta vacio
 function campo_vacio(clave, nombre){
     if (clave==""){
-        alert(nombre + " debe estar rellenado")
+        if ($("#idiomas-btn").text()==="ES"){
+            alert(nombre + " debe estar rellenado");
+        }
+        else if ($("#idiomas-btn").text()==="EN"){
+            alert(nombre + " must be filled");
+        }
         return false;
     }
     return true;
@@ -118,7 +131,12 @@ function saveFormData() {
 //Funcion que comprueba si existe al menos un usuario y si existe, recibe al ultimo usuario que se haya registrado
 function checkCookie(user) {    
     if (user != "") {
-        alert('Bienvenido ' + user);
+        if ($("#idiomas-btn").text()==="ES"){
+            alert('Bienvenido ' + user);
+        }
+        else if ($("#idiomas-btn").text()==="EN"){
+            alert('Welcome ' + user);
+        }
     }
 }
 

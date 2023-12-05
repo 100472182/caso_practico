@@ -68,12 +68,12 @@ function cambiarIdioma_ini(selectedLanguage){
 function revisar_campos_vacios_i() {
     // CORREO
     var correo = document.getElementById("correo").value;
-    if (!campo_vacio(correo, "Correo")) {
+    if (!campo_vacio(correo,$("#correo").attr("placeholder"))) {
         return false;
     }
     // PASSWORD
     var password =  $("#password").val();
-    if (!campo_vacio(password, "Contraseña")) {
+    if (!campo_vacio(password, $("#pasword").attr("placeholder"))) {
         return false;
     }
     return true;
@@ -121,10 +121,20 @@ function validar_inicio_sesion(){
             checkCookie(user);
             return true;
         }
-        alert("Usuario y/o contraseña incorreco(s)");
+        if ($("#idiomas-btn").text()==="ES"){
+            alert("Usuario y/o contraseña incorrecto(s)");
+        }
+        else if($("#idiomas-btn").text()==="EN"){
+            alert("Incorrect username and/or password(s)");
+        }
         return false;
     }
-    alert("Esta cuenta no existe. Regístrese");
+    if ($("#idiomas-btn").text()==="ES"){
+        alert("Esta cuenta no existe. Regístrese");
+    }
+    else if($("#idiomas-btn").text()==="EN"){
+        alert("This account does not exist. Sign up");
+    }
     return false;
 }
 
