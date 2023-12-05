@@ -116,8 +116,9 @@ function validar_inicio_sesion(){
         if (correo === correo_bd , password === password_bd){
             let user= getCookie(correo + "_name_surname");
             
-            //Cambiamos a la pestaña registro
-            window.location.href="../source/reserva.html"
+            //Cambiamos a la pestaña
+            var variableCompartida = localStorage.getItem('enlace_siguiente')
+            window.location.href= variableCompartida;
             checkCookie(user);
             return true;
         }
