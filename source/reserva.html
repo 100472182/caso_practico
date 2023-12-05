@@ -30,40 +30,9 @@
     </header>
     <section class="contenedor"> 
         <div class="elemento-contenedor dos-columnas">
-            <ul id="fecha" class="desplegable">
-                <li><h6>Fecha</h6></li>
-                </ul>
-                <div class="panel-fecha">
-                    <table id="calendar">
-                        <thead>
-                        <caption> </caption>
-                        <tr>
-                           <th>
-                                     Lun
-                           </th>
-                           <th>
-                                     Mar
-                           </th>
-                           <th>
-                                     Mie
-                           </th>
-                           <th>
-                                     Jue
-                           </th>
-                           <th>
-                                     Vie
-                           </th>
-                           <th>
-                                     Sab
-                           </th>
-                           <th>
-                                     Dom
-                           </th>
-                       </tr>
-                      </thead>
-                  <tbody> </tbody>
-                      </table>
-                    </div>
+            <div id="fecha" class="desplegable">
+                <input type="date" name="fechaInicio" id="fechaInicio" min="2023-12-05" max="2024-02-05" class="readonly">
+            </div>
         </div>
         
         <div class="elemento-contenedor">
@@ -143,9 +112,6 @@
 
 
 
-
-
-        
     </section>
     <script src="./scripts/shared.js"></script>
     <script src="./scripts/reserva.js"></script
