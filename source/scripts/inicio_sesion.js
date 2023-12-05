@@ -28,12 +28,6 @@ $(document).ready(function () {
         // Obtener el texto del enlace seleccionado
         selectedLanguage = $(this).text();
         
-        // Actualizar el texto del botón de idiomas
-        $("#idiomas-btn").text(selectedLanguage);
-        
-        // Cerrar el menú desplegable
-        $("#idiomas-menu").slideUp();
-
         //Cambiar de idioma 
         cambiarIdioma_ini(selectedLanguage);
 
