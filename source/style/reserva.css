@@ -37,17 +37,6 @@ body {
     grid-column: span 2; /* Ocupa las dos columnas disponibles */
 }
 
-.desplegable{
-    padding: 20px;
-    background-color: #F2A121;
-    border-radius: 50px;
-    
-}
-
-.desplegable li{
-    justify-content: left;
-}
-
 #horarios{
     background-color: none;
     padding: 20px;
@@ -87,26 +76,41 @@ h5{
 
 
 input[type=date] {
-    height: 35px;
+    height: 50px;
     margin: 0 auto;
     width: 100%;
     font-family: arial, sans-serif;
     font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
-    background-color:  #F2A121;
     outline: none;
     border: 0;
-    padding: 0 3px;
-  }
-  
-  
-  input[type=date]::-webkit-calendar-picker-indicator {
+    padding: 20px;
+    background-color: #F2A121;
+    border-radius: 50px;
+}
+
+
+input[type=date]::-webkit-calendar-picker-indicator {
     font-size: 30px;
-  }
-  input[type=date]::-webkit-calendar-picker-indicator:hover {
+}
+input[type=date]::-webkit-calendar-picker-indicator:hover {
     background-color: #959595;
     cursor: pointer;
-  }
+}
 
 
+
+select {
+    padding: 20px;
+    width: 100%;
+    background-color: #F2A121;
+    border-radius: 50px;
+    font-size: 20px;
+}
+
+option{
+    background-color: #fff;
+}
+
+  
