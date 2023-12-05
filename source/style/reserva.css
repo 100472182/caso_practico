@@ -11,8 +11,10 @@ body {
 }
 .contenedor {
     display: grid;
+    margin-top: 10%;
+    margin-bottom: auto;
     grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
-    grid-template-rows: 1fr 1fr auto;
+    grid-template-rows: auto auto auto;
     grid-gap: 30px; /* Espacio entre las columnas y filas */
     width: 80%;
     height: auto;
@@ -56,10 +58,48 @@ body {
 }
 
 h6{
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 h5{
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #333333;
 }
+
+.panel-fecha{
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: fit-content;
+    height:fit-content;
+}
+
+.contenedor-calendario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+#calendar { font-family:Arial;font-size:20px;}
+#calendar caption {text-align:left;padding:5px 10px; background-color:#003366;
+color:#fff;font-weight:bold;font-size:medium;}
+#calendar caption div:nth-child(1) {float:left;}
+#calendar caption div:nth-child(2) {float:right;}
+#calendar caption div:nth-child(2) a {cursor:pointer;}
+#calendar th {background-color:#006699;color:#fff;width:40px;}
+#calendar td {text-align:right;padding:2px 5px;background-color:silver;}
+#calendar .hoy {background-color:red;}
+
+
+
+
+
+
+
