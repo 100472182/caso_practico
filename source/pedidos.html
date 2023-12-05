@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <header class="barra_de_navegacion">
+    <header id="barra_de_navegacion">
         <!--Cabecera de la pagina-->
         <!--La imagen de bartolomeo-->
         <div id= "reducido" >
@@ -32,91 +32,93 @@
 
     </header>
         
-    <section id = "sect_pedidos">
-            <section id = "barra_progreso">
+    <section id = "sect_pedidos primer_section">
+            <section id="contenedor_barra_progreso">
                 <!-- Barra de Progreso-->
-                <div class = "nodo" id= "progreso_nodo_bolsa" >
-                    <!-- Bolsa de la compra-->
-                    <img class = "img_nodo" src="../images/bag-shopping-solid.svg">
-                </div>
-                <div class = "barra" id = "progreso_barra_bolsa_tarjeta" >
-                    <!-- Barra de Bolsa a Tarjeta-->
-                </div>
-                <div class = "nodo" id = "progreso_nodo_tarjeta" >
-                    <!-- Tarjeta de Pago-->
-                    <img id = "img_nodo_tarjeta" src="../images/credit-card-solid.svg">
-                </div>
-                <div class = "barra" id = "progreso_barra_tarjeta_completo" >
-                    <!-- Barra de Tarjeta a Pedido Completo-->
-                </div>
-                <div class = "nodo" id = "progreso_nodo_completo" >
-                    <!-- Pedido Completo-->
-                    <img class = "img_nodo" src="../images/check-solid.svg">
+                <div id = "barra_progreso">
+                    <div class = "nodo" id= "progreso_nodo_bolsa" >
+                        <!-- Bolsa de la compra-->
+                        <img class = "img_nodo" src="../images/bag-shopping-solid.svg">
+                    </div>
+                    <div class = "barra" id = "progreso_barra_bolsa_tarjeta" >
+                        <!-- Barra de Bolsa a Tarjeta-->
+                    </div>
+                    <div class = "nodo" id = "progreso_nodo_tarjeta" >
+                        <!-- Tarjeta de Pago-->
+                        <img id = "img_nodo_tarjeta" src="../images/credit-card-solid.svg">
+                    </div>
+                    <div class = "barra" id = "progreso_barra_tarjeta_completo" >
+                        <!-- Barra de Tarjeta a Pedido Completo-->
+                    </div>
+                    <div class = "nodo" id = "progreso_nodo_completo" >
+                        <!-- Pedido Completo-->
+                        <img class = "img_nodo" src="../images/check-solid.svg">
+                    </div>
                 </div>
             </section>
-        <!-- Sección Seleccionar Pedidos-->
-        <div id="control_pedido" class="contenedor">
-            <!-- Carrito y Realizar Pedido-->
-            <!-- Fijo al realizar scroll-->
-            <ul>
-                <li id="n_pedidos">
-                    <!--N° de pedido-->
-                    X
-                </li>
-                <li id="precio_total">
-                    <!--Precio total-->
-                    Y
-                </li>
-                <li>
-                    <!--Img Cesta-->
-                    <img id="img_cesta" src="../images/Cesta.png">
-                </li>
-                <li>
-                    <!--Img Tarjeta-->
-                    <img id="img_tarjeta" src="../images/Tarjeta_de_credito.png">
-                </li>
-            </ul>
+            <section id="filtros" class="contenedor">
+                <!-- Barra de Filtros/Categorias-->
+    
+                    <!-- No tienen que entrar todas las categorías, debe de ser scrolleable, este div no sé si es necesario-->
+                    <!-- No es fijo al realizar el scroll vertical-->
+                    <div id="filtro_por_ti">
+                        <!-- Pedido por ti-->
+                        Pedido por ti
+                    </div>
+                    <div id="filtro_recomendado">
+                        <!-- Recomendado-->
+                        Recomendado
+                    </div>
+                    <div id="filtro_desayunos">
+                        <!-- Desayunos-->
+                        Desayunos
+                    </div>
+                    <div id="filtro_entrantes">
+                        <!-- Entrantes-->
+                        Entrantes
+                    </div>
+                    <div id="filtro_pizzas">
+                        <!-- Pizzas-->
+                        Pizzas
+                    </div>
+                    <div id="filtro_pastas">
+                        <!-- Pastas-->
+                        Pastas
+                    </div>
+                    <div id="filtro_cocina_fusion">
+                        <!-- Cocina Fusión-->
+                        Cocina Fusión
+                    </div>
+                    <div id="filtro_postres">
+                        <!-- Postres-->
+                        Postres
+                    </div>
+            </section>
+        <div id="contenedor_control_pedido">
+            <!-- Sección Seleccionar Pedidos-->
+            <div id="control_pedido" class="contenedor">
+                <!-- Carrito y Realizar Pedido-->
+                <!-- Fijo al realizar scroll-->
+                <ul>
+                    <li id="n_pedidos">
+                        <!--N° de pedido-->
+                        X
+                    </li>
+                    <li id="precio_total">
+                        <!--Precio total-->
+                        Y
+                    </li>
+                    <li>
+                        <!--Img Cesta-->
+                        <img id="img_cesta" src="../images/Cesta.png">
+                    </li>
+                    <li>
+                        <!--Img Tarjeta-->
+                        <img id="img_tarjeta" src="../images/Tarjeta_de_credito.png">
+                    </li>
+                </ul>
+            </div>
         </div>
-        
-        <section id="filtros" class="contenedor">
-            <!-- Barra de Filtros/Categorias-->
-
-                <!-- No tienen que entrar todas las categorías, debe de ser scrolleable, este div no sé si es necesario-->
-                <!-- No es fijo al realizar el scroll vertical-->
-                <div id="filtro_por_ti">
-                    <!-- Pedido por ti-->
-                    Pedido por ti
-                </div>
-                <div id="filtro_recomendado">
-                    <!-- Recomendado-->
-                    Recomendado
-                </div>
-                <div id="filtro_desayunos">
-                    <!-- Desayunos-->
-                    Desayunos
-                </div>
-                <div id="filtro_entrantes">
-                    <!-- Entrantes-->
-                    Entrantes
-                </div>
-                <div id="filtro_pizzas">
-                    <!-- Pizzas-->
-                    Pizzas
-                </div>
-                <div id="filtro_pastas">
-                    <!-- Pastas-->
-                    Pastas
-                </div>
-                <div id="filtro_cocina_fusion">
-                    <!-- Cocina Fusión-->
-                    Cocina Fusión
-                </div>
-                <div id="filtro_postres">
-                    <!-- Postres-->
-                    Postres
-                </div>
-        </section>
-
         <section id="productos">
             <!-- Productos -->
             <div id="bartolomeo_benedict" class="contenedor producto">

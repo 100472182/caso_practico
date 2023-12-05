@@ -2,10 +2,13 @@
     margin: 0;
     padding: 0;
 }
-
+#contenedor_barra_progreso{
+    display: flex;
+    justify-content: center;
+}
 #barra_progreso{
-    padding-top:20vh;
-    width: 100%;
+    width: 75%;
+    margin-top: 10%;
     display: flex;
     align-items:center; /* Centra verticalmente */
     justify-content: space-around; /* Centra horizontalmente */
@@ -54,12 +57,17 @@
 .contenedor{
     border-radius: 10px;
     background-color: #D48D39;
+    padding: 1%;
+}
+#contenedor_control_pedido{
+    display: flex;
+    justify-content: right;
+    padding-right: 2%;
 }
 #control_pedido{
+    padding: 0%;
+    margin-top: 2%;;
     width:22.5%;
-    position:fixed;
-    top: 27.5%;
-    left:76%;
 }
 #control_pedido ul{
     display: grid;
@@ -80,7 +88,7 @@
     width: 80%;
 }
 #filtros{
-    margin-top:7.5%;
+    margin-top:2.5%;
     margin-left: 1%;
     margin-right: 1%;
     display: flex;
@@ -127,4 +135,5 @@
     padding-bottom: 4%;
     width: 90%;
     border-radius: 25px;
+    margin-bottom: 5%;
 }

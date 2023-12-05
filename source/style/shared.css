@@ -1,6 +1,6 @@
 /*Clase utilizada para la barra de navegacion*/
 
-.barra_de_navegacion{
+#barra_de_navegacion{
     display: grid;
     grid-template-columns: repeat(5,1fr);
     background-color: #333333;
