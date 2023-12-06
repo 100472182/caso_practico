@@ -107,6 +107,16 @@ select {
     background-color: #F2A121;
     border-radius: 50px;
     font-size: 20px;
+
+    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url(/images/caret-down-solid.svg);
+    background-repeat: no-repeat;
+    background-position: right center;
+      
+      
 }
 
 option{
