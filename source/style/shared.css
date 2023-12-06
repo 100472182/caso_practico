@@ -27,7 +27,7 @@
 }
 
 /*Los enlaces del  navegador*/
-.barra_de_navegacion ul{
+#barra_de_navegacion ul{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-column: span 3;
