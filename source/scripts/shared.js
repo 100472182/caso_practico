@@ -17,7 +17,7 @@ $(document).ready(function() {
         else if ($("#idiomas-btn").text() =="EN"){
             localStorage.setItem('enlace_siguiente', "./reserva_en.html");
         }
-        alert("Valor reserva:" + localStorage.getItem('enlace_siguiente'))
+        
 
     })
 
