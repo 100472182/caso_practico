@@ -51,32 +51,19 @@ function prevImagenPlatos() {
   }
 
 
-function bajarBotonPedido() {
-  const boton = document.getElementById('boton-pedido');
-  boton.style.top = '330px';
-  setTimeout(function() {
-    const boton = document.getElementById('boton-pedido');
-    boton.style.top = '325px';
-  }, 100);
-}
-
-function bajarBotonReserva() {
-  const boton = document.getElementById('boton-reserva');
-  boton.style.top = '330px';
-  setTimeout(function() {
-    const boton = document.getElementById('boton-reserva');
-    boton.style.top = '325px';
-  }, 100);
-}
-
-function bajarBotonCarta() {
-  const boton = document.getElementById('boton-carta');
-  boton.style.top = '370px';
-  setTimeout(function() {
-    const boton = document.getElementById('boton-carta');
-    boton.style.top = '365px';
-  }, 100);
-}
+  function bajarBoton(idBoton) {
+    const boton = document.getElementById(idBoton);
+    const estiloActual = getComputedStyle(boton);
+    let topValue = parseFloat(estiloActual.top);
+    boton.addEventListener('click', function() {
+      topValue += 5;
+      boton.style.top = topValue + 'px';
+      setTimeout(function() {
+        topValue -= 5;
+        boton.style.top = topValue + 'px';
+      }, 100);
+    });
+  }
 
 function abrirGaleriaPlatos(index){
   let galeria = document.getElementById('galeria-platos');
@@ -95,9 +82,9 @@ mostrarImagen(indiceActual, indiceActualPlatos);
 setInterval(nextImagen, 6000);
 document.getElementById('flecha-left').onclick = prevImagen;
 document.getElementById('flecha-right').onclick = nextImagen;
-document.getElementById('boton-pedido').onclick = bajarBotonPedido;
-document.getElementById('boton-reserva').onclick = bajarBotonReserva;
-document.getElementById('boton-carta').onclick = bajarBotonCarta;
+bajarBoton('boton-pedido');
+bajarBoton('boton-reserva');
+bajarBoton('boton-carta');
 document.getElementById('x-cerrar').onclick = cerrarGaleriaPlatos
 document.getElementById('flecha-left-platos').onclick = prevImagenPlatos;
 document.getElementById('flecha-right-platos').onclick = nextImagenPlatos;
