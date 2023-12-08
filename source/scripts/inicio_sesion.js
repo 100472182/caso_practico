@@ -111,6 +111,7 @@ function validar_inicio_sesion(){
             let user= getCookie(correo + "_name_surname");
             
             //Cambiamos a la pestaña
+
             var variableCompartida = localStorage.getItem('enlace_siguiente')
             window.location.href= variableCompartida;
             checkCookie(user);

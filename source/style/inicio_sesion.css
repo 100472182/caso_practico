@@ -84,7 +84,7 @@
 
 
 /*Las figuras de fondo*/
-.rectangulo-fondo {
+#rectangulo-fondo {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -177,7 +177,7 @@ h6{
 /*Responsive ajustados a la resolucion de un móvil*/
 @media only screen and (max-width:600px){  
     /*Los circulos y el rectangulo desaparecen desaparecen*/
-    .circulo-fondo,.rectangulo-fondo{
+    .circulo-fondo,#rectangulo-fondo{
         display: none;
     }
 
