@@ -46,6 +46,7 @@ $(document).ready(function() {
             $("#nuestra_carta").text("Nuestra carta");
             $("#hacer_pedido").attr("href", "./inicio_sesion.html");
             $("#hacer_reserva").attr("href", "./inicio_sesion.html");
+            $("#logo_bartolomeo").parent("a").attr("href", "./home.html");
 
             /*Asigna siguiente pestaña para el registro o inicio de sesion*/
             variableCompartida = localStorage.getItem('enlace_siguiente')
@@ -64,6 +65,7 @@ $(document).ready(function() {
             $("#nuestra_carta").text("Our menu");
             $("#hacer_pedido").attr("href", "./inicio_sesion_en.html");
             $("#hacer_reserva").attr("href", "./inicio_sesion_en.html");
+            $("#logo_bartolomeo").parent("a").attr("href", "./home_en.html");
 
             /*Asigna siguiente pestaña para el registro o inicio de sesion*/
             variableCompartida = localStorage.getItem('enlace_siguiente');
