@@ -1,7 +1,6 @@
 // Importo las funciones necesarias de registro.js
 
 //El idioma por defecto
-var selectedLanguage= $("#idiomas-btn").text();
 
 $(document).ready(function () {
     /*Actualizar el idioma*/ 
@@ -25,7 +24,6 @@ $(document).ready(function () {
         event.preventDefault();
         // Obtener el texto del enlace seleccionado
         selectedLanguage = $(this).text();
-        
         //Cambiar de idioma 
         cambiarIdioma_ini(selectedLanguage);
 

@@ -1,7 +1,8 @@
-$(document).ready(function() {
 
-    localStorage.setItem('idioma', $("#idiomas-btn").text());
-    
+$(document).ready(function() {
+    if (localStorage.getItem('idioma') === null){
+    localStorage.setItem('idioma', $("#idiomas-btn").text())
+    }
     /*Asigna direccion de la siguiente pestaña para el inicio o registro de sesion*/
     $("#hacer_pedido").click(function(){
             localStorage.setItem('enlace_siguiente', "./pedidos.html");
@@ -24,7 +25,7 @@ $(document).ready(function() {
         // Actualizar el texto del botón de idiomas
         $("#idiomas-btn").text(selectedLanguage);
         localStorage.setItem('idioma', selectedLanguage);
-        
+        alert(localStorage.getItem('idioma'));
         // Cerrar el menú desplegable
         $("#idiomas-menu").slideUp();
         
@@ -40,20 +41,12 @@ function cambiarIdioma_nav(selectedLanguage){
     $("#hacer_pedido").text("Haz tu pedido");
     $("#hacer_reserva").text("Reserva tu mesa");
     $("#nuestra_carta").text("Nuestra carta");
-    $("#hacer_pedido").attr("href", "./inicio_sesion.html");
-    $("#hacer_reserva").attr("href", "./inicio_sesion.html");
-    $("#logo_bartolomeo").parent("a").attr("href", "./home.html");
-
 }
 else if (selectedLanguage ==="EN"){
     /*Navegacion*/
     $("#hacer_pedido").text("Make your order");
     $("#hacer_reserva").text("Reserve your table");
     $("#nuestra_carta").text("Our menu");
-    $("#hacer_pedido").attr("href", "./inicio_sesion_en.html");
-    $("#hacer_reserva").attr("href", "./inicio_sesion_en.html");
-    $("#logo_bartolomeo").parent("a").attr("href", "./home_en.html");
-
 }
 };
 
