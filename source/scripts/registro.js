@@ -1,13 +1,9 @@
 /*Formulario para el registro de los usuarios*/
 //import { saveFormData, checkCookie } from "./cookies.";
 
-//El idioma por defecto
-var selectedLanguage= $("#idiomas-btn").text();
-
 $(document).ready(function() {
-    /*Actualizar el idioma*/ 
+    //Actualizar el idioma
     cambiarIdioma_reg(localStorage.getItem("idioma"))
-    cambiarIdioma_nav(localStorage.getItem('idioma'));
 
     /*Los botones para iniciar o registrar la sesion*/
     $("#cancelar").click(function() {
@@ -21,7 +17,6 @@ $(document).ready(function() {
     });
 
     $("#idiomas-menu p").click(function (event) {
-        //event.preventDefault();
         // Obtener el texto del enlace seleccionado
         var selectedLanguage = $(this).text();
         
@@ -48,7 +43,7 @@ function cambiarIdioma_reg(selectedLanguage){
         $("#cancelar").text("Cancelar");
     }
     else if (selectedLanguage ==="EN"){
-        /*El registro de sesion*/
+        //El registro de sesion
         $("#title_registro").text("Register");
         $("#correo").attr("placeholder", "Email");
         $("#password").attr("placeholder", "Password");
@@ -56,7 +51,7 @@ function cambiarIdioma_reg(selectedLanguage){
         $("#telefono").attr("placeholder", "Phone number");
         $("#direccion").attr("placeholder", "Address");
 
-        /*Botones*/
+        //Botones
         $("#registrar").text("Sing up");
         $("#cancelar").text("Cancel");
     }
@@ -201,7 +196,7 @@ function validar_campos_r(){
     
     //Guardamos los datos en cookies
     saveFormData();
-    /*Cambiamos de pestaña*/
+    //Cambiamos de pestaña
     var variableCompartida = localStorage.getItem('enlace_siguiente')
     window.location.href= variableCompartida;
     checkCookie($("#nombre_apellidos").val());

@@ -3,6 +3,7 @@ $(document).ready(function() {
     if (localStorage.getItem('idioma') === null){
     localStorage.setItem('idioma', $("#idiomas-btn").text())
     }
+    cambiarIdioma_nav(localStorage.getItem('idioma'));
     /*Asigna direccion de la siguiente pestaña para el inicio o registro de sesion*/
     $("#hacer_pedido").click(function(){
             localStorage.setItem('enlace_siguiente', "./pedidos.html");
@@ -24,7 +25,10 @@ $(document).ready(function() {
         
         // Actualizar el texto del botón de idiomas
         $("#idiomas-btn").text(selectedLanguage);
+        
+        // Actualizar el valor de la variable local idioma para el resto de ventanas
         localStorage.setItem('idioma', selectedLanguage);
+        
         // Cerrar el menú desplegable
         $("#idiomas-menu").slideUp();
         
@@ -74,7 +78,6 @@ function validar_correo (){
     return true;
 }
 
-
 //Funcion que valida la password para el registro
 function validar_password(){
     //Obtiene el elemento de entrada por su id
@@ -112,10 +115,7 @@ function campo_vacio(clave, nombre){
 }
 
 
-
-
-
- //---------------------------------COOKIES----------------------------------------------------------------------
+ //-------------------------------------------------COOKIES-------------------------------------------------
 //Funcion para almacenar las cookies
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
@@ -140,7 +140,6 @@ function saveFormData() {
     setCookie(correo + "_correo", correo, 7);
     return true; // Esto permite que el formulario se envíe
 }
-
 
 //Funcion que comprueba si existe al menos un usuario y si existe, recibe al ultimo usuario que se haya registrado
 function checkCookie(user) {    

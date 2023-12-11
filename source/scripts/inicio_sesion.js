@@ -3,9 +3,9 @@
 //El idioma por defecto
 
 $(document).ready(function () {
-    /*Actualizar el idioma*/ 
+    //Actualizar el idioma 
     cambiarIdioma_ini(localStorage.getItem("idioma"))
-    cambiarIdioma_nav(localStorage.getItem('idioma'));
+    //cambiarIdioma_nav(localStorage.getItem('idioma'));
 
     /*Los botones para iniciar o registrar la sesion*/
     $("#iniciar").click(function () {
@@ -21,7 +21,6 @@ $(document).ready(function () {
     });
 
     $("#idiomas-menu p").click(function (event) {
-        //event.preventDefault();
         // Obtener el texto del enlace seleccionado
         selectedLanguage = $(this).text();
         //Cambiar de idioma 
@@ -43,12 +42,12 @@ function cambiarIdioma_ini(selectedLanguage){
         $("#registrar").text("Registrar");
     }
     else if (selectedLanguage ==="EN"){
-        /*El inicio de sesion*/
+        //El inicio de sesion
         $("#title_iniciar").text("Start session");
         $("#correo").attr("placeholder", "Email");
         $("#password").attr("placeholder", "Password");
 
-        /*Botones*/
+        //Botones
         $("#iniciar").text("Log in");
         $("#registrar").text("Sign up");
     }
