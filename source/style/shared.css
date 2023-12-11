@@ -94,6 +94,7 @@
 
 #idiomas-menu p:hover{
     cursor: pointer;
+    transform: scale(1.1); /*aumentamos su tamaño*/
 }
 
 /*El idioma elegido*/
