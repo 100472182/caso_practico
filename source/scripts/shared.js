@@ -25,7 +25,6 @@ $(document).ready(function() {
         // Actualizar el texto del botón de idiomas
         $("#idiomas-btn").text(selectedLanguage);
         localStorage.setItem('idioma', selectedLanguage);
-        alert(localStorage.getItem('idioma'));
         // Cerrar el menú desplegable
         $("#idiomas-menu").slideUp();
         

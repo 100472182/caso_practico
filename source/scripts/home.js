@@ -119,6 +119,7 @@ function cambiarIdioma_home(selectedLanguage){
       $("#txt16").text("Contáctanos")
       $("#txt17").text("Comparte tu opinión")
       $("#txt18").text("Política de Privacidad")
+      $("#caja-opinion").attr("placeholder", "Déjanos aquí tu reseña/duda/problema/petición")
   }
   else if (selectedLanguage ==="EN"){
       $("#txt4").text("Live a true Italian experience in Bartolomeo.")
@@ -136,6 +137,7 @@ function cambiarIdioma_home(selectedLanguage){
       $("#txt16").text("Contact us")
       $("#txt17").text("Share your opinion")
       $("#txt18").text("Privacy Policy")
+      $("#caja-opinion").attr("placeholder", "Leave us here your review/question/problem/request.")
   }
 }
 
