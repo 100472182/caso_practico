@@ -4,6 +4,10 @@
 var selectedLanguage= $("#idiomas-btn").text();
 
 $(document).ready(function () {
+    /*Actualizar el idioma*/ 
+    cambiarIdioma_ini(localStorage.getItem("idioma"))
+    cambiarIdioma_nav(localStorage.getItem('idioma'));
+
     /*Los botones para iniciar o registrar la sesion*/
     $("#iniciar").click(function () {
         event.preventDefault();
@@ -13,13 +17,7 @@ $(document).ready(function () {
     $("#registrar").click(function () {
         event.preventDefault();
         $("body").fadeOut(500, function () {
-            //Comprobar si la siguiente ventana debe estar en castellano o en ingles
-            if (selectedLanguage==="ES"){
                 window.location.href = "../source/registro.html";
-            }
-            else if (selectedLanguage==="EN") {
-                window.location.href = "../source/registro_en.html";
-            }
         });
     });
 

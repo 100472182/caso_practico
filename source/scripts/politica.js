@@ -1,7 +1,9 @@
 $(document).ready(function() {
-    cambiarIdioma_plt(localStorage.getItem("idioma"))
+    /*Actualizar el idioma*/
+    cambiarIdioma_plt(localStorage.getItem("idioma"));
+    cambiarIdioma_nav(localStorage.getItem('idioma'));
 
-    $("#idiomas-menu a").click(function (event) {
+    $("#idiomas-menu p").click(function (event) {
         event.preventDefault();
         // Obtener el texto del enlace seleccionado
         var selectedLanguage = $(this).text();
