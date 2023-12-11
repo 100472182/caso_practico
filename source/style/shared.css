@@ -1,5 +1,9 @@
-/*Clase utilizada para la barra de navegacion*/
+* {box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+/*Clase utilizada para la barra de navegacion*/
 #barra_de_navegacion{
     display: grid;
     grid-template-columns: repeat(5,1fr);

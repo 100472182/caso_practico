@@ -21,7 +21,7 @@ $(document).ready(function () {
     });
 
     $("#idiomas-menu p").click(function (event) {
-        event.preventDefault();
+        //event.preventDefault();
         // Obtener el texto del enlace seleccionado
         selectedLanguage = $(this).text();
         //Cambiar de idioma 
