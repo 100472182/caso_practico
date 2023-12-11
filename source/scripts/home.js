@@ -8,7 +8,6 @@ let indiceActualPlatos = 0;
 $(document).ready(function () {
   /*Actualizar el idioma*/ 
   cambiarIdioma_home(localStorage.getItem("idioma"));
-  cambiarIdioma_nav(localStorage.getItem('idioma'));
   $("#idiomas-menu p").click(function (event) {
       event.preventDefault();
       // Obtener el texto del enlace seleccionado
