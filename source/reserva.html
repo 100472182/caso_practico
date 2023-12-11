@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="es">
 <head>
     <title>Bartolomeo</title>
@@ -23,18 +23,18 @@
         <div id="idiomas">
             <button id="idiomas-btn">ES</button>
             <div id="idiomas-menu">
-              <a href="#spanish">ES</a>
-              <a href="#english">EN</a>
+                <p>ES</p>
+                <p>EN</p>
             </div>
         </div>
     </header>
     <section class="contenedor"> 
         <div class="elemento-contenedor dos-columnas">
-            <input type="date" name="fechaInicio" id="fechaInicio" min="2023-12-05" max="2024-02-05" class="readonly">
+            <input type="date" name="fechaInicio" id="input-calendario" min="2023-12-05" max="2024-02-05" class="readonly">
         </div>
         
         <div class="elemento-contenedor">
-            <select>
+            <select id="selector-personas">
                 <option value="" selected>Personas</option>
                 <option value="persona1">1</option>
                 <option value="persona2">2</option>
@@ -47,7 +47,7 @@
             </select>
         </div>
         <div class="elemento-contenedor">
-            <select>
+            <select id="selector-horas-disponibles">
                 <option value="" selected>Horas Disponibles</option>
                 <option value="hora1">1</option>
                 <option value="hora2">2</option>
@@ -61,15 +61,17 @@
         </div>
         <div class="dos-columnas">
             <ul id="horarios">
-                <li><h5>Horarios</h5></li>
+                <li id="flip"><h5>Horarios<span><img id="flecha-horarios" src="/images/chevron-down-solid.svg" alt="Flecha desplegable"></span></h5></li>
+                <hr>
+                <li class="panel">
+                    <div><span>Martes a Sábado</span><span>De 12:00 a 16:00 y 20:00 a 23:00</span></div>
+                    <div><span>Domingo</span><span>De 12:00 a 16:00</span></div>
+                </li>
             </ul>
         </div>
-        
-        
-        
 
-
-
+        <button type="submit" id="boton-reserva">Hacer reserva</button>
+        
         <!-- Reserva-->
         <section>
             <!-- Seleccionar momento de reserva-->
@@ -123,11 +125,7 @@
             <!-- Caja Reserva realizada-->
         </div>
 
-
-
-
-
     </section>
     <script src="./scripts/shared.js"></script>
-    <script src="./scripts/reserva.js"></script
+    <script src="./scripts/reserva.js"></script>
 </body>
