@@ -5,7 +5,6 @@
 $(document).ready(function () {
     //Actualizar el idioma 
     cambiarIdioma_ini(localStorage.getItem("idioma"))
-    //cambiarIdioma_nav(localStorage.getItem('idioma'));
 
     /*Los botones para iniciar o registrar la sesion*/
     $("#iniciar").click(function () {
