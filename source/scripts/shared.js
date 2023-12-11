@@ -3,6 +3,7 @@ $(document).ready(function() {
     if (localStorage.getItem('idioma') === null){
         localStorage.setItem('idioma', $("#idiomas-btn").text())
     }
+   
     cambiarIdioma_nav(localStorage.getItem('idioma'));
     /*Asigna direccion de la siguiente pestaña para el inicio o registro de sesion*/
     $("#hacer_pedido").click(function(){

@@ -1,6 +1,4 @@
 /*Formulario para el registro de los usuarios*/
-//import { saveFormData, checkCookie } from "./cookies.";
-
 $(document).ready(function() {
     //Actualizar el idioma
     cambiarIdioma_reg(localStorage.getItem("idioma"))

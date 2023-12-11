@@ -1,7 +1,5 @@
 // Importo las funciones necesarias de registro.js
 
-//El idioma por defecto
-
 $(document).ready(function () {
     //Actualizar el idioma 
     cambiarIdioma_ini(localStorage.getItem("idioma"))
