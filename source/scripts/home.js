@@ -77,6 +77,23 @@ function cerrarGaleriaPlatos(){
   galeria.style.display = 'none';
 }
 
+function abrirReserva(){
+  if ($("#idiomas-btn").text() =="ES"){
+    localStorage.setItem('enlace_siguiente', "./reserva.html");
+}
+else if ($("#idiomas-btn").text() =="EN"){
+    localStorage.setItem('enlace_siguiente', "./reserva_en.html");
+}
+}
+
+function abrirPedidos(){
+  if ($("#idiomas-btn").text() =="ES"){
+    localStorage.setItem('enlace_siguiente', "./pedidos.html");
+}
+else if ($("#idiomas-btn").text() =="EN"){
+    localStorage.setItem('enlace_siguiente', "./pedidos_en.html");
+}
+}
 
 mostrarImagen(indiceActual, indiceActualPlatos);
 setInterval(nextImagen, 6000);
@@ -85,7 +102,7 @@ document.getElementById('flecha-right').onclick = nextImagen;
 bajarBoton('boton-pedido');
 bajarBoton('boton-reserva');
 bajarBoton('boton-carta');
-document.getElementById('x-cerrar').onclick = cerrarGaleriaPlatos
+document.getElementById('x-cerrar').onclick = cerrarGaleriaPlatos;
 document.getElementById('flecha-left-platos').onclick = prevImagenPlatos;
 document.getElementById('flecha-right-platos').onclick = nextImagenPlatos;
 for (let imagen of platos) {
@@ -94,4 +111,6 @@ for (let imagen of platos) {
     abrirGaleriaPlatos(index);
   };
 }
+document.getElementById('boton-pedido').onclick = abrirPedidos;
+document.getElementById('boton-reserva').onclick = abrirReserva;
 

@@ -26,7 +26,7 @@ $(document).ready(function() {
         $("#idiomas-menu").slideToggle();
     });
 
-    $("#idiomas-menu a").click(function (event) {
+    $("#idiomas-menu p").click(function (event) {
         event.preventDefault();
         // Obtener el texto del enlace seleccionado
         var selectedLanguage = $(this).text();

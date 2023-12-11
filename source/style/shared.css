@@ -80,12 +80,16 @@ li a:hover{
 }
 
 /*Cada idioma del navegador*/
-#idiomas-menu a {
+#idiomas-menu p {
     padding: 8px;
     text-decoration: none;
     font-size: 1.2rem;
     color: #C0732B;
     display: block; /*Los elementos aparecen en columna*/
+}
+
+#idiomas-menu p:hover{
+    cursor: pointer;
 }
 
 /*El idioma elegido*/

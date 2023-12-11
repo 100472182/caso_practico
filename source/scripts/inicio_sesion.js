@@ -23,7 +23,7 @@ $(document).ready(function () {
         });
     });
 
-    $("#idiomas-menu a").click(function (event) {
+    $("#idiomas-menu p").click(function (event) {
         event.preventDefault();
         // Obtener el texto del enlace seleccionado
         selectedLanguage = $(this).text();
