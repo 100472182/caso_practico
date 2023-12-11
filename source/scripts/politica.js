@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    cambiarIdioma_plt(localStorage.getItem("idioma"))
 
     $("#idiomas-menu a").click(function (event) {
         event.preventDefault();

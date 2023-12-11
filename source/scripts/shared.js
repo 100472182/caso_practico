@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+    localStorage.setItem('idioma', $("#idiomas-btn").text())
     /*Asigna direccion de la siguiente pestaña para el inicio o registro de sesion*/
     $("#hacer_pedido").click(function(){
         if ($("#idiomas-btn").text() =="ES"){
@@ -7,6 +7,7 @@ $(document).ready(function() {
         }
         else if ($("#idiomas-btn").text() =="EN"){
             localStorage.setItem('enlace_siguiente', "./pedidos_en.html");
+            ;
         }
     })
 
@@ -33,6 +34,7 @@ $(document).ready(function() {
         
         // Actualizar el texto del botón de idiomas
         $("#idiomas-btn").text(selectedLanguage);
+        localStorage.setItem('idioma', selectedLanguage)
         
         // Cerrar el menú desplegable
         $("#idiomas-menu").slideUp();
