@@ -101,8 +101,8 @@ function validar_correo (){
         else if ($("#idiomas-btn").text()==="EN"){
             alert("Incorrect email.")
         }
-
         return false;
+
     }
     return true;
 }
