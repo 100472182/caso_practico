@@ -5,6 +5,9 @@
 var selectedLanguage= $("#idiomas-btn").text();
 
 $(document).ready(function() {
+    /*Actualizar el idioma*/ 
+    cambiarIdioma_reg(localStorage.getItem("idioma"))
+    cambiarIdioma_nav(localStorage.getItem('idioma'));
 
     /*Los botones para iniciar o registrar la sesion*/
     $("#cancelar").click(function() {
@@ -17,8 +20,8 @@ $(document).ready(function() {
         validar_campos_r();
     });
 
-    $("#idiomas-menu a").click(function (event) {
-        event.preventDefault();
+    $("#idiomas-menu p").click(function (event) {
+        //event.preventDefault();
         // Obtener el texto del enlace seleccionado
         var selectedLanguage = $(this).text();
         

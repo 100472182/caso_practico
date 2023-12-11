@@ -1,33 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/82e1991057.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+
     <title>Bartolomeo</title>
-    <link rel="stylesheet" href="style/style1.css">
+    <link rel="stylesheet" href="style/politica.css">
+    <link rel="stylesheet" href="style/shared.css">
     <meta charset="UTF-8">
 </head>
 <body>
-    <header>
-        <!-- Cabecera-->
-        <div>
-            <!-- Imagen Bartolomeo-->
+    <header id="barra_de_navegacion">
+        <div id= "reducido" >
+            <a href="./home.html">
+                <img id = "logo_bartolomeo"src="../images/logo-bartolomeo.png" alt= "Logo Bartolomeo">
+            </a>
         </div>
-        <nav>
-            <!-- Menú de navegación-->
-            <div>
-                <!-- Caja Realizar Pedido-->
+        <ul>
+            <li><a id= "hacer_pedido" href="./inicio_sesion.html">Haz tu pedido</a></li>
+            <li><a id= "hacer_reserva" href="./inicio_sesion.html">Reserva tu mesa</a></li>
+            <li><a id= "nuestra_carta" href="./CARTA-VERANO-2023.pdf">Nuestra carta</a></li>
+        </ul>
+        <div id="idiomas">
+            <button id="idiomas-btn">ES</button>
+            <div id="idiomas-menu">
+                <p>ES</p>
+                <p>EN</p>
             </div>
-            <div>
-                <!-- Caja Reserva de Mesa-->
-            </div>
-            <div>
-                <!-- Caja Ver Carta-->
-            </div>
-            <div>
-                <!-- Caja Selección Idioma-->
-            </div>
-        </nav>
-        
+        </div>
     </header>
-    <section>
-        <!-- Politica de Privacidad-->
+    <section id="recuadro_1">
+        <article id ="recuadro_2">
+            <h2 id="p1">Política de Privacidad</h2>
+
+            <h4 id="p2">Fecha de vigencia: 10/11/2023</h4>
+
+            <p id="p3">
+                Gracias por visitar nuestro sitio web. En BARTOLOMEO, nos tomamos en serio la privacidad de nuestros visitantes. Esta política de privacidad describe cómo recopilamos, utilizamos y protegemos la información personal que pueda proporcionarnos a través de nuestro sitio web.
+            </p>
+            <h4 id="p4">Información que recopilamos:</h4>
+                <ul>
+                    <li id= "p5">
+                            Información de pago: Si realiza una reserva en línea o compra productos a través de nuestro sitio web, podemos recopilar información de pago, como detalles de tarjetas de crédito o débito.
+                    </li>
+                    <li id="p6">
+                            Información de la visita: Podemos recopilar información sobre su visita al sitio web, incluidas las páginas que visita, el tiempo que pasa en el sitio y la frecuencia de las visitas.
+                    </li>
+                </ul>
+            <h4 id="p7">Cómo utilizamos la información:</h4>
+            
+            <p id="p8">Utilizamos la información recopilada para:</p>
+
+            <li id="p9">Procesar reservas y pedidos.</li>
+            <li id="p10">Enviar información relevante sobre eventos, promociones o actualizaciones del restaurante.</li>
+            <li id="p11">Mejorar y personalizar la experiencia del usuario en nuestro sitio web.</li>
+            <li id="p12">Garantizar la seguridad y protección de la información del usuario.</li>
+
+            <h4 id="p13">Cómo protegemos su información:</h4>
+            <p id="p14">
+                Implementamos medidas de seguridad para proteger su información personal contra accesos no autorizados, alteraciones, divulgaciones o destrucciones no autorizadas.
+            </p>
+            <h4 id="p15">Divulgación de información:</h4>
+            <p id="p16">
+                No compartimos, vendemos ni alquilamos su información personal a terceros sin su consentimiento, a menos que sea necesario para cumplir con la ley o proteger nuestros derechos.
+            </p>
+            <h4 id="p17">Enlaces a sitios web de terceros:</h4>
+            <p id= "p18">
+                Nuestro sitio web puede contener enlaces a sitios web de terceros. No somos responsables de las prácticas de privacidad o el contenido de estos sitios.
+            </p>
+            <h4 id="p19">Cambios en la política de privacidad:</h4>
+            <p id="p20">
+                Nos reservamos el derecho de actualizar esta política en cualquier momento. Le recomendamos que revise periódicamente esta página para estar al tanto de cualquier cambio.
+            </p>
+
+            <p id= "p21">
+                Al utilizar nuestro sitio web, usted acepta los términos de esta política de privacidad. Si tiene alguna pregunta o inquietud, no dude en ponerse en contacto con nosotros a través de nuestro <a href="https://www.instagram.com/bartolomeokitchen/" target="_blank">Instagram</a> o 
+            <a href="https://www.facebook.com/bartolomeokitchen/" target="_blank">Facebook</a>.
+            </p>
+        </article>
+
     </section>
+    <script src="./scripts/politica.js"></script>
+    <script src="./scripts/shared.js"></script>
+</body>
+</html>
+

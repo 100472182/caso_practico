@@ -1,8 +1,3 @@
-* {box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 /*#barra-de-navegacion{
     background-color: #333333;
     height:17vh;
@@ -54,7 +49,6 @@ nav {
 #espacio-header {
     margin-top: 4.9%;
 }
-
 
 .fondo-home {
     background-color: #F9D7A0;

@@ -1,24 +1,15 @@
-$(document).ready(function() {
 
+$(document).ready(function() {
+    if (localStorage.getItem('idioma') === null){
+    localStorage.setItem('idioma', $("#idiomas-btn").text())
+    }
     /*Asigna direccion de la siguiente pestaña para el inicio o registro de sesion*/
     $("#hacer_pedido").click(function(){
-        if ($("#idiomas-btn").text() =="ES"){
             localStorage.setItem('enlace_siguiente', "./pedidos.html");
-        }
-        else if ($("#idiomas-btn").text() =="EN"){
-            localStorage.setItem('enlace_siguiente', "./pedidos_en.html");
-        }
     })
 
     $("#hacer_reserva").click(function(){
-        if ($("#idiomas-btn").text() =="ES"){
             localStorage.setItem('enlace_siguiente', "./reserva.html");
-        }
-        else if ($("#idiomas-btn").text() =="EN"){
-            localStorage.setItem('enlace_siguiente', "./reserva_en.html");
-        }
-        
-
     })
 
     /*Menu de hamburguesa para seleccionar el idioma*/
@@ -26,61 +17,37 @@ $(document).ready(function() {
         $("#idiomas-menu").slideToggle();
     });
 
-    $("#idiomas-menu a").click(function (event) {
+    $("#idiomas-menu p").click(function (event) {
         event.preventDefault();
         // Obtener el texto del enlace seleccionado
         var selectedLanguage = $(this).text();
         
         // Actualizar el texto del botón de idiomas
         $("#idiomas-btn").text(selectedLanguage);
-        
+        localStorage.setItem('idioma', selectedLanguage);
         // Cerrar el menú desplegable
         $("#idiomas-menu").slideUp();
         
         //Conversion al ingles
-        
-        if(selectedLanguage==="ES") {/*Navegacion*/
-            /*Navegacion*/
-            $("#hacer_pedido").text("Haz tu pedido");
-            $("#hacer_reserva").text("Reserva tu mesa");
-            $("#nuestra_carta").text("Nuestra carta");
-            $("#hacer_pedido").attr("href", "./inicio_sesion.html");
-            $("#hacer_reserva").attr("href", "./inicio_sesion.html");
-            $("#logo_bartolomeo").parent("a").attr("href", "./home.html");
+        cambiarIdioma_nav(selectedLanguage);
 
-            /*Asigna siguiente pestaña para el registro o inicio de sesion*/
-            variableCompartida = localStorage.getItem('enlace_siguiente')
-            if (variableCompartida=== "./pedidos_en.html" || variableCompartida==="./pedidos.html"){
-                localStorage.setItem('enlace_siguiente', "./pedidos.html");
-            };
+})});
 
-            if (variableCompartida=== "./reserva_en.html" || variableCompartida==="./reserva.html"){
-                localStorage.setItem('enlace_siguiente', "./reserva.html");
-            };
-        }
-        else if (selectedLanguage ==="EN"){
-            /*Navegacion*/
-            $("#hacer_pedido").text("Make your order");
-            $("#hacer_reserva").text("Reserve your table");
-            $("#nuestra_carta").text("Our menu");
-            $("#hacer_pedido").attr("href", "./inicio_sesion_en.html");
-            $("#hacer_reserva").attr("href", "./inicio_sesion_en.html");
-            $("#logo_bartolomeo").parent("a").attr("href", "./home_en.html");
-
-            /*Asigna siguiente pestaña para el registro o inicio de sesion*/
-            variableCompartida = localStorage.getItem('enlace_siguiente');
-            if (variableCompartida=== "./pedidos_en.html" || variableCompartida==="./pedidos.html"){
-                localStorage.setItem('enlace_siguiente', "./pedidos_en.html");
-            };
-
-            if (variableCompartida=== "./reserva_en.html" || variableCompartida==="./reserva.html"){
-                localStorage.setItem('enlace_siguiente', "./reserva_en.html");
-            };
-        }
-    });
-});
-
-
+function cambiarIdioma_nav(selectedLanguage){
+    $("#idiomas-btn").text(localStorage.getItem('idioma'));
+    if(selectedLanguage==="ES") {/*Navegacion*/
+    /*Navegacion*/
+    $("#hacer_pedido").text("Haz tu pedido");
+    $("#hacer_reserva").text("Reserva tu mesa");
+    $("#nuestra_carta").text("Nuestra carta");
+}
+else if (selectedLanguage ==="EN"){
+    /*Navegacion*/
+    $("#hacer_pedido").text("Make your order");
+    $("#hacer_reserva").text("Reserve your table");
+    $("#nuestra_carta").text("Our menu");
+}
+};
 
 /*Funciones compartidas por registro e inicio de sesion*/
 //Funcion que valida el correo electronico para el registro

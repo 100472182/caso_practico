@@ -1,5 +1,9 @@
-/*Clase utilizada para la barra de navegacion*/
+* {box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+/*Clase utilizada para la barra de navegacion*/
 #barra_de_navegacion{
     display: grid;
     grid-template-columns: repeat(5,1fr);
@@ -34,14 +38,14 @@
     list-style: none;
 }
 /*La lista de enlaces*/
-ul li{
+#barra_de_navegacion ul li{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 /*Cada enlace*/
-li a{
+#barra_de_navegacion li a{
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -54,7 +58,7 @@ li a{
     box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.3);
 }
 
-li a:hover{
+#barra_de_navegacion li a:hover{
     transform: scale(1.1); /*aumentamos su tamaño*/
 }
 
@@ -80,12 +84,16 @@ li a:hover{
 }
 
 /*Cada idioma del navegador*/
-#idiomas-menu a {
+#idiomas-menu p {
     padding: 8px;
     text-decoration: none;
     font-size: 1.2rem;
     color: #C0732B;
     display: block; /*Los elementos aparecen en columna*/
+}
+
+#idiomas-menu p:hover{
+    cursor: pointer;
 }
 
 /*El idioma elegido*/
@@ -121,7 +129,7 @@ body{
     }
 
     /*Modifico tamaño del nav*/
-    li a{
+    #barra_de_navegacion li a{
         font-size: 1rem;
         padding: 5px;
     }
@@ -135,7 +143,7 @@ body{
     }
 
     /*Modifico tamaño del nav*/
-    li a{
+    #barra_de_navegacion li a{
         font-size: 0.6rem;
         padding: 5px;
     }
