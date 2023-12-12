@@ -1,24 +1,17 @@
-$(document).ready(function() {
 
+$(document).ready(function() {
+    if (localStorage.getItem('idioma') === null){
+        localStorage.setItem('idioma', $("#idiomas-btn").text())
+    }
+   
+    cambiarIdioma_nav(localStorage.getItem('idioma'));
     /*Asigna direccion de la siguiente pestaña para el inicio o registro de sesion*/
     $("#hacer_pedido").click(function(){
-        if ($("#idiomas-btn").text() =="ES"){
             localStorage.setItem('enlace_siguiente', "./pedidos.html");
-        }
-        else if ($("#idiomas-btn").text() =="EN"){
-            localStorage.setItem('enlace_siguiente', "./pedidos_en.html");
-        }
     })
 
     $("#hacer_reserva").click(function(){
-        if ($("#idiomas-btn").text() =="ES"){
             localStorage.setItem('enlace_siguiente', "./reserva.html");
-        }
-        else if ($("#idiomas-btn").text() =="EN"){
-            localStorage.setItem('enlace_siguiente', "./reserva_en.html");
-        }
-        
-
     })
 
     /*Menu de hamburguesa para seleccionar el idioma*/
@@ -26,7 +19,7 @@ $(document).ready(function() {
         $("#idiomas-menu").slideToggle();
     });
 
-    $("#idiomas-menu a").click(function (event) {
+    $("#idiomas-menu p").click(function (event) {
         event.preventDefault();
         // Obtener el texto del enlace seleccionado
         var selectedLanguage = $(this).text();
@@ -34,51 +27,32 @@ $(document).ready(function() {
         // Actualizar el texto del botón de idiomas
         $("#idiomas-btn").text(selectedLanguage);
         
+        // Actualizar el valor de la variable local idioma para el resto de ventanas
+        localStorage.setItem('idioma', selectedLanguage);
+        
         // Cerrar el menú desplegable
         $("#idiomas-menu").slideUp();
         
         //Conversion al ingles
-        
-        if(selectedLanguage==="ES") {/*Navegacion*/
-            /*Navegacion*/
-            $("#hacer_pedido").text("Haz tu pedido");
-            $("#hacer_reserva").text("Reserva tu mesa");
-            $("#nuestra_carta").text("Nuestra carta");
-            $("#hacer_pedido").attr("href", "./inicio_sesion.html");
-            $("#hacer_reserva").attr("href", "./inicio_sesion.html");
+        cambiarIdioma_nav(selectedLanguage);
 
-            /*Asigna siguiente pestaña para el registro o inicio de sesion*/
-            variableCompartida = localStorage.getItem('enlace_siguiente')
-            if (variableCompartida=== "./pedidos_en.html" || variableCompartida==="./pedidos.html"){
-                localStorage.setItem('enlace_siguiente', "./pedidos.html");
-            };
+})});
 
-            if (variableCompartida=== "./reserva_en.html" || variableCompartida==="./reserva.html"){
-                localStorage.setItem('enlace_siguiente', "./reserva.html");
-            };
-        }
-        else if (selectedLanguage ==="EN"){
-            /*Navegacion*/
-            $("#hacer_pedido").text("Make your order");
-            $("#hacer_reserva").text("Reserve your table");
-            $("#nuestra_carta").text("Our menu");
-            $("#hacer_pedido").attr("href", "./inicio_sesion_en.html");
-            $("#hacer_reserva").attr("href", "./inicio_sesion_en.html");
-
-            /*Asigna siguiente pestaña para el registro o inicio de sesion*/
-            variableCompartida = localStorage.getItem('enlace_siguiente');
-            if (variableCompartida=== "./pedidos_en.html" || variableCompartida==="./pedidos.html"){
-                localStorage.setItem('enlace_siguiente', "./pedidos_en.html");
-            };
-
-            if (variableCompartida=== "./reserva_en.html" || variableCompartida==="./reserva.html"){
-                localStorage.setItem('enlace_siguiente', "./reserva_en.html");
-            };
-        }
-    });
-});
-
-
+function cambiarIdioma_nav(selectedLanguage){
+    $("#idiomas-btn").text(localStorage.getItem('idioma'));
+    if(selectedLanguage==="ES") {/*Navegacion*/
+    /*Navegacion*/
+    $("#hacer_pedido").text("Haz tu pedido");
+    $("#hacer_reserva").text("Reserva tu mesa");
+    $("#nuestra_carta").text("Nuestra carta");
+}
+else if (selectedLanguage ==="EN"){
+    /*Navegacion*/
+    $("#hacer_pedido").text("Make your order");
+    $("#hacer_reserva").text("Reserve your table");
+    $("#nuestra_carta").text("Our menu");
+}
+};
 
 /*Funciones compartidas por registro e inicio de sesion*/
 //Funcion que valida el correo electronico para el registro
@@ -99,12 +73,11 @@ function validar_correo (){
         else if ($("#idiomas-btn").text()==="EN"){
             alert("Incorrect email.")
         }
-
         return false;
+
     }
     return true;
 }
-
 
 //Funcion que valida la password para el registro
 function validar_password(){
@@ -143,10 +116,7 @@ function campo_vacio(clave, nombre){
 }
 
 
-
-
-
- //---------------------------------COOKIES----------------------------------------------------------------------
+ //-------------------------------------------------COOKIES-------------------------------------------------
 //Funcion para almacenar las cookies
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
@@ -171,7 +141,6 @@ function saveFormData() {
     setCookie(correo + "_correo", correo, 7);
     return true; // Esto permite que el formulario se envíe
 }
-
 
 //Funcion que comprueba si existe al menos un usuario y si existe, recibe al ultimo usuario que se haya registrado
 function checkCookie(user) {    

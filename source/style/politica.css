@@ -1,0 +1,21 @@
+/*Recuadro para centrar el texto*/
+#recuadro_1{
+    display: flex;
+    justify-content: center;
+    margin-top: 15vh;
+    margin-bottom: 10vh;
+}
+
+/*Recuadro que contiene el texto*/
+#recuadro_2{
+    background-color: #FBE0B5;
+    width: 70vw;
+    border-radius: 33px;
+    padding: 20px;
+}
+
+h4{
+    margin: 2%;
+    margin-left: 0;
+    margin-bottom: 1%;
+}
