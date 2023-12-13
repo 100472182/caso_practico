@@ -4,8 +4,18 @@ $(".readonly").keydown(function(e) {
 });
 
 $(document).ready(function(){
+  // Actualizar el idioma 
+  cambiarIdioma_reserva(localStorage.getItem("idioma"))
+  // Se cambia también en caso de que decidan cambiar de idioma
+  $("#idiomas-menu p").click(function (event) {
+    // Obtener el texto del enlace seleccionado
+    selectedLanguage = $(this).text();
+    //Cambiar de idioma 
+    cambiarIdioma_reserva(selectedLanguage);
+});
+
   //parte del encabezado
-  //Cambiar el fondo del enlace a a hacer pedidos y reserva
+  //Cambiar el fondo del enlace a hacer pedidos y reserva
   $("#hacer_pedido").css("background-color", "");
   $("#hacer_reserva").css("background-color", "#c5681c");
 
@@ -125,9 +135,13 @@ function cambiarHorasDisponibles(){
     // Obtener las horas disponibles para la fecha seleccionada
     let horasDisponibles = agenda[fechaSeleccionada].horasDisponibles;
 
-    // Limpiar las opciones actuales del selector
-    selectorHorasDisponibles.innerHTML = '<option value="" selected>Horas Disponibles</option>';
-
+    // Limpiar las opciones actuales del selector, y ponerlo en el idioma correspondiente
+    var selectedLanguage = localStorage.getItem("idioma");
+    if(selectedLanguage === "ES") {
+      selectorHorasDisponibles.innerHTML = '<option value="" selected>Horas Disponibles</option>';
+    } else if (selectedLanguage === "EN"){
+      selectorHorasDisponibles.innerHTML = '<option value="" selected>Available Hours</option>';
+    }
     // Comprobar si quedan horas disponibles
     if (horasDisponibles.length > 0) {
       // Añadir una opción por cada hora disponible
@@ -141,8 +155,12 @@ function cambiarHorasDisponibles(){
         selectorHorasDisponibles.add(opcion);
       });
     } else {
-      // Si no quedan horas disponibles, añadir una opción indicándolo
-      selectorHorasDisponibles.innerHTML = '<option value="" selected>No quedan horas</option>';
+      // Si no quedan horas disponibles, añadir una opción indicándolo. Ponerlo en el idioma correspondiente
+      if(selectedLanguage === "ES") {
+        selectorHorasDisponibles.innerHTML = '<option value="" selected>No quedan horas</option>';
+      } else if (selectedLanguage === "EN"){
+        selectorHorasDisponibles.innerHTML = '<option value="" selected>No hours left</option>';
+      }
     }
   });
 }
@@ -196,5 +214,72 @@ function cambiarFondo(){
   } else {
     // vuelve al fondo normal
     document.body.style.background = "#F9D7A0";
+  }
+}
+
+// Funcion que cambia de idioma en la pagina
+function cambiarIdioma_reserva(selectedLanguage){
+  if(selectedLanguage==="ES") {
+      
+    // Selector de personas, se accede a su primera opción y se cambia su texto
+    var select = document.getElementById('selector-personas');
+    var option = select.options[0];
+    option.text = 'Personas';
+
+    // Selector de horas disponibles
+    var select = document.getElementById('selector-horas-disponibles');
+    var option = select.options[0];
+    if (option.text==="Horas Disponibles" || option.text==="Available Hours"){
+      option.text = 'Horas Disponibles';
+    } else {
+      option.text = 'No quedan horas';
+    }
+
+    // Horarios
+    // Accede al elemento h5 dentro de #flip y cambia su texto
+    var h5 = document.querySelector('#flip h5');
+    // Guarda span en una variable, para no perderlo
+    var spanHTML = h5.querySelector('span').outerHTML;
+    // Cambia h5, manteniendo el span
+    h5.innerHTML = 'Horarios' + spanHTML;
+    // Accede al primer span dentro de .panel y cambia su texto
+    document.querySelector('.panel div:first-child span:first-child').textContent = 'Martes a Sábado';
+    // Accede al segundo span dentro de .panel y cambia su texto
+    document.querySelector('.panel div:first-child span:last-child').textContent = 'De 12:00 a 16:00 y 20:00 a 23:00';
+
+    // Botón reserva
+    $("#boton-reserva").text("Hacer reserva");
+    
+    // Contenedor reserva realizada
+    document.querySelector('#contenedor-reserva-realizada div').textContent = '¡Reserva realizada!';
+  }
+  // En inglés
+  else if (selectedLanguage ==="EN"){
+    // Selector de personas
+    var select = document.getElementById('selector-personas');
+    var option = select.options[0];
+    option.text = 'People';
+
+    // Selector de horas disponibles
+    var select = document.getElementById('selector-horas-disponibles');
+    var option = select.options[0];
+    if (option.text==="Horas Disponibles" || option.text==="Available Hours"){
+      option.text = 'Available Hours';
+    } else {
+      option.text = 'No hours left';
+    }
+
+    // Horarios
+    var h5 = document.querySelector('#flip h5');
+    var spanHTML = h5.querySelector('span').outerHTML;
+    h5.innerHTML = 'Schedules' + spanHTML;
+    document.querySelector('.panel div:first-child span:first-child').textContent = 'Tuesday to Saturday';
+    document.querySelector('.panel div:first-child span:last-child').textContent = 'From 12:00 to 16:00 and 20:00 to 23:00';
+
+    // Botón reserva
+    $("#boton-reserva").text("Make reservation");
+
+    // Contenedor reserva realizada
+    document.querySelector('#contenedor-reserva-realizada div').textContent = 'Reservation made!';
   }
 }
