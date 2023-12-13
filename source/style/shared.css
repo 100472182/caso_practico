@@ -145,7 +145,8 @@ body{
 
     /*Modifico tamaño del nav*/
     #barra_de_navegacion li a{
-        font-size: 0.6rem;
+        font-size: 0.9rem;
         padding: 5px;
+        text-align: center;
     }
 }
