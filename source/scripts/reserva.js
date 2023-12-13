@@ -4,14 +4,11 @@ $(".readonly").keydown(function(e) {
 });
 
 $(document).ready(function(){
+
   $(".container").hide();
   //Cambiar el fondo del enlace a a hacer pedidos y reserva
   $("#hacer_pedido").css("background-color", "");
   $("#hacer_reserva").css("background-color", "#c5681c");
-  
-  // Crear un objeto para almacenar las fechas
-  //let agenda = JSON.parse(localStorage.getItem('agenda')) || {};
-  //localStorage.setItem('agenda', JSON.stringify(agenda));
   
   // Desplegable de los horarios
   $(".panel").hide()
@@ -70,6 +67,7 @@ function comprobar_boton_reserva(){
 
 
 function cambiarHorasDisponibles(){
+  cambiarFondo();
   // Obtener el elemento del selector de horas disponibles
   let selectorHorasDisponibles = document.getElementById('selector-horas-disponibles');
 
@@ -178,5 +176,15 @@ $("#boton-reserva").click(function() {
   // Oculto el contenedor en el que se ha hecho la reserva
   $(".contenedor").hide();
   // Muestro el contenedor de reserva hecha
-  $("#container").show();
+  $(".container").show();
+  cambiarFondo();
 });
+
+function cambiarFondo(){
+  if ($(".container").is(":visible")){
+    // cambio el fondo del body
+    document.body.style.background = "repeating-linear-gradient(-45deg, #F9D7A0, #F9D7A0 80px, #C0732BE5 80px, #C0732BE5 160px)";
+  } else {
+    document.body.style.background = "#F9D7A0";
+  }
+}
