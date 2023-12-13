@@ -4,17 +4,20 @@ $(".readonly").keydown(function(e) {
 });
 
 $(document).ready(function(){
-  // Al cargar la página se oculta el contenedor de reserva realizada
-  $("#contenedor-reserva-realizada").hide();
+  //parte del encabezado
   //Cambiar el fondo del enlace a a hacer pedidos y reserva
   $("#hacer_pedido").css("background-color", "");
   $("#hacer_reserva").css("background-color", "#c5681c");
+
+  // Al cargar la página se oculta el contenedor de reserva realizada
+  $("#contenedor-reserva-realizada").hide();
   
   // Desplegable de los horarios
   $(".panel").hide()
   $("#flip").click(function(){
     $(".panel").slideToggle("slow");
     if ($("#flecha-horarios").css('transform')=='none'){
+      // se invierte la flecha, para indicar que se muestra información
       $("#flecha-horarios").css('transform', 'scaleY(-1)');
     } else{
       $("#flecha-horarios").css('transform', 'none')
@@ -32,6 +35,7 @@ $(document).ready(function(){
   var fechaMaxFormato = fechaMax.getFullYear()+"-"+(mes)+"-"+(dia) ;
   $("#input-calendario").attr("max", fechaMaxFormato);
 
+  // Actualización de la horas disponibles a seleccionar
   cambiarHorasDisponibles();
 
   // Deshabilita el selector de horas disponibles y el boton de reserva
@@ -67,14 +71,15 @@ function comprobar_boton_reserva(){
 
 
 function cambiarHorasDisponibles(){
-  cambiarFondo();
-  // Obtener el elemento del selector de horas disponibles
+  // Esta función muestra en el selector de horas disponibles las horas que se pueden seleccionar en función del día
+
+  // Obtener el selector de horas disponibles
   let selectorHorasDisponibles = document.getElementById('selector-horas-disponibles');
 
-  // Obtener el elemento del input de fecha
+  // Obtener el input de fecha
   let inputFecha = document.getElementById('input-calendario');
 
-  // Añadir un evento 'change' al input de fecha
+  // Añadir un evento 'change' al input de fecha. Se detecta cuando cambia su valor
   inputFecha.addEventListener('change', function() {
     // Obtener la fecha seleccionada
     let fechaSeleccionada = this.value;
@@ -85,12 +90,13 @@ function cambiarHorasDisponibles(){
     // Obtener el día de la semana (0 es domingo, 1 es lunes, etc.)
     let diaDeLaSemana = fecha.getDay();
 
-    // Obtener la agenda del almacenamiento local
+    // Obtener la agenda del almacenamiento local. Si no existe se crea vacía
     let agenda = JSON.parse(localStorage.getItem('agenda')) || {};
 
     // Si la fecha seleccionada no está en la agenda, crearla
     if (!agenda[fechaSeleccionada]) {
       agenda[fechaSeleccionada] = {
+        // contiene las horas disponibles y las reservas hechas para esa fecha
         horasDisponibles: [],
         reservas: []
       };
@@ -141,6 +147,7 @@ function cambiarHorasDisponibles(){
   });
 }
 
+//Acciones cuando se pulse el boton para hacer la reserva
 $("#boton-reserva").click(function() {
   // Obtener la fecha seleccionada
   let fechaSeleccionada = $("#input-calendario").val();
@@ -187,6 +194,7 @@ function cambiarFondo(){
     // cambio el fondo del body
     document.body.style.background = "repeating-linear-gradient(-45deg, #F9D7A0, #F9D7A0 80px, #C0732BE5 80px, #C0732BE5 160px)";
   } else {
+    // vuelve al fondo normal
     document.body.style.background = "#F9D7A0";
   }
 }
