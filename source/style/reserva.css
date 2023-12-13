@@ -1,5 +1,5 @@
 body {
-    display: flex;
+    display: flex; /*Se hace de tipo flex el body para centrar en la página los contenedores*/
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -17,7 +17,7 @@ body {
 }
 
 #boton-reserva {
-    position: absolute; /*posicionado abajo en la derecha del contenedor*/
+    position: absolute; /*posicionado en la esquina inferior derecha del contenedor*/
     bottom: -20px;
     right: -30px;
     background-color: #333333;
@@ -28,14 +28,15 @@ body {
     font-size: 16px;
     margin: 4px 2px;
     border-radius: 30px;
-    cursor: pointer;
+    cursor: pointer; /*En caso de estar habilitado se muestra que se puede pulsar*/
 }
 
 #boton-reserva:disabled {
 background-color: #7a7474;
-cursor: not-allowed;
+cursor: not-allowed; /*En caso de estar deshabilitado se muestra que no se puede pulsar*/
 }
 
+/*características de los elementos del contenedor*/
 .elemento-contenedor{
     background-color: #333333;
     color: black;
@@ -43,14 +44,16 @@ cursor: not-allowed;
     border-radius: 30px;
 }
 
+/*elementos que ocupan dos columnas*/
 .dos-columnas {
-    grid-column: span 2; /* Ocupa las dos columnas disponibles */
+    grid-column: span 2; /*Ocupa las dos columnas disponibles*/
 }
 
 #selector-horas-disponibles:disabled {
-    cursor: not-allowed;
+    cursor: not-allowed; /*En caso de estar deshabilitado se muestra que no se puede pulsar*/
 }
 
+/*estilo distinto para el elemento "horarios"*/
 #horarios{
     background-color: none;
     padding: 15px 32px;
@@ -60,6 +63,7 @@ cursor: not-allowed;
     display: block;
 }
 
+/*estilo de la flecha que se usa en horarios*/
 #horarios img{
     width: 20px;
     height: 100%;
@@ -67,14 +71,15 @@ cursor: not-allowed;
     margin-left: 5px;
 }
 
+/*línea horizontal*/
 hr {
     border: none;
     height: 2px;
-    background-color: #333333; /* color de la linea */
+    background-color: #333333;
 }
 
 #flip{
-    cursor: pointer;
+    cursor: pointer; /*En caso de estar habilitado se muestra que se puede pulsar*/
 }
 
 .panel{
@@ -85,7 +90,7 @@ hr {
 
 .panel div{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /*se muestran los días en la izquierda y las horas en la derecha*/
     font-size: 20px;
     color: #333333;
     margin-top: 2px;
@@ -100,12 +105,7 @@ h5{
     color: #333333;
 }
 
-.contenedor-calendario{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+/*callendario*/
 input[type=date] {
     height: 50px;
     margin: 0 auto;
@@ -130,6 +130,7 @@ input[type=date]::-webkit-calendar-picker-indicator:hover {
     cursor: pointer;
 }
 
+/*selectores*/
 select {
     padding: 20px;
     width: 100%;
@@ -145,10 +146,12 @@ select {
     background-position: calc(100% - 20px) center;
 }
 
+/*opciones de los selectores*/
 option{
     background-color: #fff;
 }
 
+/*contenedor que apaerece cuando se ha realizado la reserva*/
 #contenedor-reserva-realizada {
     display: flex;
     flex-direction: row;
@@ -162,12 +165,12 @@ option{
     border: 2px solid black;
 }
 
-.icon {
+.icono {
     width: 200px;
     height: 200px;
     margin-bottom: 20px;
 }
-.message {
+.mensaje {
     font-size: 50px;
     color: #333;
 }
