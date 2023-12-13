@@ -55,7 +55,6 @@ cursor: not-allowed; /*En caso de estar deshabilitado se muestra que no se puede
 
 /*estilo distinto para el elemento "horarios"*/
 #horarios{
-    background-color: none;
     padding: 15px 32px;
 }
 
@@ -103,6 +102,10 @@ h6{
 h5{
     font-size: 1.5rem;
     color: #333333;
+}
+
+h4{
+    display: none;
 }
 
 /*callendario*/
