@@ -3,7 +3,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
 }
 .contenedor {
     display: grid;
@@ -163,6 +163,38 @@ option{
     background-color: #fff;
 }
 
-.ocultar{
-    display: none;
+
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: #FBE0B5;
+}
+
+.icon {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    /* Aquí puedes añadir el código para mostrar los iconos de calendario y cubiertos */
+}
+.message {
+    font-size: 50px;
+    color: #333;
+}
+
+body {
+    background: repeating-linear-gradient(
+        -45deg,
+        #F9D7A0,
+        #F9D7A0 80px,
+        #C0732BE5 80px,
+        #C0732BE5 160px
+    );
 }
