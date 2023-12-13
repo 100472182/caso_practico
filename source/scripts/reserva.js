@@ -4,8 +4,9 @@ $(".readonly").keydown(function(e) {
 });
 
 $(document).ready(function(){
+  cambiarClases();
   // Actualizar el idioma 
-  cambiarIdioma_reserva(localStorage.getItem("idioma"))
+  cambiarIdioma_reserva(localStorage.getItem("idioma"));
   // Se cambia también en caso de que decidan cambiar de idioma
   $("#idiomas-menu p").click(function (event) {
     // Obtener el texto del enlace seleccionado
@@ -242,10 +243,14 @@ function cambiarIdioma_reserva(selectedLanguage){
     var spanHTML = h5.querySelector('span').outerHTML;
     // Cambia h5, manteniendo el span
     h5.innerHTML = 'Horarios' + spanHTML;
+    // Para cada div de panel
     // Accede al primer span dentro de .panel y cambia su texto
-    document.querySelector('.panel div:first-child span:first-child').textContent = 'Martes a Sábado';
     // Accede al segundo span dentro de .panel y cambia su texto
+    document.querySelector('.panel div:first-child span:first-child').textContent = 'Martes a Sábado';
     document.querySelector('.panel div:first-child span:last-child').textContent = 'De 12:00 a 16:00 y 20:00 a 23:00';
+    document.querySelector('.panel div:last-child span:first-child').textContent = 'Domingo';
+    document.querySelector('.panel div:last-child span:last-child').textContent = 'De 12:00 a 16:00';
+
 
     // Botón reserva
     $("#boton-reserva").text("Hacer reserva");
@@ -275,6 +280,8 @@ function cambiarIdioma_reserva(selectedLanguage){
     h5.innerHTML = 'Schedules' + spanHTML;
     document.querySelector('.panel div:first-child span:first-child').textContent = 'Tuesday to Saturday';
     document.querySelector('.panel div:first-child span:last-child').textContent = 'From 12:00 to 16:00 and 20:00 to 23:00';
+    document.querySelector('.panel div:last-child span:first-child').textContent = 'Sunday';
+    document.querySelector('.panel div:last-child span:last-child').textContent = 'From 12:00 to 16:00';
 
     // Botón reserva
     $("#boton-reserva").text("Make reservation");
@@ -283,3 +290,31 @@ function cambiarIdioma_reserva(selectedLanguage){
     document.querySelector('#contenedor-reserva-realizada div').textContent = 'Reservation made!';
   }
 }
+
+
+function cambiarClases(){
+  /* Esta función cambia de clase a los elementos del contenedor en función de lo que les corresponda
+  debido a la version móvil, tablet o desktop que haya */
+  /*En caso de que se inicie la pagina en tamaño de movil*/
+  if ($(window).width() <= 768){
+    // Los elementos del contenedor deben ocupar dos columnas
+    $(".elemento-contenedor").addClass("dos-columnas");
+  }
+  else{
+    // vuelta a como eran inicialmente
+    $("#elemento-personas").removeClass("dos-columnas")
+    $("#elemento-horas").removeClass("dos-columnas")
+  }
+
+  /*Cuando se detecte cambio de tamaño*/
+  $(window).resize(function() {
+    if ($(window).width() <= 768){
+      $(".elemento-contenedor").addClass("dos-columnas");
+    }
+    else{
+      $("#elemento-personas").removeClass("dos-columnas")
+      $("#elemento-horas").removeClass("dos-columnas")
+    }
+  });
+}
+

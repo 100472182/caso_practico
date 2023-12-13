@@ -95,10 +95,6 @@ hr {
     margin-top: 2px;
 }
 
-h6{
-    font-size: 1.5rem;
-}
-
 h5{
     font-size: 1.5rem;
     color: #333333;
@@ -178,4 +174,67 @@ option{
     color: #333;
 }
 
+/*Versión tablet*/
+@media only screen and (max-width:768px){
+    .elemento-contenedor{
+        padding: 15px 15px;;
+        border-radius: 50px;
+    }
 
+    #boton-reserva {
+        font-size: 18px; /*un poco más grande*/
+    }
+
+    .panel div{
+        font-size: 18px; /*un poco más pequeño y más espacio entre ellos*/
+        margin-top: 4px;
+    }
+    
+    h5{
+        font-size: 2rem; /*un poco más grande*/
+    }
+    
+    /*callendario, un poco más grande*/
+    input[type=date] {
+        font-size: 25px;
+    }
+    
+    input[type=date]::-webkit-calendar-picker-indicator {
+        font-size: 35px;
+    }
+    
+    /*selectores*/
+    select {
+        font-size: 25px;
+    }
+    
+    /*contenedor que apaerece cuando se ha realizado la reserva*/
+    #contenedor-reserva-realizada {
+       width: 80%;
+    }
+}
+
+/*Versión tablet*/
+@media only screen and (max-width:600px){
+    .elemento-contenedor{
+        padding: 10px 10px;;
+    }
+
+    #contenedor {
+        padding: 20px;
+    }
+
+    #boton-reserva {
+        font-size: 14px; /*más pequeño*/
+        bottom: -25px; /*un poco más abajo*/
+    }
+    
+    h5{
+        font-size: 2.2rem; /*un poco más grande*/
+    }
+    
+    /*contenedor que apaerece cuando se ha realizado la reserva*/
+    #contenedor-reserva-realizada {
+       flex-direction: column;
+    }
+}
