@@ -163,4 +163,6 @@ option{
     background-color: #fff;
 }
 
-
+.ocultar{
+    display: none;
+}
