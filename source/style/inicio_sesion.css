@@ -1,4 +1,3 @@
-
 /*Inicio de sesion*/
 
 #primer_section_inicio{
@@ -34,16 +33,15 @@
     width: 40vw;
 }
 
-#box_inicio_sesion_2 input{
-    padding-left: 20px;
-}
-
 #campos_inicio_sesion{
     display: flex;
     flex-direction: column;
     width: 90%;
 }
+
 #campos_inicio_sesion input{
+    padding-left: 20px;
+    padding-bottom: 5px;
     margin: 2%;
     margin-bottom: 10px;
     font-size: 2rem;
@@ -70,7 +68,6 @@
     margin-right: 0px;
 }
 
-
 #botones-inicio button{
     font-size: 1.5rem;
     border-radius: 30px;
@@ -80,8 +77,6 @@
     color: white;
     font-family: "Times New Roman", Times, serif;
 }
-
-
 
 /*Las figuras de fondo*/
 #rectangulo-fondo {
@@ -160,6 +155,7 @@ h6{
 
     #campos_inicio_sesion input{
         font-size: 1.5rem;
+        padding-bottom: 3px;
     }
 
     /*Los botontes iniciar o cancelar*/

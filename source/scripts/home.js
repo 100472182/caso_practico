@@ -6,6 +6,12 @@ let indiceActual = 0;
 let indiceActualPlatos = 0;
 
 $(document).ready(function () {
+//Cambiar el fondo del enlace a a hacer pedidos y reserva
+$("#hacer_pedido").css("background-color", "");
+$("#hacer_reserva").css("background-color", "");
+
+
+
   /*Actualizar el idioma*/ 
   cambiarIdioma_home(localStorage.getItem("idioma"));
   $("#idiomas-menu p").click(function (event) {

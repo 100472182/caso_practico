@@ -1,3 +1,7 @@
+//Cambiar el fondo del enlace a a hacer pedidos y reserva
+$("#hacer_pedido").css("background-color", "#c5681c");
+$("#hacer_reserva").css("background-color", "");
+
 function formatoDosCifras(numero) {
     // Función que dado un número devuelve que numero con dos cifras
     if (numero < 10) {

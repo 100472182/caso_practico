@@ -5,6 +5,10 @@ $(".readonly").keydown(function(e) {
 
 
 $(document).ready(function(){
+  //Cambiar el fondo del enlace a a hacer pedidos y reserva
+  $("#hacer_pedido").css("background-color", "");
+  $("#hacer_reserva").css("background-color", "#c5681c");
+
   // Crear un objeto para almacenar las fechas
   let agenda = JSON.parse(localStorage.getItem('agenda')) || {};
   localStorage.setItem('agenda', JSON.stringify(agenda));

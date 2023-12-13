@@ -89,6 +89,10 @@ function validar_campos_i() {
 
 //Esta funcion comprueba si el usuario y la password insertada son correctas
 function validar_inicio_sesion(){
+    //Cambiar el fondo del enlace a a hacer pedidos y reserva
+    $("#hacer_pedido").css("background-color", "");
+    $("#hacer_reserva").css("background-color", "");
+
     //Valores insertados en los campos
     let correo= $("#correo").val();
     let password= $("#password").val();

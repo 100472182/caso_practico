@@ -1,5 +1,10 @@
 /*Formulario para el registro de los usuarios*/
 $(document).ready(function() {
+    //Cambiar el fondo del enlace a a hacer pedidos y reserva
+    $("#hacer_pedido").css("background-color", "");
+    $("#hacer_reserva").css("background-color", "");
+
+
     //Actualizar el idioma
     cambiarIdioma_reg(localStorage.getItem("idioma"))
 
