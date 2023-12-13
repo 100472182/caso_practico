@@ -4,7 +4,7 @@ body {
     align-items: center;
     height: 100vh;
 }
-.contenedor {
+#contenedor {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
     grid-template-rows: auto auto auto;
@@ -149,7 +149,7 @@ option{
     background-color: #fff;
 }
 
-.container {
+#contenedor-reserva-realizada {
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -166,7 +166,6 @@ option{
     width: 200px;
     height: 200px;
     margin-bottom: 20px;
-    /* Aquí puedes añadir el código para mostrar los iconos de calendario y cubiertos */
 }
 .message {
     font-size: 50px;

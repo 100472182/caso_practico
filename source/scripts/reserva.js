@@ -4,8 +4,8 @@ $(".readonly").keydown(function(e) {
 });
 
 $(document).ready(function(){
-
-  $(".container").hide();
+  // Al cargar la página se oculta el contenedor de reserva realizada
+  $("#contenedor-reserva-realizada").hide();
   //Cambiar el fondo del enlace a a hacer pedidos y reserva
   $("#hacer_pedido").css("background-color", "");
   $("#hacer_reserva").css("background-color", "#c5681c");
@@ -174,14 +174,16 @@ $("#boton-reserva").click(function() {
   }
   
   // Oculto el contenedor en el que se ha hecho la reserva
-  $(".contenedor").hide();
+  $("#contenedor").hide();
   // Muestro el contenedor de reserva hecha
-  $(".container").show();
+  $("#contenedor-reserva-realizada").show();
+  //cambio el fondo a rayas
   cambiarFondo();
 });
 
 function cambiarFondo(){
-  if ($(".container").is(":visible")){
+  // Esta función cambia el fondo en función de si la reserva ha sido completada
+  if ($("#contenedor-reserva-realizada").is(":visible")){
     // cambio el fondo del body
     document.body.style.background = "repeating-linear-gradient(-45deg, #F9D7A0, #F9D7A0 80px, #C0732BE5 80px, #C0732BE5 160px)";
   } else {

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style/shared.css">
     <meta charset="UTF-8">
 </head>
-<body>
+<body> <!--Encabezado común con el resto de páginas-->
     <header id="barra_de_navegacion">
         <div id= "reducido" >
             <a href="./home.html">
@@ -28,12 +28,18 @@
             </div>
         </div>
     </header>
-    <section class="contenedor"> 
+
+    <!--Primer contenedor, incluye las opciones de reserva-->
+    <section id="contenedor"> 
+        <!--Dos columnas para selección de la fecha-->
         <div class="elemento-contenedor dos-columnas">
+            <!--Tiene un objeto de tipo date, es decir, el calendario predeterminado-->
             <input type="date" name="fechaInicio" id="input-calendario" min="2023-12-05" max="2024-02-05" class="readonly">
         </div>
         
+        <!--Objeto que contiene el selector, así se le aplica dos fondos-->
         <div class="elemento-contenedor">
+            <!--Selector de personas para la reserva-->
             <select id="selector-personas">
                 <option value="" selected>Personas</option>
                 <option value="persona1">1</option>
@@ -46,23 +52,24 @@
                 <option value="persona8">8</option>
             </select>
         </div>
+
+        <!--Objeto que contiene el selector, así se le aplica dos fondos-->
         <div class="elemento-contenedor">
+            <!--Selector de horas disponibles-->
             <select id="selector-horas-disponibles">
                 <option value="" selected>Horas Disponibles</option>
-                <option value="hora1">1</option>
-                <option value="hora2">2</option>
-                <option value="hora3">3</option>
-                <option value="hora4">4</option>
-                <option value="hora5">5</option>
-                <option value="hora6">6</option>
-                <option value="hora7">7</option>
-                <option value="hora8">8</option>
+                <!--El resto de opciones se asignan desde reserva.js-->
             </select>
         </div>
+
+        <!--Horarios, ocupan dos columnas-->
         <div class="dos-columnas">
             <ul id="horarios">
+                <!--Objeto que se puede pulsar para mostrar las fechas-->
                 <li id="flip"><h5>Horarios<span><img id="flecha-horarios" src="/images/chevron-down-solid.svg" alt="Flecha desplegable"></span></h5></li>
+                <!--Linea que ocupa el ancho-->
                 <hr>
+                <!--Objeto que se muestra al pulsar en flip-->
                 <li class="panel">
                     <div><span>Martes a Sábado</span><span>De 12:00 a 16:00 y 20:00 a 23:00</span></div>
                     <div><span>Domingo</span><span>De 12:00 a 16:00</span></div>
@@ -70,15 +77,16 @@
             </ul>
         </div>
 
+        <!--Botón para hacer la reserva-->
         <button type="submit" id="boton-reserva">Hacer reserva</button>
     </section>
 
-    <div class="container">
+    <!--Contenedor que aparece cuando la reserva se ha realizado-->
+    <section id="contenedor-reserva-realizada">
         <img class="icon" src="/images/logo-reserva-realizada-removebg-preview.png"> 
         <div class="message">¡Reserva realizada!</div>
-    </div>
+    </section>
 
-    
     <script src="./scripts/shared.js"></script>
     <script src="./scripts/reserva.js"></script>
 </body>
