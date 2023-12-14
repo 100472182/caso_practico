@@ -62,12 +62,19 @@
     transform: scale(1.1); /*aumentamos su tamaño*/
 }
 
+/*Boton para cerrrar sesion*/
+#cerrar_sesion{
+    display: none;
+    margin-left: auto;
+}
+
+
 /*Desplegable y boton de idiomas*/
 #idiomas {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content:center;
-    align-items:end;
+    align-items:center;
     padding-right: 10%;
 }
 /*Los idiomas del navegador*/
@@ -98,13 +105,14 @@
 }
 
 /*El idioma elegido*/
-#idiomas-btn{
+#idiomas-btn, #cerrar_sesion button{
     font-size: 1.5em;
     color: #F2A121;
     background-color: #333333;
     text-decoration: none;
     border: none;
     font-family: "Times New Roman", Times, serif;
+    margin-left: auto;
 }
 
 button:hover{
@@ -133,6 +141,11 @@ body{
     #barra_de_navegacion li a{
         font-size: 1rem;
         padding: 5px;
+    }
+
+    #cerrar_sesion{
+        font-size: 0.6rem;
+        padding: 2px;
     }
 }
 

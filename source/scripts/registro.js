@@ -25,15 +25,14 @@ $(document).ready(function() {
         
         //Cambiar de idioma
         cambiarIdioma_reg(selectedLanguage);
-    
     });
 });
 
 //Funcion que cambia de idioma la pestaña registro
 function cambiarIdioma_reg(selectedLanguage){
     
-    if(selectedLanguage==="ES") {/*Navegacion*/
-        /*El registro de sesion*/
+    if(selectedLanguage==="ES") {
+        //El registro de sesion
         $("#title_registro").text("Registro");
         $("#correo").attr("placeholder", "Correo electrónico");
         $("#password").attr("placeholder", "Contraseña");
@@ -41,7 +40,7 @@ function cambiarIdioma_reg(selectedLanguage){
         $("#telefono").attr("placeholder", "Teléfono");
         $("#direccion").attr("placeholder", "Dirección");
 
-        /*Botones*/
+        //Botones
         $("#registrar").text("Iniciar");
         $("#cancelar").text("Cancelar");
     }
@@ -199,7 +198,9 @@ function validar_campos_r(){
     
     //Guardamos los datos en cookies
     saveFormData();
+
     //Cambiamos de pestaña
+    localStorage.setItem('inicio_sesion', true);
     var variableCompartida = localStorage.getItem('enlace_siguiente')
     window.location.href= variableCompartida;
     checkCookie($("#nombre_apellidos").val());

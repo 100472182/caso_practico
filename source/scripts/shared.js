@@ -1,20 +1,58 @@
 
 $(document).ready(function() {
+    // El idioma actual
     if (localStorage.getItem('idioma') === null){
         localStorage.setItem('idioma', $("#idiomas-btn").text())
     }
+
+    // Comprobar si ha iniciado sesión o se ha registrado el usuario
+    if (localStorage.getItem('inicio_sesion') === null) {
+        // Si no hay una entrada en el almacenamiento local, establece el valor predeterminado como true
+        localStorage.setItem('inicio_sesion', false);
+    }
+    // Mostrar u ocultar el botón dependiendo del estado de inicio de sesión
+    if (localStorage.getItem('inicio_sesion') === 'true') {
+        $('#cerrar_sesion').show();
+    } else {
+        $('#cerrar_sesion').hide();
+    }
+
+    // Agregar un controlador de eventos para el clic en el botón dentro de #cerrar_sesion
+    $('#cerrar_sesion button').on('click', function() {
+        // Realizar la redirección al URL deseado
+        window.location.href = './home.html';
+
+        // Actualizar el estado de inicio de sesión a false
+        localStorage.setItem('inicio_sesion', 'false');
+
+        // Ocultar el contenedor #cerrar_sesion después de la redirección
+        $('#cerrar_sesion').hide();
+        });
+
    
     cambiarIdioma_nav(localStorage.getItem('idioma'));
-    /*Asigna direccion de la siguiente pestaña para el inicio o registro de sesion*/
+    //Asigna direccion de la siguiente pestaña para el inicio o registro de sesion
     $("#hacer_pedido").click(function(){
+        if (localStorage.getItem('inicio_sesion') === 'true') {
+            event.preventDefault();
+            window.location.href = './pedidos.html';
+        }
+        else{
             localStorage.setItem('enlace_siguiente', "./pedidos.html");
-    })
+        }
+    });
 
     $("#hacer_reserva").click(function(){
+        if (localStorage.getItem('inicio_sesion') === 'true') {
+            event.preventDefault();
+            window.location.href = './reserva.html';
+        }
+        else{
             localStorage.setItem('enlace_siguiente', "./reserva.html");
-    })
+        }
+    });
 
-    /*Menu de hamburguesa para seleccionar el idioma*/
+    //Menu de hamburguesa para seleccionar el idioma
     $("#idiomas-btn").click(function () {
         $("#idiomas-menu").slideToggle();
     });
@@ -40,17 +78,19 @@ $(document).ready(function() {
 
 function cambiarIdioma_nav(selectedLanguage){
     $("#idiomas-btn").text(localStorage.getItem('idioma'));
-    if(selectedLanguage==="ES") {/*Navegacion*/
-    /*Navegacion*/
+    if(selectedLanguage==="ES") {
+    //Navegacion
     $("#hacer_pedido").text("Haz tu pedido");
     $("#hacer_reserva").text("Reserva tu mesa");
     $("#nuestra_carta").text("Nuestra carta");
+    $('#cerrar_sesion button').text('Cerrar sesión');
 }
 else if (selectedLanguage ==="EN"){
     /*Navegacion*/
     $("#hacer_pedido").text("Make your order");
     $("#hacer_reserva").text("Reserve your table");
     $("#nuestra_carta").text("Our menu");
+    $('#cerrar_sesion button').text('Close session');
 }
 };
 

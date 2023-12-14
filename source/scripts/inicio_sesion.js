@@ -4,7 +4,7 @@ $(document).ready(function () {
     //Actualizar el idioma 
     cambiarIdioma_ini(localStorage.getItem("idioma"))
 
-    /*Los botones para iniciar o registrar la sesion*/
+    //Los botones para iniciar o registrar la sesion
     $("#iniciar").click(function () {
         event.preventDefault();
         validar_campos_i();
@@ -28,13 +28,13 @@ $(document).ready(function () {
 
 //Funcion que cambia de idioma la pestaña inicio_sesion
 function cambiarIdioma_ini(selectedLanguage){
-    if(selectedLanguage==="ES") {/*Navegacion*/
-        /*El inicio de sesion*/
+    if(selectedLanguage==="ES") {
+        //El inicio de sesion
         $("#title_iniciar").text("Iniciar sesión");
         $("#correo").attr("placeholder", "Correo electrónico");
         $("#password").attr("placeholder", "Contraseña");
 
-        /*Botones*/
+        //Botones
         $("#iniciar").text("Iniciar");
         $("#registrar").text("Registrar");
     }
@@ -107,9 +107,9 @@ function validar_inicio_sesion(){
             let user= getCookie(correo + "_name_surname");
             
             //Cambiamos a la pestaña
-
-            var variableCompartida = localStorage.getItem('enlace_siguiente')
+            var variableCompartida = localStorage.getItem('enlace_siguiente');
             window.location.href= variableCompartida;
+            localStorage.setItem('inicio_sesion', true);
             checkCookie(user);
             return true;
         }
