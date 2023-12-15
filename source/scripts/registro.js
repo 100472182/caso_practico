@@ -41,7 +41,7 @@ function cambiarIdioma_reg(selectedLanguage){
         $("#direccion").attr("placeholder", "Dirección");
 
         //Botones
-        $("#registrar").text("Iniciar");
+        $("#registrar").text("Registrar");
         $("#cancelar").text("Cancelar");
     }
     else if (selectedLanguage ==="EN"){
