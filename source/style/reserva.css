@@ -105,7 +105,8 @@ h4{
 }
 
 /*callendario*/
-input[type=date] {
+
+input[type=text] {
     height: 50px;
     margin: 0 auto;
     width: 100%;
@@ -118,8 +119,12 @@ input[type=date] {
     padding: 15px 32px;
     background-color: #F2A121;
     border-radius: 50px;
+    background-image: url(/images/callendario.svg);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 20px) center;
 }
 
+/*
 input[type=date]::-webkit-calendar-picker-indicator {
     font-size: 30px;
 }
@@ -128,6 +133,7 @@ input[type=date]::-webkit-calendar-picker-indicator:hover {
     background-color: #959595;
     cursor: pointer;
 }
+*/
 
 /*selectores*/
 select {
@@ -195,6 +201,7 @@ option{
     }
     
     /*callendario, un poco más grande*/
+    /*
     input[type=date] {
         font-size: 25px;
     }
@@ -202,6 +209,7 @@ option{
     input[type=date]::-webkit-calendar-picker-indicator {
         font-size: 35px;
     }
+    */
     
     /*selectores*/
     select {

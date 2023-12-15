@@ -1,7 +1,37 @@
+/*
 // No deja que se escriba con el teclado la fecha
 $(".readonly").keydown(function(e) {
   e.preventDefault();
 });
+*/
+
+// Actualizacion de la fecha minima y maxima en el calendario
+var fechaHoy = new Date();
+var fechaMax = new Date();
+var dia = ("0" + fechaHoy.getDate()).slice(-2);
+var mes = ("0" + (fechaHoy.getMonth() + 1)).slice(-2);
+var fechaHoyFormato = fechaHoy.getFullYear()+"-"+(mes)+"-"+(dia);
+$("#input-calendario").attr("minDate", fechaHoyFormato);
+fechaMax.setFullYear(fechaHoy.getFullYear() + 1);
+var fechaMaxFormato = fechaMax.getFullYear()+"-"+(mes)+"-"+(dia) ;
+$("#input-calendario").attr("maxDate", fechaMaxFormato);
+
+// Inicializa flatpickr en el input deseado
+flatpickr("#input-calendario", {
+  minDate: fechaHoyFormato,
+  maxDate: fechaMaxFormato,
+
+"disable": [
+  function(date) {
+    // deshabilita los lunes
+    return (date.getDay() === 1);
+  }
+  ],
+  // empieza en los lunes
+  "locale": {
+      "firstDayOfWeek": 2
+  }
+});    
 
 $(document).ready(function(){
   cambiarClases();
@@ -35,16 +65,18 @@ $(document).ready(function(){
     }
   });
 
+  /*
   // Actualizacion de la fecha minima y maxima en el calendario
   var fechaHoy = new Date();
   var fechaMax = new Date();
   var dia = ("0" + fechaHoy.getDate()).slice(-2);
   var mes = ("0" + (fechaHoy.getMonth() + 1)).slice(-2);
   var fechaHoyFormato = fechaHoy.getFullYear()+"-"+(mes)+"-"+(dia);
-  $("#input-calendario").attr("min", fechaHoyFormato);
+  $("#input-calendario").attr("minDate", fechaHoyFormato);
   fechaMax.setFullYear(fechaHoy.getFullYear() + 1);
   var fechaMaxFormato = fechaMax.getFullYear()+"-"+(mes)+"-"+(dia) ;
-  $("#input-calendario").attr("max", fechaMaxFormato);
+  $("#input-calendario").attr("maxDate", fechaMaxFormato);
+*/
 
   // Actualización de la horas disponibles a seleccionar
   cambiarHorasDisponibles();
@@ -221,7 +253,10 @@ function cambiarFondo(){
 // Funcion que cambia de idioma en la pagina
 function cambiarIdioma_reserva(selectedLanguage){
   if(selectedLanguage==="ES") {
-      
+    // Calendario
+    var calendario = document.getElementById('input-calendario');
+    calendario.placeholder = 'Seleccione una fecha';
+    
     // Selector de personas, se accede a su primera opción y se cambia su texto
     var select = document.getElementById('selector-personas');
     var option = select.options[0];
@@ -260,6 +295,10 @@ function cambiarIdioma_reserva(selectedLanguage){
   }
   // En inglés
   else if (selectedLanguage ==="EN"){
+    // Calendario
+    var calendario = document.getElementById('input-calendario');
+    calendario.placeholder = 'Select a Date';
+
     // Selector de personas
     var select = document.getElementById('selector-personas');
     var option = select.options[0];
@@ -290,7 +329,6 @@ function cambiarIdioma_reserva(selectedLanguage){
     document.querySelector('#contenedor-reserva-realizada div').textContent = 'Reservation made!';
   }
 }
-
 
 function cambiarClases(){
   /* Esta función cambia de clase a los elementos del contenedor en función de lo que les corresponda
