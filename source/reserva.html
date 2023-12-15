@@ -2,10 +2,14 @@
 <html lang="es">
 <head>
     <title>Bartolomeo</title>
+    <!--Librería de jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!--Para usar los svg-->
     <script src="https://kit.fontawesome.com/82e1991057.js" crossorigin="anonymous"></script>
+    <!--librería flatpickr-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!--CSS usados-->
     <link rel="stylesheet" href="style/reserva.css">
     <link rel="stylesheet" href="style/shared.css">
     <meta charset="UTF-8">
@@ -36,8 +40,8 @@
     <section id="contenedor"> 
         <!--Dos columnas para selección de la fecha-->
         <div class="elemento-contenedor dos-columnas">
-            <!--Tiene un objeto de tipo date, es decir, el calendario predeterminado-->
-            <input type="text" name="fechaInicio" id="input-calendario" class="flatpickr-input" placeholder="Seleccione una fecha">
+            <!--clendario, perteneciente a la librería flatpickr -->
+            <input type="text" id="input-calendario" class="flatpickr-input" placeholder="Seleccione una fecha">
         </div>
      
         <!--Objeto que contiene el selector, así se le aplica dos fondos-->

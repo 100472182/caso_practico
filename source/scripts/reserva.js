@@ -1,10 +1,3 @@
-/*
-// No deja que se escriba con el teclado la fecha
-$(".readonly").keydown(function(e) {
-  e.preventDefault();
-});
-*/
-
 // Actualizacion de la fecha minima y maxima en el calendario
 var fechaHoy = new Date();
 var fechaMax = new Date();
@@ -27,13 +20,14 @@ flatpickr("#input-calendario", {
     return (date.getDay() === 1);
   }
   ],
-  // empieza en los lunes
+  // empieza en los martes
   "locale": {
       "firstDayOfWeek": 2
   }
 });    
 
 $(document).ready(function(){
+  // Reajuste de clases de los elementos en función del ancho de pantalla
   cambiarClases();
   // Actualizar el idioma 
   cambiarIdioma_reserva(localStorage.getItem("idioma"));
@@ -65,19 +59,6 @@ $(document).ready(function(){
     }
   });
 
-  /*
-  // Actualizacion de la fecha minima y maxima en el calendario
-  var fechaHoy = new Date();
-  var fechaMax = new Date();
-  var dia = ("0" + fechaHoy.getDate()).slice(-2);
-  var mes = ("0" + (fechaHoy.getMonth() + 1)).slice(-2);
-  var fechaHoyFormato = fechaHoy.getFullYear()+"-"+(mes)+"-"+(dia);
-  $("#input-calendario").attr("minDate", fechaHoyFormato);
-  fechaMax.setFullYear(fechaHoy.getFullYear() + 1);
-  var fechaMaxFormato = fechaMax.getFullYear()+"-"+(mes)+"-"+(dia) ;
-  $("#input-calendario").attr("maxDate", fechaMaxFormato);
-*/
-
   // Actualización de la horas disponibles a seleccionar
   cambiarHorasDisponibles();
 
@@ -85,6 +66,8 @@ $(document).ready(function(){
   $("#selector-horas-disponibles").prop("disabled", true);
   $("#boton-reserva").prop("disabled", true);
 
+  // Maneja el cambio de valores en los selectores y calendario
+  // Se habilitan y deshabilitan los elementos según corresponda
   $("#selector-personas").change(manejarCambio);
   $("#input-calendario").change(manejarCambio);
   $("#selector-horas-disponibles").change(comprobar_boton_reserva);
@@ -333,7 +316,7 @@ function cambiarIdioma_reserva(selectedLanguage){
 function cambiarClases(){
   /* Esta función cambia de clase a los elementos del contenedor en función de lo que les corresponda
   debido a la version móvil, tablet o desktop que haya */
-  /*En caso de que se inicie la pagina en tamaño de movil*/
+  // En caso de que se inicie la pagina en tamaño de movil
   if ($(window).width() <= 768){
     // Los elementos del contenedor deben ocupar dos columnas
     $(".elemento-contenedor").addClass("dos-columnas");
@@ -344,7 +327,7 @@ function cambiarClases(){
     $("#elemento-horas").removeClass("dos-columnas")
   }
 
-  /*Cuando se detecte cambio de tamaño*/
+  // Cuando se detecte cambio de tamaño
   $(window).resize(function() {
     if ($(window).width() <= 768){
       $(".elemento-contenedor").addClass("dos-columnas");
