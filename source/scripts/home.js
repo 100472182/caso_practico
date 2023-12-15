@@ -98,11 +98,23 @@ function cerrarGaleriaPlatos(){
 }
 
 function abrirReserva(){
-  localStorage.setItem('enlace_siguiente', "./reserva.html");
+  if (localStorage.getItem('inicio_sesion') === 'true') {
+    event.preventDefault();
+    window.location.href = './reserva.html';
+  }
+  else{
+      localStorage.setItem('enlace_siguiente', "./reserva.html");
+  }
 }
 
 function abrirPedidos(){
-  localStorage.setItem('enlace_siguiente', "./pedidos.html");
+  if (localStorage.getItem('inicio_sesion') === 'true') {
+    event.preventDefault();
+    window.location.href = './pedidos.html';
+  }
+  else{
+      localStorage.setItem('enlace_siguiente', "./pedidos.html");
+  }
 }
 
 
