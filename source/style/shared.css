@@ -124,6 +124,11 @@ button:hover{
     margin-top: 6%;
 }
 
+
+.cabecera_none{
+    display: none;
+}
+
 body{
     background-color:#F9D7A0;
 }
