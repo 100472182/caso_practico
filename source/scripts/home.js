@@ -6,6 +6,12 @@ let indiceActual = 0;
 let indiceActualPlatos = 0;
 
 $(document).ready(function () {
+//Cambiar el fondo del enlace a a hacer pedidos y reserva
+$("#hacer_pedido").css("background-color", "");
+$("#hacer_reserva").css("background-color", "");
+
+
+
   /*Actualizar el idioma*/ 
   cambiarIdioma_home(localStorage.getItem("idioma"));
   $("#idiomas-menu p").click(function (event) {
@@ -92,11 +98,23 @@ function cerrarGaleriaPlatos(){
 }
 
 function abrirReserva(){
-  localStorage.setItem('enlace_siguiente', "./reserva.html");
+  if (localStorage.getItem('inicio_sesion') === 'true') {
+    event.preventDefault();
+    window.location.href = './reserva.html';
+  }
+  else{
+      localStorage.setItem('enlace_siguiente', "./reserva.html");
+  }
 }
 
 function abrirPedidos(){
-  localStorage.setItem('enlace_siguiente', "./pedidos.html");
+  if (localStorage.getItem('inicio_sesion') === 'true') {
+    event.preventDefault();
+    window.location.href = './pedidos.html';
+  }
+  else{
+      localStorage.setItem('enlace_siguiente', "./pedidos.html");
+  }
 }
 
 

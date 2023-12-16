@@ -31,7 +31,7 @@
     width: 25%;
 }
 
-/*Contiene */
+/*Los inputs*/
 #input-registro{
     display: flex;
     flex-wrap: wrap;
@@ -42,6 +42,12 @@
     width: 60%;
     background-color: #FBE0B5;
     border-radius: 30px;
+}
+
+/*Cada input*/
+#input-registro input{
+    padding-left: 20px;
+    padding-bottom: 3px;
 }
 
 /*Contenido en input-registro.Contiene la imagen del usuario, los inputs a rellenar y los botones*/
@@ -91,7 +97,6 @@
 /*El boton de registrar*/
 #registrar{
     width: fit-content;
-    align-items: left;
 }
 
 /*El boton de cancelar*/
@@ -99,6 +104,7 @@
     width: fit-content;
     text-align: end;
 }
+
 /*Los botones del formulario*/
 .formulario button{
     background-color: #C0732B;
@@ -135,8 +141,7 @@ h5{
     }  
 
     #input-registro{ 
-        width: 80%;
-        
+        width: 80%; 
     }
 
     /*Modifico la posicion del formulario*/
@@ -149,8 +154,7 @@ h5{
     /*Los campos a rellenar*/
     .campos{
         font-size: 1.2rem;
-        padding-left: 10px;
-        
+        padding-left: 10px; 
     }
 
     /*Los botones para registrarse*/
@@ -162,10 +166,6 @@ h5{
     #botones-registro{
         width: 94%;
     }
-
-
-
-
 }
 
 /*Responsive ajustados a la resolucion de un móvil*/
@@ -219,5 +219,4 @@ h5{
     #botones-registro{
         width: 94%;
     }
-
 }

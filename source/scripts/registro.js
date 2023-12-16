@@ -1,5 +1,10 @@
 /*Formulario para el registro de los usuarios*/
 $(document).ready(function() {
+    //Cambiar el fondo del enlace a a hacer pedidos y reserva
+    $("#hacer_pedido").css("background-color", "");
+    $("#hacer_reserva").css("background-color", "");
+
+
     //Actualizar el idioma
     cambiarIdioma_reg(localStorage.getItem("idioma"))
 
@@ -20,15 +25,14 @@ $(document).ready(function() {
         
         //Cambiar de idioma
         cambiarIdioma_reg(selectedLanguage);
-    
     });
 });
 
 //Funcion que cambia de idioma la pestaña registro
 function cambiarIdioma_reg(selectedLanguage){
     
-    if(selectedLanguage==="ES") {/*Navegacion*/
-        /*El registro de sesion*/
+    if(selectedLanguage==="ES") {
+        //El registro de sesion
         $("#title_registro").text("Registro");
         $("#correo").attr("placeholder", "Correo electrónico");
         $("#password").attr("placeholder", "Contraseña");
@@ -36,8 +40,8 @@ function cambiarIdioma_reg(selectedLanguage){
         $("#telefono").attr("placeholder", "Teléfono");
         $("#direccion").attr("placeholder", "Dirección");
 
-        /*Botones*/
-        $("#registrar").text("Iniciar");
+        //Botones
+        $("#registrar").text("Registrar");
         $("#cancelar").text("Cancelar");
     }
     else if (selectedLanguage ==="EN"){
@@ -194,7 +198,9 @@ function validar_campos_r(){
     
     //Guardamos los datos en cookies
     saveFormData();
+
     //Cambiamos de pestaña
+    localStorage.setItem('inicio_sesion', true);
     var variableCompartida = localStorage.getItem('enlace_siguiente')
     window.location.href= variableCompartida;
     checkCookie($("#nombre_apellidos").val());

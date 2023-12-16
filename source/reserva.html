@@ -2,17 +2,23 @@
 <html lang="es">
 <head>
     <title>Bartolomeo</title>
+    <!--Librería de jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!--Para usar los svg-->
     <script src="https://kit.fontawesome.com/82e1991057.js" crossorigin="anonymous"></script>
+    <!--librería flatpickr-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!--CSS usados-->
     <link rel="stylesheet" href="style/reserva.css">
     <link rel="stylesheet" href="style/shared.css">
     <meta charset="UTF-8">
 </head>
-<body>
+<body> <!--Encabezado común con el resto de páginas-->
     <header id="barra_de_navegacion">
         <div id= "reducido" >
             <a href="./home.html">
-                <img id = "logo_bartolomeo"src="../images/logo-bartolomeo.png" alt= "Logo Bartolomeo">
+                <img id = "logo_bartolomeo" src="../images/logo-bartolomeo.png" alt= "Logo Bartolomeo">
             </a>
         </div>
         <ul>
@@ -21,6 +27,7 @@
             <li><a id= "nuestra_carta" href="./CARTA-VERANO-2023.pdf" target="_blank">Nuestra carta</a></li>
         </ul>
         <div id="idiomas">
+            <div id ="cerrar_sesion"> <button>Cerrar sesión</button> </div>
             <button id="idiomas-btn">ES</button>
             <div id="idiomas-menu">
                 <p>ES</p>
@@ -28,12 +35,18 @@
             </div>
         </div>
     </header>
-    <section class="contenedor"> 
+
+    <!--Primer contenedor, incluye las opciones de reserva-->
+    <section id="contenedor"> 
+        <!--Dos columnas para selección de la fecha-->
         <div class="elemento-contenedor dos-columnas">
-            <input type="date" name="fechaInicio" id="input-calendario" min="2023-12-05" max="2024-02-05" class="readonly">
+            <!--clendario, perteneciente a la librería flatpickr -->
+            <input type="text" id="input-calendario" class="flatpickr-input" placeholder="Seleccione una fecha">
         </div>
-        
-        <div class="elemento-contenedor">
+     
+        <!--Objeto que contiene el selector, así se le aplica dos fondos-->
+        <div id="elemento-personas" class="elemento-contenedor">
+            <!--Selector de personas para la reserva-->
             <select id="selector-personas">
                 <option value="" selected>Personas</option>
                 <option value="persona1">1</option>
@@ -46,23 +59,24 @@
                 <option value="persona8">8</option>
             </select>
         </div>
-        <div class="elemento-contenedor">
+
+        <!--Objeto que contiene el selector, así se le aplica dos fondos-->
+        <div id="elemento-horas" class="elemento-contenedor">
+            <!--Selector de horas disponibles-->
             <select id="selector-horas-disponibles">
                 <option value="" selected>Horas Disponibles</option>
-                <option value="hora1">1</option>
-                <option value="hora2">2</option>
-                <option value="hora3">3</option>
-                <option value="hora4">4</option>
-                <option value="hora5">5</option>
-                <option value="hora6">6</option>
-                <option value="hora7">7</option>
-                <option value="hora8">8</option>
+                <!--El resto de opciones se asignan desde reserva.js-->
             </select>
         </div>
+
+        <!--Horarios, ocupan dos columnas-->
         <div class="dos-columnas">
             <ul id="horarios">
+                <!--Objeto que se puede pulsar para mostrar las fechas-->
                 <li id="flip"><h5>Horarios<span><img id="flecha-horarios" src="/images/chevron-down-solid.svg" alt="Flecha desplegable"></span></h5></li>
-                <hr>
+                <!--Linea que ocupa el ancho-->
+                <li><hr></li>
+                <!--Objeto que se muestra al pulsar en flip-->
                 <li class="panel">
                     <div><span>Martes a Sábado</span><span>De 12:00 a 16:00 y 20:00 a 23:00</span></div>
                     <div><span>Domingo</span><span>De 12:00 a 16:00</span></div>
@@ -70,62 +84,17 @@
             </ul>
         </div>
 
+        <!--Botón para hacer la reserva-->
         <button type="submit" id="boton-reserva">Hacer reserva</button>
-        
-        <!-- Reserva-->
-        <section>
-            <!-- Seleccionar momento de reserva-->
-            <div>
-                <!-- Fondo Fecha-->
-                <div>
-                    <!-- Fecha-->
-                    <div>
-                        <!-- Botón Calendario-->
-                    </div>
-                </div>
-            </div>
-            <div>
-                <!-- Fondo Nº de Personas-->
-                <div>
-                    <!--Nº de Personas-->
-                    <div>
-                        <!-- Botón Desplegable-->
-                    </div>
-                </div>
-            </div>
-            <div>
-                <!-- Fondo Horarios Disponibles-->
-                <div>
-                    <!-- Horarios Disponibles-->
-                    <div>
-                        <!-- Botón Desplegable-->
-                    </div>
-                </div>
-            </div>
-            <div>
-                <!-- Titulo desplegable-->
-                <div>
-                    <!-- Horarios Desplegados-->
-                    <div>
-                        <!-- Texto izquierda-->
-                    </div>
-                    <div>
-                        <!-- Texto derecha-->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div>
-            <!-- Botón hacer reserva-->
-        </div>
     </section>
-    <section>
-        <!-- Reserva realizada-->
-        <div>
-            <!-- Caja Reserva realizada-->
-        </div>
 
+    <!--Contenedor que aparece cuando la reserva se ha realizado-->
+    <section id="contenedor-reserva-realizada">
+        <h4>Contendedor reserva realizada</h4>
+        <img class="icono" src="/images/logo-reserva-realizada-removebg-preview.png" alt="imagen-reserva-realizada"> 
+        <div class="mensaje">¡Reserva realizada!</div>
     </section>
+
     <script src="./scripts/shared.js"></script>
     <script src="./scripts/reserva.js"></script>
 </body>

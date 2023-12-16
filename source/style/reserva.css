@@ -1,19 +1,15 @@
-
 body {
-    display: flex;
+    display: flex; /*Se hace de tipo flex el body para centrar en la página los contenedores*/
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
 }
-.contenedor {
+#contenedor {
     display: grid;
-    margin-top: 15%;
-    margin-bottom: auto;
     grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
     grid-template-rows: auto auto auto;
     grid-gap: 30px; /* Espacio entre las columnas y filas */
     width: 80%;
-    height: auto;
     background-color:  #D48D39;
     padding: 50px;
     border-radius: 10px;
@@ -21,7 +17,7 @@ body {
 }
 
 #boton-reserva {
-    position: absolute; /*posicionado abajo en la derecha del contenedor*/
+    position: absolute; /*posicionado en la esquina inferior derecha del contenedor*/
     bottom: -20px;
     right: -30px;
     background-color: #333333;
@@ -32,15 +28,15 @@ body {
     font-size: 16px;
     margin: 4px 2px;
     border-radius: 30px;
-    cursor: pointer;
-  }
+    cursor: pointer; /*En caso de estar habilitado se muestra que se puede pulsar*/
+}
 
 #boton-reserva:disabled {
 background-color: #7a7474;
-cursor: not-allowed;
+cursor: not-allowed; /*En caso de estar deshabilitado se muestra que no se puede pulsar*/
 }
-  
 
+/*características de los elementos del contenedor*/
 .elemento-contenedor{
     background-color: #333333;
     color: black;
@@ -48,16 +44,17 @@ cursor: not-allowed;
     border-radius: 30px;
 }
 
+/*elementos que ocupan dos columnas*/
 .dos-columnas {
-    grid-column: span 2; /* Ocupa las dos columnas disponibles */
+    grid-column: span 2; /*Ocupa las dos columnas disponibles*/
 }
 
 #selector-horas-disponibles:disabled {
-    cursor: not-allowed;
+    cursor: not-allowed; /*En caso de estar deshabilitado se muestra que no se puede pulsar*/
 }
 
+/*estilo distinto para el elemento "horarios"*/
 #horarios{
-    background-color: none;
     padding: 15px 32px;
 }
 
@@ -65,6 +62,7 @@ cursor: not-allowed;
     display: block;
 }
 
+/*estilo de la flecha que se usa en horarios*/
 #horarios img{
     width: 20px;
     height: 100%;
@@ -72,15 +70,15 @@ cursor: not-allowed;
     margin-left: 5px;
 }
 
-
+/*línea horizontal*/
 hr {
     border: none;
     height: 2px;
-    background-color: #333333; /* color de la linea */
+    background-color: #333333;
 }
 
 #flip{
-    cursor: pointer;
+    cursor: pointer; /*En caso de estar habilitado se muestra que se puede pulsar*/
 }
 
 .panel{
@@ -91,14 +89,10 @@ hr {
 
 .panel div{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /*se muestran los días en la izquierda y las horas en la derecha*/
     font-size: 20px;
     color: #333333;
     margin-top: 2px;
-}
-
-h6{
-    font-size: 1.5rem;
 }
 
 h5{
@@ -106,61 +100,127 @@ h5{
     color: #333333;
 }
 
-.contenedor-calendario{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+h4{
+    display: none;
 }
 
-
-
-
-
-input[type=date] {
+/*callendario*/
+input[type=text] {
     height: 50px;
     margin: 0 auto;
     width: 100%;
-    font-family: arial, sans-serif;
     font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
-    outline: none;
     border: 0;
     padding: 15px 32px;
     background-color: #F2A121;
     border-radius: 50px;
+    background-image: url(/images/calendar-days-solid.svg);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 25px) center;
 }
 
-
-input[type=date]::-webkit-calendar-picker-indicator {
-    font-size: 30px;
-}
-input[type=date]::-webkit-calendar-picker-indicator:hover {
-    background-color: #959595;
-    cursor: pointer;
+.flatpickr-input::placeholder {
+    color: black;
 }
 
-
-
+/*selectores*/
 select {
     padding: 20px;
     width: 100%;
     background-color: #F2A121;
     border-radius: 50px;
     font-size: 20px;
+    font-weight: bold;
     cursor: pointer;
-
-    
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     background-image: url(/images/caret-down-solid.svg);
     background-repeat: no-repeat;
     background-position: calc(100% - 20px) center;
 }
 
+/*opciones de los selectores*/
 option{
     background-color: #fff;
 }
 
+/*contenedor que apaerece cuando se ha realizado la reserva*/
+#contenedor-reserva-realizada {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: #FBE0B5;
+    border: 2px solid black;
+}
 
+.icono {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+.mensaje {
+    font-size: 50px;
+    color: #333;
+}
+
+/*Versión tablet*/
+@media only screen and (max-width:768px){
+    .elemento-contenedor{
+        padding: 15px 15px;;
+        border-radius: 50px;
+    }
+
+    #boton-reserva {
+        font-size: 18px; /*un poco más grande*/
+    }
+
+    .panel div{
+        font-size: 18px; /*un poco más pequeño y más espacio entre ellos*/
+        margin-top: 4px;
+    }
+    
+    h5{
+        font-size: 2rem; /*un poco más grande*/
+    }
+    
+    /*selectores*/
+    select {
+        font-size: 25px;
+    }
+    
+    /*contenedor que apaerece cuando se ha realizado la reserva*/
+    #contenedor-reserva-realizada {
+       width: 80%;
+    }
+}
+
+/*Versión tablet*/
+@media only screen and (max-width:600px){
+    .elemento-contenedor{
+        padding: 10px 10px;;
+    }
+
+    #contenedor {
+        padding: 20px;
+    }
+
+    #boton-reserva {
+        font-size: 14px; /*más pequeño*/
+        bottom: -25px; /*un poco más abajo*/
+    }
+    
+    h5{
+        font-size: 2.2rem; /*un poco más grande*/
+    }
+    
+    /*contenedor que apaerece cuando se ha realizado la reserva*/
+    #contenedor-reserva-realizada {
+       flex-direction: column;
+    }
+}

@@ -1,7 +1,10 @@
 $(document).ready(function() {
     /*Actualizar el idioma*/
     cambiarIdioma_plt(localStorage.getItem("idioma"));
-    
+    //Cambiar el fondo del enlace a a hacer pedidos y reserva
+    $("#hacer_pedido").css("background-color", "");
+    $("#hacer_reserva").css("background-color", "");
+
     $("#idiomas-menu p").click(function (event) {
         event.preventDefault();
         // Obtener el texto del enlace seleccionado
