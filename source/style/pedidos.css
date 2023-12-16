@@ -1,8 +1,6 @@
 
 body{
     background-color:#F9D7A0;
-    /* Cuando salga un pop-up
-    overflow:hidden */
 }
 #contenedor_barra_progreso{
     display: flex;
@@ -13,9 +11,12 @@ body{
     align-items: center;
     justify-content: center;
 }
+.pointer{
+    cursor: pointer;
+}
 #barra_progreso{
     width: 75%;
-    margin-top: 10%;
+    margin-top: 5%;
     display: flex;
     align-items:center; /* Centra verticalmente */
     justify-content: space-around; /* Centra horizontalmente */
@@ -31,10 +32,11 @@ body{
     
 }
 .barra {
+    margin:-2%;
     flex:1;
     width: 70%;
     height: 12.5%;
-    position:absolute;
+    position:relative;
     z-index: 1;
 }
 
@@ -51,7 +53,7 @@ body{
     margin-left: 19%;
     height: 70%;
 }
-#img_nodo_tarjeta{
+#img_n_tarjeta{
     height: 60%;
     margin-top: 18%;
     margin-left: 17.5%;
@@ -224,17 +226,15 @@ body{
     position: fixed;
     top: 10%;
     left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color:#00000080;
+    width: 35%;
+    height: auto;
     z-index: 100;
     overflow:auto;
     display:none;
 }
 .caja_pop_up{
-    margin-left: 2%;
     background-color: #F9D7A0;
-    width: 35%;
+    width: 100%;
 }
 .caja_pop_up .contenedor{
     padding-bottom: 2.5%;
@@ -282,10 +282,10 @@ body{
     position: fixed;
     top: 10%;
     left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color:#00000080;
+    width: 35%;
+    height: auto;
     z-index: 100;
+    display: none;
 }
 #pop_up_descr_prod .caja_pop_up{
     padding-bottom: 2.5%;
@@ -311,4 +311,51 @@ body{
 #descripcion_prod{
     margin-bottom: 10%;
     padding-bottom: 4%;
+}
+.fondo_negro{
+    position: fixed;
+    top: 10%;
+    left: 0;
+    background-color:#00000080;
+    min-width: 100%;
+    min-height: 100vh;
+    z-index: 99;
+
+}
+.rectangulo-fondo {
+    position: fixed;
+    bottom: -50%;
+    left: 0;
+    width: 5%;
+    min-height: 2000px;
+    background-color: #c0732bb9; /* Color del rectángulo */
+    z-index: -1; /* Coloca el rectángulo detrás del contenido */
+    transform: rotate(45deg);
+}   
+#rectangulo_1{
+    left: 15%;
+}
+#rectangulo_2{
+    left:35%;
+}
+#rectangulo_3{
+    left:55%;
+}
+#rectangulo_4{
+    left:75%;
+}
+#rectangulo_5{
+    left:95%;
+}
+#rectangulo_6{
+    left:115%
+}
+
+#confirmacion_pedido{
+    background-color: #FBE0B5;
+    width: 60%;
+    max-height: 60vh;
+}
+#img_pedido_confirmado{
+    max-height: 20%;
 }
