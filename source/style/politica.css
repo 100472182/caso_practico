@@ -19,3 +19,25 @@ h4{
     margin-left: 0;
     margin-bottom: 1%;
 }
+
+ul{
+    padding-left: 1.5vw;
+}
+
+/*--------------------------------Responsive------------------------------------------------*/
+
+/*Responsive ajustados a la resolucion de una tablet*/
+
+@media only screen and (max-width:768px){
+    ul{
+        padding-left: 2.5vw;
+    }
+}
+
+
+/*Responsive ajustados a la resolucion de un móvil*/
+@media only screen and (max-width:600px){  
+    ul{
+        padding-left: 3.5vw;
+    }
+}
