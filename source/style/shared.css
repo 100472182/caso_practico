@@ -124,7 +124,7 @@ button:hover{
     margin-top: 6%;
 }
 
-
+/*Header para cumplir el validator w3c*/
 .cabecera_none{
     display: none;
 }
