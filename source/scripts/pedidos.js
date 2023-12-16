@@ -348,7 +348,12 @@ class pedidos {
         // Función que comprueba el número de tarjeta dado
         const rgx = /^[0-9]{16}$/;
         if (!rgx.test(n_tarjeta)) {
-            alert("Número de tarjeta no válida, son necesarios 16 dígitos");
+            if ($("#idiomas-btn").text() === "ES") {
+                alert("Número de tarjeta no válido, son necesarios 16 dígitos");
+            }
+            else if ($("#idiomas-btn").text() === "EN") {
+                alert("Invalid card number, 16 digits are required");
+            }
             return false;
         }
         return true;
@@ -357,7 +362,12 @@ class pedidos {
         // Función que comprueba la fecha dada
         const rgx = /^(0[1-9]|1[0-2])\/\d{2}$/;
         if (!rgx.test(fecha)) {
-            alert("Fecha no válida");
+            if ($("#idiomas-btn").text() === "ES") {
+                alert("Fecha no válida");
+            }
+            else if ($("#idiomas-btn").text() === "EN") {
+                alert("Invalid date");
+            }
             return false;
         }
         let fechaActual = new Date();
@@ -368,12 +378,22 @@ class pedidos {
         año = Number(año);
         let mes = fechaActual.getMonth() + 1;
         if (fecha_año < año) {
-            alert("Fecha no válida");
+            if ($("#idiomas-btn").text() === "ES") {
+                alert("Fecha no válida");
+            }
+            else if ($("#idiomas-btn").text() === "EN") {
+                alert("Invalid date");
+            }
             return false;
         }
         else {
             if ((fecha_año == año) && (fecha_mes <= mes)) {
-                alert("Fecha no válida");
+                if ($("#idiomas-btn").text() === "ES") {
+                    alert("Fecha no válida");
+                }
+                else if ($("#idiomas-btn").text() === "EN") {
+                    alert("Invalid date");
+                }
                 return false;
             }
         }
@@ -383,7 +403,12 @@ class pedidos {
         // Función que comprueba el cvv dado
         const rgx = /^[0-9]{3}$/;
         if (!rgx.test(cvv)) {
-            alert("CVV no válido, son necesarios 3 dígitos");
+            if ($("#idiomas-btn").text() === "ES") {
+                alert("CVV no válido, son necesarios 3 dígitos");
+            }
+            else if ($("#idiomas-btn").text() === "EN") {
+                alert("Invalid CVV, 3 digits are required");
+            }
             return false;
         }
         return true;
@@ -428,6 +453,9 @@ function cambiarIdioma_pedidos(selectedLanguage, ped) {
         $("#boton_add").text("Añadir")
         $("#pop_up_carrito h3").text("Tu Pedido")
         $("#titulo_revision").text("Resumen del pedido")
+        $("titular").attr("placeholder", "Titular")
+        $("n_tarjeta").attr("placeholder", "Número de tarjeta")
+        $("fecha").attr("placeholder", "Fecha")
         $("#boton_pagar").text("Pagar")
         $("#boton_cancelar").text("Cancelar")
         $("#confirmacion_pedido h2").text("¡Pedido realizado!")
@@ -444,6 +472,9 @@ function cambiarIdioma_pedidos(selectedLanguage, ped) {
         $("#boton_add").text("Add");
         $("#pop_up_carrito h3").text("Your Order");
         $("#titulo_revision").text("Order Summary");
+        $("titular").attr("placeholder", "Holder");
+        $("n_tarjeta").attr("placeholder", "Card number");
+        $("fecha").attr("placeholder", "Date");
         $("#boton_pagar").text("Pay");
         $("#boton_cancelar").text("Cancel");
         $("#confirmacion_pedido h2").text("Order Placed!");
