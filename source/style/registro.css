@@ -1,7 +1,5 @@
 /* Registro de cuenta*/
-/*El formulario de registro*/
-/*La mitad derecha del formulario*/
-/*La imagen de la  izquierda*/
+
 #sitio-bartolomeo{
       display:flex;
       justify-content: center;
@@ -89,7 +87,7 @@
 /*Los botones*/
 #botones-registro{
     display: flex;
-    justify-content: space-between; /* Espacio entre los botones */
+    justify-content: space-between; 
     width: 95%;
     margin-top: 7px;
 }
@@ -147,8 +145,7 @@ h5{
     /*Modifico la posicion del formulario*/
     #form-formulario{
         padding: 2px;
-        align-self: self-start;
-        
+        align-self: self-start;   
     }
 
     /*Los campos a rellenar*/
@@ -206,7 +203,7 @@ h5{
         flex-direction: column;
     }
 
-    /*Ajustamos tamaño de los campos a rellenar*/
+    /*Tamaño de los campos a rellenar*/
     .campos{
         font-size: 1.5rem;
         max-width: 85%;

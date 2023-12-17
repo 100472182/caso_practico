@@ -19,7 +19,7 @@ $(document).ready(function() {
 
 /*Cambiar idioma de la politica de la empresa*/
 function cambiarIdioma_plt(selectedLanguage){
-    if(selectedLanguage==="ES") {/*Navegacion*/
+    if(selectedLanguage==="ES") {
         $("#p1").text("Política de Privacidad");
         $("#p2").text("Fecha de vigencia: 10/11/2023");
         $("#p3").text("Gracias por visitar nuestro sitio web. En BARTOLOMEO, nos tomamos en serio la privacidad de nuestros visitantes. Esta política de privacidad describe cómo recopilamos, utilizamos y protegemos la información personal que pueda proporcionarnos a través de nuestro sitio web.");
@@ -41,10 +41,6 @@ function cambiarIdioma_plt(selectedLanguage){
         $("#p19").text("Cambios en la política de privacidad:");
         $("#p20").text("Nos reservamos el derecho de actualizar esta política en cualquier momento. Le recomendamos que revise periódicamente esta página para estar al tanto de cualquier cambio.");
         $("#p21").html("Al utilizar nuestro sitio web, usted acepta los términos de esta política de privacidad. Si tiene alguna pregunta o inquietud, no dude en ponerse en contacto con nosotros a través de nuestro <a href='https://www.instagram.com/bartolomeokitchen/' target='_blank'>Instagram</a> o <a href='https://www.facebook.com/bartolomeokitchen/' target='_blank'>Facebook</a>.");
-
-
-
-       
     }
     else if (selectedLanguage ==="EN"){
         $("#p1").text("Privacy Policy");
@@ -68,6 +64,5 @@ function cambiarIdioma_plt(selectedLanguage){
         $("#p19").text("Changes to the Privacy Policy:");
         $("#p20").text("We reserve the right to update this policy at any time. We recommend that you periodically review this page to stay informed of any changes.");
         $("#p21").html("By using our website, you agree to the terms of this privacy policy. If you have any questions or concerns, feel free to contact us through our <a href='https://www.instagram.com/bartolomeokitchen/' target='_blank'>Instagram</a> or <a href='https://www.facebook.com/bartolomeokitchen/' target='_blank'>Facebook</a>.");
-
     }
 }
