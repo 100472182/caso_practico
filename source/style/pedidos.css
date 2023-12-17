@@ -2,11 +2,12 @@ body {
     background-color: #f9d7a0;
 }
 
+/* La barra de progreso debe de estar centrada */
 #contenedor_barra_progreso {
     display: flex;
     justify-content: center;
 }
-
+/*  */
 .contendedor_centrado {
     display: flex;
     align-items: center;
@@ -22,13 +23,11 @@ body {
     margin-top: 5%;
     display: flex;
     align-items: center;
-    /* Centra verticalmente */
     justify-content: space-around;
-    /* Centra horizontalmente */
     height: 20vh;
     position: relative;
 }
-
+/* Círculos  */
 .nodo {
     width: 15vmin;
     aspect-ratio: 1;
@@ -36,7 +35,7 @@ body {
     position: relative;
     z-index: 2;
 }
-
+/* Barras */
 .barra {
     margin: -2%;
     flex: 1;
@@ -53,7 +52,7 @@ body {
 [id*="nodo"] {
     background-color: #eb7d10;
 }
-
+/* Colocar la imagen en cada nodo */
 .img_nodo {
     margin-top: 13%;
     margin-left: 19%;
@@ -65,13 +64,13 @@ body {
     margin-top: 18%;
     margin-left: 17.5%;
 }
-
+/* Formato de la sección de pedidos */
 #sect_pedidos {
     width: 100%;
     height: auto;
     background-color: #f9d7a0;
 }
-
+/* Contenedor básico */
 .contenedor {
     margin: 1%;
     border-radius: 10px;
@@ -90,7 +89,7 @@ body {
     margin-top: 2%;
     width: 22.5%;
 }
-
+/* Posicionamiento de los elementos de control pedido */
 #control_pedido ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -111,7 +110,7 @@ body {
 #img_tarjeta {
     width: 80%;
 }
-
+/* Contenedor que contiene los distintos filtros y se hará scroll en horizontal */
 #filtros {
     margin-top: 2.5%;
     margin-left: 1%;
@@ -122,7 +121,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
 }
-
+/* Formato de cada uno de los filtros */
 [id*="filtro_"] {
     background-color: #904e00;
     color: white;
@@ -135,7 +134,7 @@ body {
     font-size: 1.2rem;
     min-width: 20%;
 }
-
+/* Contenedor que contiene los distintos productos como una matriz 4x5 */
 #productos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -165,7 +164,7 @@ body {
     width: 90%;
     border-radius: 25px;
 }
-
+/* Formato de la sección de la revisión */
 #sect_revision {
     width: 100%;
     height: auto;
@@ -175,7 +174,7 @@ body {
     grid-gap: 1%;
     margin-bottom: 2%;
 }
-
+/* Caja donde está cada uno de los productos */
 #caja_pedidos {
     margin: 5%;
     margin-top: 2.5%;
@@ -184,7 +183,7 @@ body {
     background-color: #d48d39;
     border-radius: 10px;
 }
-
+/* Formato del resumen y revisión */
 .ud_prod {
     display: grid;
     grid-template-columns: 4fr repeat(3, 1fr);
@@ -196,7 +195,7 @@ body {
     margin-bottom: 2%;
     font-size: 1.75rem;
 }
-
+/* Contenedor de realizar el pago */
 #cuadro_pago {
     margin: 5%;
     margin-top: 2.5%;
@@ -205,7 +204,7 @@ body {
     align-items: center;
     justify-content: center;
 }
-
+/* Formulario de pago */
 #formulario_pago {
     padding: 15%;
     background-color: #f6e8bd;
@@ -215,7 +214,7 @@ body {
     align-items: center;
     justify-content: center;
 }
-
+/* Cada uno de los inputs */
 .input_pago {
     margin-top: 2%;
     margin-bottom: 2%;
@@ -250,7 +249,7 @@ body {
 .boton:active {
     background-color: #904e00;
 }
-
+/* Pop-up del carrito que continua con el scroll */
 #pop_up_carrito {
     position: fixed;
     top: 10%;
@@ -261,7 +260,7 @@ body {
     overflow: auto;
     display: none;
 }
-
+/* Caja donde habrá contenido */
 .caja_pop_up {
     background-color: #f9d7a0;
     width: 100%;
@@ -272,7 +271,7 @@ body {
 .caja_pop_up .contenedor {
     padding-bottom: 2.5%;
 }
-
+/* Formato del boton más  */
 .boton_mas {
     width: 50px;
     aspect-ratio: 1;
@@ -291,7 +290,7 @@ body {
     margin-left: 2%;
     margin-right: 2%;
 }
-
+/* Formato del botón menos */
 .boton_menos {
     width: 50px;
     aspect-ratio: 1;
@@ -314,7 +313,7 @@ body {
 .precio_total {
     margin-left: 40%;
 }
-
+/* Pop-up de las descripciones del producto */
 #pop_up_descr_prod {
     position: fixed;
     top: 10%;
@@ -337,7 +336,8 @@ body {
     padding-top: 5%;
     width: 100%;
 }
-
+/* Toda la fila del pop-up del producto que te muestra la cantidad y la 
+capacidad de añadir un producto */
 #caja_añadir {
     display: flex;
     justify-content: space-evenly;
@@ -360,7 +360,7 @@ body {
     margin-bottom: 10%;
     padding-bottom: 4%;
 }
-
+/* fondo que acompaña a los pop-ups que permite salir de ellos */
 .fondo_negro {
     display: none;
     position: fixed;
@@ -417,7 +417,7 @@ body {
 #img_pedido_confirmado {
     max-height: 20%;
 }
-
+/* ---------------------- Responsive Tablet ----------------------  */
 @media only screen and (max-width: 768px) {
     #barra_progreso {
         margin-top: 10%;
@@ -476,7 +476,7 @@ body {
         width: 10px;
     }
 }
-
+/* ---------------------- Responsive Móvil ----------------------  */
 @media only screen and (max-width: 600px) {
     #barra_progreso {
         margin-top: 15%;
