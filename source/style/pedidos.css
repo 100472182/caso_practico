@@ -1,5 +1,5 @@
 body {
-    background-color: #F9D7A0;
+    background-color: #f9d7a0;
 }
 
 #contenedor_barra_progreso {
@@ -35,7 +35,6 @@ body {
     border-radius: 50%;
     position: relative;
     z-index: 2;
-
 }
 
 .barra {
@@ -48,13 +47,11 @@ body {
 }
 
 [id*="progreso_barra"] {
-
-    background-color: #EB7D10;
-
+    background-color: #eb7d10;
 }
 
 [id*="nodo"] {
-    background-color: #EB7D10;
+    background-color: #eb7d10;
 }
 
 .img_nodo {
@@ -72,13 +69,13 @@ body {
 #sect_pedidos {
     width: 100%;
     height: auto;
-    background-color: #F9D7A0;
+    background-color: #f9d7a0;
 }
 
 .contenedor {
     margin: 1%;
     border-radius: 10px;
-    background-color: #D48D39;
+    background-color: #d48d39;
     padding: 1%;
 }
 
@@ -91,7 +88,6 @@ body {
 #control_pedido {
     padding: 0%;
     margin-top: 2%;
-    ;
     width: 22.5%;
 }
 
@@ -106,7 +102,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 #img_cesta {
@@ -129,7 +124,7 @@ body {
 }
 
 [id*="filtro_"] {
-    background-color: #904E00;
+    background-color: #904e00;
     color: white;
     border-radius: 40px;
     margin-left: 0.5%;
@@ -152,7 +147,7 @@ body {
 
 .producto {
     text-align: center;
-
+    padding-bottom: 10%;
 }
 
 .producto h3 {
@@ -167,16 +162,14 @@ body {
     margin-top: 5%;
     padding-left: 10%;
     padding-right: 10%;
-    padding-bottom: 4%;
     width: 90%;
     border-radius: 25px;
-    margin-bottom: 5%;
 }
 
 #sect_revision {
     width: 100%;
     height: auto;
-    background-color: #F9D7A0;
+    background-color: #f9d7a0;
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     grid-gap: 1%;
@@ -188,7 +181,7 @@ body {
     margin-top: 2.5%;
     margin-bottom: 2.5%;
     padding: 2%;
-    background-color: #D48D39;
+    background-color: #d48d39;
     border-radius: 10px;
 }
 
@@ -215,7 +208,7 @@ body {
 
 #formulario_pago {
     padding: 15%;
-    background-color: #F6E8BD;
+    background-color: #f6e8bd;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -246,7 +239,7 @@ body {
     border-radius: 10px;
     border: none;
     padding: 2%;
-    background-color: #C0732B;
+    background-color: #c0732b;
     color: white;
 }
 
@@ -255,7 +248,7 @@ body {
 }
 
 .boton:active {
-    background-color: #904E00;
+    background-color: #904e00;
 }
 
 #pop_up_carrito {
@@ -270,8 +263,10 @@ body {
 }
 
 .caja_pop_up {
-    background-color: #F9D7A0;
+    background-color: #f9d7a0;
     width: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .caja_pop_up .contenedor {
@@ -279,14 +274,13 @@ body {
 }
 
 .boton_mas {
-    margin-left: 2%;
-    padding-top: 0.25%;
-    float: left;
-    background-color: #d07402;
-    border-radius: 50%;
-    width: 1.5vw;
+    width: 50px;
     aspect-ratio: 1;
-    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d07402;
 }
 
 .boton_mas:hover {
@@ -295,18 +289,17 @@ body {
 
 .n_seleccionado {
     margin-left: 2%;
-    float: left;
+    margin-right: 2%;
 }
 
 .boton_menos {
-    margin-left: 2%;
-    padding-top: 0.25%;
-    float: left;
-    background-color: #d07402;
-    border-radius: 50%;
-    width: 1.5vw;
+    width: 50px;
     aspect-ratio: 1;
-    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d07402;
 }
 
 .boton_menos:hover {
@@ -316,12 +309,10 @@ body {
 .papelera {
     margin-top: 0.75%;
     margin-left: 5%;
-    float: left;
 }
 
 .precio_total {
     margin-left: 40%;
-
 }
 
 #pop_up_descr_prod {
@@ -349,10 +340,16 @@ body {
 
 #caja_añadir {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     margin-top: 10%;
-    margin: 2%
+    margin: 5%;
+}
+.seleccion {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
 }
 
 #caja_añadir .boton {
@@ -365,6 +362,7 @@ body {
 }
 
 .fondo_negro {
+    display: none;
     position: fixed;
     top: 10%;
     left: 0;
@@ -372,7 +370,6 @@ body {
     min-width: 100%;
     min-height: 100vh;
     z-index: 99;
-
 }
 
 .rectangulo-fondo {
@@ -382,10 +379,9 @@ body {
     width: 5%;
     min-height: 2000px;
     background-color: #c0732bb9;
-    /* Color del rectángulo */
     z-index: -1;
-    /* Coloca el rectángulo detrás del contenido */
     transform: rotate(45deg);
+    display: none;
 }
 
 #rectangulo_1 {
@@ -409,15 +405,93 @@ body {
 }
 
 #rectangulo_6 {
-    left: 115%
+    left: 115%;
 }
 
 #confirmacion_pedido {
-    background-color: #FBE0B5;
+    background-color: #fbe0b5;
     width: 60%;
     max-height: 60vh;
 }
 
 #img_pedido_confirmado {
     max-height: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+    #barra_progreso {
+        margin-top: 10%;
+    }
+    [id*="filtro_"] {
+        min-width: 25%;
+    }
+    .producto {
+        padding-bottom: 0;
+    }
+    #pop_up_carrito {
+        width: 45%;
+    }
+    #pop_up_descr_prod {
+        width: 45%;
+    }
+    #caja_añadir {
+        margin: 15%;
+    }
+    #caja_añadir .boton {
+        padding-top: 2%;
+    }
+    #confirmacion_pedido {
+        width: 90%;
+    }
+    .boton_mas {
+        min-width: 25px;
+        font-size: 1.5rem;
+    }
+    .boton_menos {
+        min-width: 25px;
+        font-size: 1.5rem;
+    }
+    #sect_revision {
+        display: flex;
+        flex-direction: column;
+    }
+    #sect_completado .contendedor_centrado {
+        flex-direction: column;
+    }
+    #img_pedido_confirmado {
+        max-height: 10%;
+    }
+    #contenedor_control_pedido {
+        display: flex;
+        justify-content: center;
+    }
+    #control_pedido {
+        min-width: 90vw;
+        font-size: 1.5rem;
+    }
+    #pop_up_carrito .boton_menos {
+        width: 10px;
+    }
+    #pop_up_carrito .boton_mas {
+        width: 10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #barra_progreso {
+        margin-top: 15%;
+    }
+    [id*="filtro_"] {
+        min-width: 25%;
+    }
+    #productos {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+    }
+    #pop_up_carrito {
+        width: 55%;
+    }
+    #pop_up_descr_prod {
+        width: 55%;
+    }
 }

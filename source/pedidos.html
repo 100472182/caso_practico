@@ -1,944 +1,1074 @@
 <!DOCTYPE html>
 <html lang="es">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <title>Bartolomeo</title>
+        <link rel="stylesheet" href="style/pedidos.css" />
+        <link rel="stylesheet" href="style/shared.css" />
+        <meta charset="UTF-8" />
+    </head>
 
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <title>Bartolomeo</title>
-    <link rel="stylesheet" href="style/pedidos.css">
-    <link rel="stylesheet" href="style/shared.css">
-    <meta charset="UTF-8">
-</head>
-
-<body>
-    <header id="barra_de_navegacion">
-        <div id="reducido">
-            <a href="./home.html">
-                <img id="logo_bartolomeo" src="../images/logo-bartolomeo.png" alt="Logo Bartolomeo">
-            </a>
-        </div>
-        <ul>
-            <li><a id="hacer_pedido" href="./inicio_sesion.html">Haz tu pedido</a></li>
-            <li><a id="hacer_reserva" href="./inicio_sesion.html">Reserva tu mesa</a></li>
-            <li><a id="nuestra_carta" href="./CARTA-VERANO-2023.pdf" target="_blank">Nuestra carta</a></li>
-        </ul>
-        <div id="idiomas">
-            <div id="cerrar_sesion"> <button>Cerrar sesión</button> </div>
-            <button id="idiomas-btn">ES</button>
-            <div id="idiomas-menu">
-                <p>ES</p>
-                <p>EN</p>
+    <body>
+        <header id="barra_de_navegacion">
+            <div id="reducido">
+                <a href="./home.html">
+                    <img
+                        id="logo_bartolomeo"
+                        src="../images/logo-bartolomeo.png"
+                        alt="Logo Bartolomeo"
+                    />
+                </a>
             </div>
-        </div>
-    </header>
-    <section class="contendedor_centrado">
-        <!-- Barra de Progreso-->
-        <div id="barra_progreso">
-            <div class="nodo" id="progreso_nodo_bolsa">
-                <!-- Bolsa de la compra-->
-                <img class="img_nodo" src="../images/bag-shopping-solid.svg">
+            <ul>
+                <li>
+                    <a id="hacer_pedido" href="./inicio_sesion.html"
+                        >Haz tu pedido</a
+                    >
+                </li>
+                <li>
+                    <a id="hacer_reserva" href="./inicio_sesion.html"
+                        >Reserva tu mesa</a
+                    >
+                </li>
+                <li>
+                    <a
+                        id="nuestra_carta"
+                        href="./CARTA-VERANO-2023.pdf"
+                        target="_blank"
+                        >Nuestra carta</a
+                    >
+                </li>
+            </ul>
+            <div id="idiomas">
+                <div id="cerrar_sesion"><button>Cerrar sesión</button></div>
+                <button id="idiomas-btn">ES</button>
+                <div id="idiomas-menu">
+                    <p>ES</p>
+                    <p>EN</p>
+                </div>
             </div>
-            <div class="barra" id="progreso_barra_bolsa_tarjeta">
-                <!-- Barra de Bolsa a Tarjeta-->
-            </div>
-            <div class="nodo" id="progreso_nodo_tarjeta">
-                <!-- Tarjeta de Pago-->
-                <img id="img_n_tarjeta" src="../images/credit-card-solid.svg">
-            </div>
-            <div class="barra" id="progreso_barra_tarjeta_completo">
-                <!-- Barra de Tarjeta a Pedido Completo-->
-            </div>
-            <div class="nodo" id="progreso_nodo_completo">
-                <!-- Pedido Completo-->
-                <img class="img_nodo" src="../images/check-solid.svg">
-            </div>
-        </div>
-    </section>
-
-    <section id="sect_pedidos">
-        <section id="filtros" class="contenedor">
-            <!-- Barra de Filtros/Categorias-->
-
-            <!-- No tienen que entrar todas las categorías, debe de ser scrolleable, este div no sé si es necesario-->
-            <!-- No es fijo al realizar el scroll vertical-->
-            <div id="filtro_vegetariano" class="filtro">
-                <!-- Recomendado-->
-                Vegetariano
-            </div>
-            <div id="filtro_desayunos" class="filtro">
-                <!-- Desayunos-->
-                Desayunos
-            </div>
-            <div id="filtro_entrantes" class="filtro">
-                <!-- Entrantes-->
-                Entrantes
-            </div>
-            <div id="filtro_pizzas" class="filtro">
-                <!-- Pizzas-->
-                Pizzas
-            </div>
-            <div id="filtro_pastas" class="filtro">
-                <!-- Pastas-->
-                Pastas
-            </div>
-            <div id="filtro_cocina_fusion" class="filtro">
-                <!-- Cocina Fusión-->
-                Cocina Fusión
-            </div>
-            <div id="filtro_postres" class="filtro">
-                <!-- Postres-->
-                Postres
+        </header>
+        <section class="contendedor_centrado">
+            <!-- Barra de Progreso-->
+            <div id="barra_progreso">
+                <div class="nodo" id="progreso_nodo_bolsa">
+                    <!-- Bolsa de la compra-->
+                    <img
+                        class="img_nodo"
+                        src="../images/bag-shopping-solid.svg"
+                    />
+                </div>
+                <div class="barra" id="progreso_barra_bolsa_tarjeta">
+                    <!-- Barra de Bolsa a Tarjeta-->
+                </div>
+                <div class="nodo" id="progreso_nodo_tarjeta">
+                    <!-- Tarjeta de Pago-->
+                    <img
+                        id="img_n_tarjeta"
+                        src="../images/credit-card-solid.svg"
+                    />
+                </div>
+                <div class="barra" id="progreso_barra_tarjeta_completo">
+                    <!-- Barra de Tarjeta a Pedido Completo-->
+                </div>
+                <div class="nodo" id="progreso_nodo_completo">
+                    <!-- Pedido Completo-->
+                    <img class="img_nodo" src="../images/check-solid.svg" />
+                </div>
             </div>
         </section>
-        <div id="contenedor_control_pedido">
-            <!-- Sección Seleccionar Pedidos-->
-            <div id="control_pedido" class="contenedor">
-                <!-- Carrito y Realizar Pedido-->
-                <!-- Fijo al realizar scroll-->
-                <ul>
-                    <li id="n_pedidos">
-                        <!--N° de pedido-->
-                        X
-                    </li>
-                    <li id="precio_total">
-                        <!--Precio total-->
-                        Y
-                    </li>
-                    <li>
-                        <!--Img Cesta-->
-                        <img id="img_cesta" src="../images/Cesta.png">
-                    </li>
-                    <li>
-                        <!--Img Tarjeta-->
-                        <img id="img_tarjeta" class="siguiente" src="../images/Tarjeta_de_credito.png">
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <section class="contendedor_centrado">
-            <section id="productos">
-                <!-- Productos -->
-                <div id="prod_1" class="contenedor producto">
-                    <!-- Bartolomeo Benedict-->
-                    <h3>Bartolomeo Benedict</h3>
-                    <img class="imagen_producto" src="../images/desayuno1.jpg">
+
+        <section id="sect_pedidos">
+            <section id="filtros" class="contenedor">
+                <!-- Barra de Filtros/Categorias-->
+
+                <!-- No tienen que entrar todas las categorías, debe de ser scrolleable, este div no sé si es necesario-->
+                <!-- No es fijo al realizar el scroll vertical-->
+                <div id="filtro_vegetariano" class="filtro pointer">
+                    <!-- Recomendado-->
+                    Vegetariano
                 </div>
-                <div id="prod_2" class="contenedor producto">
-                    <!-- Penntucky Breakfast-->
-                    <h3>Penntucky Breakfast</h3>
-                    <img class="imagen_producto" src="../images/desayuno2.jpg">
+                <div id="filtro_desayunos" class="filtro pointer">
+                    <!-- Desayunos-->
+                    Desayunos
                 </div>
-                <div id="prod_3" class="contenedor producto">
-                    <!-- Cachapas-->
-                    <h3>Cachapas</h3>
-                    <img class="imagen_producto" src="../images/desayuno3.jpg">
+                <div id="filtro_entrantes" class="filtro pointer">
+                    <!-- Entrantes-->
+                    Entrantes
                 </div>
-                <div id="prod_4" class="contenedor producto">
-                    <!-- Burrata-->
-                    <h3>Burrata</h3>
-                    <img class="imagen_producto" src="../images/entrante1.jpg">
+                <div id="filtro_pizzas" class="filtro pointer">
+                    <!-- Pizzas-->
+                    Pizzas
                 </div>
-                <div id="prod_5" class="contenedor producto">
-                    <!-- Carpaccio di Salmone-->
-                    <h3>Carpaccio di Salmone</h3>
-                    <img class="imagen_producto" src="../images/entrante2.jpg">
+                <div id="filtro_pastas" class="filtro pointer">
+                    <!-- Pastas-->
+                    Pastas
                 </div>
-                <div id="prod_6" class="contenedor producto">
-                    <!-- Tequeños-->
-                    <h3>Tequeños</h3>
-                    <img class="imagen_producto" src="../images/entrante3.jpg">
+                <div id="filtro_cocina_fusion" class="filtro pointer">
+                    <!-- Cocina Fusión-->
+                    Cocina Fusión
                 </div>
-                <div id="prod_7" class="contenedor producto">
-                    <!-- Mortadella e Pistacchio-->
-                    <h3>Mortadella e Pistacchio</h3>
-                    <img class="imagen_producto" src="../images/pizza1.jpg">
-                </div>
-                <div id="prod_8" class="contenedor producto">
-                    <!-- Shakshouka-->
-                    <h3>Shakshouka</h3>
-                    <img class="imagen_producto" src="../images/pizza2.jpg">
-                </div>
-                <div id="prod_9" class="contenedor producto">
-                    <!-- Fichi e Prosciutto-->
-                    <h3>Fichi e Prosciutto</h3>
-                    <img class="imagen_producto" src="../images/pizza3.jpg">
-                </div>
-                <div id="prod_10" class="contenedor producto">
-                    <!-- Pasta al Pesto di Salvia-->
-                    <h3>Pasta al Pesto di Salvia</h3>
-                    <img class="imagen_producto" src="../images/pasta1.jpg">
-                </div>
-                <div id="prod_11" class="contenedor producto">
-                    <!-- Spaghetti Vongole al Cartoccio-->
-                    <h3>Spaghetti Vongole al Cartoccio</h3>
-                    <img class="imagen_producto" src="../images/pasta2.jpg">
-                </div>
-                <div id="prod_12" class="contenedor producto">
-                    <!-- Fettuccine nero ai Frutti di Mare-->
-                    <h3>Fettuccine nero ai Frutti di Mare</h3>
-                    <img class="imagen_producto" src="../images/pasta3.jpg">
-                </div>
-                <div id="prod_13" class="contenedor producto">
-                    <!-- Ossobuco in Gremolata & Gnocchi de Plátano Macho-->
-                    <h3>Ossobuco in Gremolata & Gnocchi de Plátano Macho</h3>
-                    <img class="imagen_producto" src="../images/fusion1.jpg">
-                </div>
-                <div id="prod_14" class="contenedor producto">
-                    <!-- Risotto Criollo-->
-                    <h3>Risotto Criollo</h3>
-                    <img class="imagen_producto" src="../images/fusion2.jpg">
-                </div>
-                <div id="prod_15" class="contenedor producto">
-                    <!-- Crostata de Pollo-->
-                    <h3>Crostata de Pollo</h3>
-                    <img class="imagen_producto" src="../images/fusion3.jpg">
-                </div>
-                <div id="prod_16" class="contenedor producto">
-                    <!-- Tiramisu-->
-                    <h3>Tiramisu</h3>
-                    <img class="imagen_producto" src="../images/postre1.jpg">
-                </div>
-                <div id="prod_17" class="contenedor producto">
-                    <!-- Bartolomeo Cheesecake-->
-                    <h3>Bartolomeo Cheesecake</h3>
-                    <img class="imagen_producto" src="../images/postre2.jpg">
-                </div>
-                <div id="prod_18" class="contenedor producto">
-                    <!-- Tarta de Queso Criolla-->
-                    <h3>Tarta de Queso Criolla</h3>
-                    <img class="imagen_producto" src="../images/postre3.jpg">
+                <div id="filtro_postres" class="filtro pointer">
+                    <!-- Postres-->
+                    Postres
                 </div>
             </section>
+            <div id="contenedor_control_pedido">
+                <!-- Sección Seleccionar Pedidos-->
+                <div id="control_pedido" class="contenedor">
+                    <!-- Carrito y Realizar Pedido-->
+                    <!-- Fijo al realizar scroll-->
+                    <ul>
+                        <li id="n_pedidos">
+                            <!--N° de pedido-->
+                            X
+                        </li>
+                        <li id="precio_total">
+                            <!--Precio total-->
+                            Y
+                        </li>
+                        <li>
+                            <!--Img Cesta-->
+                            <img
+                                id="img_cesta"
+                                class="pointer"
+                                src="../images/Cesta.png"
+                            />
+                        </li>
+                        <li>
+                            <!--Img Tarjeta-->
+                            <img
+                                id="img_tarjeta"
+                                class="siguiente pointer"
+                                src="../images/Tarjeta_de_credito.png"
+                            />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <section class="contendedor_centrado">
+                <section id="productos">
+                    <!-- Productos -->
+                    <div id="prod_1" class="contenedor producto pointer">
+                        <!-- Bartolomeo Benedict-->
+                        <h3>Bartolomeo Benedict</h3>
+                        <img
+                            class="imagen_producto"
+                            src="../images/desayuno1.jpg"
+                        />
+                    </div>
+                    <div id="prod_2" class="contenedor producto pointer">
+                        <!-- Penntucky Breakfast-->
+                        <h3>Penntucky Breakfast</h3>
+                        <img
+                            class="imagen_producto"
+                            src="../images/desayuno2.jpg"
+                        />
+                    </div>
+                    <div id="prod_3" class="contenedor producto pointer">
+                        <!-- Cachapas-->
+                        <h3>Cachapas</h3>
+                        <img
+                            class="imagen_producto"
+                            src="../images/desayuno3.jpg"
+                        />
+                    </div>
+                    <div id="prod_4" class="contenedor producto pointer">
+                        <!-- Burrata-->
+                        <h3>Burrata</h3>
+                        <img
+                            class="imagen_producto"
+                            src="../images/entrante1.jpg"
+                        />
+                    </div>
+                    <div id="prod_5" class="contenedor producto pointer">
+                        <!-- Carpaccio di Salmone-->
+                        <h3>Carpaccio di Salmone</h3>
+                        <img
+                            class="imagen_producto"
+                            src="../images/entrante2.jpg"
+                        />
+                    </div>
+                    <div id="prod_6" class="contenedor producto pointer">
+                        <!-- Tequeños-->
+                        <h3>Tequeños</h3>
+                        <img
+                            class="imagen_producto"
+                            src="../images/entrante3.jpg"
+                        />
+                    </div>
+                    <div id="prod_7" class="contenedor producto pointer">
+                        <!-- Mortadella e Pistacchio-->
+                        <h3>Mortadella e Pistacchio</h3>
+                        <img
+                            class="imagen_producto"
+                            src="../images/pizza1.jpg"
+                        />
+                    </div>
+                    <div id="prod_8" class="contenedor producto pointer">
+                        <!-- Shakshouka-->
+                        <h3>Shakshouka</h3>
+                        <img
+                            class="imagen_producto"
+                            src="../images/pizza2.jpg"
+                        />
+                    </div>
+                    <div id="prod_9" class="contenedor producto pointer">
+                        <!-- Fichi e Prosciutto-->
+                        <h3>Fichi e Prosciutto</h3>
+                        <img
+                            class="imagen_producto"
+                            src="../images/pizza3.jpg"
+                        />
+                    </div>
+                    <div id="prod_10" class="contenedor producto pointer">
+                        <!-- Pasta al Pesto di Salvia-->
+                        <h3>Pasta al Pesto di Salvia</h3>
+                        <img
+                            class="imagen_producto"
+                            src="../images/pasta1.jpg"
+                        />
+                    </div>
+                    <div id="prod_11" class="contenedor producto pointer">
+                        <!-- Spaghetti Vongole al Cartoccio-->
+                        <h3>Spaghetti Vongole al Cartoccio</h3>
+                        <img
+                            class="imagen_producto"
+                            src="../images/pasta2.jpg"
+                        />
+                    </div>
+                    <div id="prod_12" class="contenedor producto pointer">
+                        <!-- Fettuccine nero ai Frutti di Mare-->
+                        <h3>Fettuccine nero ai Frutti di Mare</h3>
+                        <img
+                            class="imagen_producto"
+                            src="../images/pasta3.jpg"
+                        />
+                    </div>
+                    <div id="prod_13" class="contenedor producto pointer">
+                        <!-- Ossobuco in Gremolata & Gnocchi de Plátano Macho-->
+                        <h3>
+                            Ossobuco in Gremolata & Gnocchi de Plátano Macho
+                        </h3>
+                        <img
+                            class="imagen_producto"
+                            src="../images/fusion1.jpg"
+                        />
+                    </div>
+                    <div id="prod_14" class="contenedor producto pointer">
+                        <!-- Risotto Criollo-->
+                        <h3>Risotto Criollo</h3>
+                        <img
+                            class="imagen_producto"
+                            src="../images/fusion2.jpg"
+                        />
+                    </div>
+                    <div id="prod_15" class="contenedor producto pointer">
+                        <!-- Crostata de Pollo-->
+                        <h3>Crostata de Pollo</h3>
+                        <img
+                            class="imagen_producto"
+                            src="../images/fusion3.jpg"
+                        />
+                    </div>
+                    <div id="prod_16" class="contenedor producto pointer">
+                        <!-- Tiramisu-->
+                        <h3>Tiramisu</h3>
+                        <img
+                            class="imagen_producto"
+                            src="../images/postre1.jpg"
+                        />
+                    </div>
+                    <div id="prod_17" class="contenedor producto pointer">
+                        <!-- Bartolomeo Cheesecake-->
+                        <h3>Bartolomeo Cheesecake</h3>
+                        <img
+                            class="imagen_producto"
+                            src="../images/postre2.jpg"
+                        />
+                    </div>
+                    <div id="prod_18" class="contenedor producto pointer">
+                        <!-- Tarta de Queso Criolla-->
+                        <h3>Tarta de Queso Criolla</h3>
+                        <img
+                            class="imagen_producto"
+                            src="../images/postre3.jpg"
+                        />
+                    </div>
+                </section>
+            </section>
+            <div id="pop_up_descr_prod">
+                <!-- Pop-up genérico de consultar pedido-->
+                <!-- Fijo al realizar el scroll-->
+                <div class="caja_pop_up">
+                    <div id="nombre_plato">
+                        <!-- Nombre del plato-->
+                        <p>XXXXXXXXXXXXXXXXXXXX</p>
+                    </div>
+                    <div id="caja_añadir">
+                        <!-- Fila de Añadir-->
+                        <!-- Botón Mas-->
+                        <button class="boton_mas pointer">+</button>
+                        <div class="n_seleccionado">
+                            <!-- Número-->
+                            <p>X</p>
+                        </div>
+                        <!-- Botón Menos-->
+                        <button class="boton_menos">-</button>
+                        <div class="precio_total">
+                            <!-- Precio-->
+                            <p>XX.XX€</p>
+                        </div>
+                        <!-- Botón Añadir-->
+                        <button class="boton" id="boton_add">Añadir</button>
+                    </div>
+                    <div id="descripcion_prod" class="contenedor">
+                        <!-- Descripción del producto-->
+                        <p>
+                            XXXXXXXXX XXXXXXXX XXXXXXXXX XXXXXXX XXXXXXXXXXX
+                            XXXXXX XXXXXXXXXX XXXXXX
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="fondo_negro"></div>
+
+            <section id="pop_up_carrito">
+                <!-- Pop-up carrito de la compra-->
+                <!-- Fijo al realizar el scroll-->
+                <div class="caja_pop_up">
+                    <h3 id="res_pedido">Tu Pedido</h3>
+                    <div id="carrito_1" class="contenedor">
+                        <!-- Bartolomeo Benedict-->
+                        <h3>Bartolomeo Benedict</h3>
+                        <div class="seleccion">
+                            <!-- Nº de Selección-->
+                            <button class="boton_mas pointer">
+                                <!-- Botón Mas-->
+                                +
+                            </button>
+                            <div class="n_seleccionado">
+                                <!-- Número-->
+                                <p>X</p>
+                            </div>
+                            <button class="boton_menos pointer">
+                                <!-- Botón Menos-->
+                                -
+                            </button>
+                            <div class="papelera pointer">
+                                <!-- Papelera-->
+                                <img src="../images/trash-solid.svg" />
+                            </div>
+                            <div class="precio_total">
+                                <!-- Precio total-->
+                                <p>XX.XX€</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="carrito_2" class="contenedor">
+                        <!-- Penntucky Breakfast-->
+                        <h3>Penntucky Breakfast</h3>
+                        <div class="seleccion">
+                            <!-- Nº de Selección-->
+                            <button class="boton_mas pointer">
+                                <!-- Botón Mas-->
+                                +
+                            </button>
+                            <div class="n_seleccionado">
+                                <!-- Número-->
+                                <p>X</p>
+                            </div>
+                            <button class="boton_menos pointer">
+                                <!-- Botón Menos-->
+                                -
+                            </button>
+                            <div class="papelera pointer">
+                                <!-- Papelera-->
+                                <img src="../images/trash-solid.svg" />
+                            </div>
+                            <div class="precio_total">
+                                <!-- Precio total-->
+                                <p>XX.XX€</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="carrito_3" class="contenedor">
+                        <!-- Cachapas-->
+                        <h3>Cachapas</h3>
+                        <div class="seleccion">
+                            <!-- Nº de Selección-->
+                            <button class="boton_mas pointer">
+                                <!-- Botón Mas-->
+                                +
+                            </button>
+                            <div class="n_seleccionado">
+                                <!-- Número-->
+                                <p>X</p>
+                            </div>
+                            <button class="boton_menos pointer">
+                                <!-- Botón Menos-->
+                                -
+                            </button>
+                            <div class="papelera pointer">
+                                <!-- Papelera-->
+                                <img src="../images/trash-solid.svg" />
+                            </div>
+                            <div class="precio_total">
+                                <!-- Precio total-->
+                                <p>XX.XX€</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="carrito_4" class="contenedor">
+                        <!-- Burrata-->
+                        <h3>Burrata</h3>
+                        <div class="seleccion">
+                            <!-- Nº de Selección-->
+                            <button class="boton_mas pointer">
+                                <!-- Botón Mas-->
+                                +
+                            </button>
+                            <div class="n_seleccionado">
+                                <!-- Número-->
+                                <p>X</p>
+                            </div>
+                            <button class="boton_menos pointer">
+                                <!-- Botón Menos-->
+                                -
+                            </button>
+                            <div class="papelera pointer">
+                                <!-- Papelera-->
+                                <img src="../images/trash-solid.svg" />
+                            </div>
+                            <div class="precio_total">
+                                <!-- Precio total-->
+                                <p>XX.XX€</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="carrito_5" class="contenedor">
+                        <!-- Carpaccio di Salmone-->
+                        <h3>Carpaccio di Salmone</h3>
+                        <div class="seleccion">
+                            <!-- Nº de Selección-->
+                            <button class="boton_mas pointer">
+                                <!-- Botón Mas-->
+                                +
+                            </button>
+                            <div class="n_seleccionado">
+                                <!-- Número-->
+                                <p>X</p>
+                            </div>
+                            <button class="boton_menos pointer">
+                                <!-- Botón Menos-->
+                                -
+                            </button>
+                            <div class="papelera pointer">
+                                <!-- Papelera-->
+                                <img src="../images/trash-solid.svg" />
+                            </div>
+                            <div class="precio_total">
+                                <!-- Precio total-->
+                                <p>XX.XX€</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="carrito_6" class="contenedor">
+                        <!-- Tequeños-->
+                        <h3>Tequeños</h3>
+                        <div class="seleccion">
+                            <!-- Nº de Selección-->
+                            <button class="boton_mas pointer">
+                                <!-- Botón Mas-->
+                                +
+                            </button>
+                            <div class="n_seleccionado">
+                                <!-- Número-->
+                                <p>X</p>
+                            </div>
+                            <button class="boton_menos pointer">
+                                <!-- Botón Menos-->
+                                -
+                            </button>
+                            <div class="papelera pointer">
+                                <!-- Papelera-->
+                                <img src="../images/trash-solid.svg" />
+                            </div>
+                            <div class="precio_total">
+                                <!-- Precio total-->
+                                <p>XX.XX€</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="carrito_7" class="contenedor">
+                        <!-- Mortadella e Pistacchio-->
+                        <h3>Mortadella e Pistacchio</h3>
+                        <div class="seleccion">
+                            <!-- Nº de Selección-->
+                            <button class="boton_mas pointer">
+                                <!-- Botón Mas-->
+                                +
+                            </button>
+                            <div class="n_seleccionado">
+                                <!-- Número-->
+                                <p>X</p>
+                            </div>
+                            <button class="boton_menos pointer">
+                                <!-- Botón Menos-->
+                                -
+                            </button>
+                            <div class="papelera pointer">
+                                <!-- Papelera-->
+                                <img src="../images/trash-solid.svg" />
+                            </div>
+                            <div class="precio_total">
+                                <!-- Precio total-->
+                                <p>XX.XX€</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="carrito_8" class="contenedor">
+                        <!-- Shakshouka-->
+                        <h3>Shakshouka</h3>
+                        <div class="seleccion">
+                            <!-- Nº de Selección-->
+                            <button class="boton_mas pointer">
+                                <!-- Botón Mas-->
+                                +
+                            </button>
+                            <div class="n_seleccionado">
+                                <!-- Número-->
+                                <p>X</p>
+                            </div>
+                            <button class="boton_menos pointer">
+                                <!-- Botón Menos-->
+                                -
+                            </button>
+                            <div class="papelera pointer">
+                                <!-- Papelera-->
+                                <img src="../images/trash-solid.svg" />
+                            </div>
+                            <div class="precio_total">
+                                <!-- Precio total-->
+                                <p>XX.XX€</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="carrito_9" class="contenedor">
+                        <!-- Fichi e Prosciutto-->
+                        <h3>Fichi e Prosciutto</h3>
+                        <div class="seleccion">
+                            <!-- Nº de Selección-->
+                            <button class="boton_mas pointer">
+                                <!-- Botón Mas-->
+                                +
+                            </button>
+                            <div class="n_seleccionado">
+                                <!-- Número-->
+                                <p>X</p>
+                            </div>
+                            <button class="boton_menos pointer">
+                                <!-- Botón Menos-->
+                                -
+                            </button>
+                            <div class="papelera pointer">
+                                <!-- Papelera-->
+                                <img src="../images/trash-solid.svg" />
+                            </div>
+                            <div class="precio_total">
+                                <!-- Precio total-->
+                                <p>XX.XX€</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="carrito_10" class="contenedor">
+                        <!-- Pasta al Pesto di Salvia-->
+                        <h3>Pasta al Pesto di Salvia</h3>
+                        <div class="seleccion">
+                            <!-- Nº de Selección-->
+                            <button class="boton_mas pointer">
+                                <!-- Botón Mas-->
+                                +
+                            </button>
+                            <div class="n_seleccionado">
+                                <!-- Número-->
+                                <p>X</p>
+                            </div>
+                            <button class="boton_menos pointer">
+                                <!-- Botón Menos-->
+                                -
+                            </button>
+                            <div class="papelera pointer">
+                                <!-- Papelera-->
+                                <img src="../images/trash-solid.svg" />
+                            </div>
+                            <div class="precio_total">
+                                <!-- Precio total-->
+                                <p>XX.XX€</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="carrito_11" class="contenedor">
+                        <!-- Spaghetti Vongole al Cartoccio-->
+                        <h3>Spaghetti Vongole al Cartoccio</h3>
+                        <div class="seleccion">
+                            <!-- Nº de Selección-->
+                            <button class="boton_mas pointer">
+                                <!-- Botón Mas-->
+                                +
+                            </button>
+                            <div class="n_seleccionado">
+                                <!-- Número-->
+                                <p>X</p>
+                            </div>
+                            <button class="boton_menos pointer">
+                                <!-- Botón Menos-->
+                                -
+                            </button>
+                            <div class="papelera pointer">
+                                <!-- Papelera-->
+                                <img src="../images/trash-solid.svg" />
+                            </div>
+                            <div class="precio_total">
+                                <!-- Precio total-->
+                                <p>XX.XX€</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="carrito_12" class="contenedor">
+                        <!-- Fettuccine nero ai Frutti di Mare-->
+                        <h3>Fettuccine nero ai Frutti di Mare</h3>
+                        <div class="seleccion">
+                            <!-- Nº de Selección-->
+                            <button class="boton_mas pointer">
+                                <!-- Botón Mas-->
+                                +
+                            </button>
+                            <div class="n_seleccionado">
+                                <!-- Número-->
+                                <p>X</p>
+                            </div>
+                            <button class="boton_menos pointer">
+                                <!-- Botón Menos-->
+                                -
+                            </button>
+                            <div class="papelera pointer">
+                                <!-- Papelera-->
+                                <img src="../images/trash-solid.svg" />
+                            </div>
+                            <div class="precio_total">
+                                <!-- Precio total-->
+                                <p>XX.XX€</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="carrito_13" class="contenedor">
+                        <!-- Ossobuco in Gremolata & Gnocchi de Plátano Macho-->
+                        <h3>
+                            Ossobuco in Gremolata & Gnocchi de Plátano Macho
+                        </h3>
+                        <div class="seleccion">
+                            <!-- Nº de Selección-->
+                            <button class="boton_mas pointer">
+                                <!-- Botón Mas-->
+                                +
+                            </button>
+                            <div class="n_seleccionado">
+                                <!-- Número-->
+                                <p>X</p>
+                            </div>
+                            <button class="boton_menos pointer">
+                                <!-- Botón Menos-->
+                                -
+                            </button>
+                            <div class="papelera pointer">
+                                <!-- Papelera-->
+                                <img src="../images/trash-solid.svg" />
+                            </div>
+                            <div class="precio_total">
+                                <!-- Precio total-->
+                                <p>XX.XX€</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="carrito_14" class="contenedor">
+                        <!-- Risotto Criollo-->
+                        <h3>Risotto Criollo</h3>
+                        <div class="seleccion">
+                            <!-- Nº de Selección-->
+                            <button class="boton_mas pointer">
+                                <!-- Botón Mas-->
+                                +
+                            </button>
+                            <div class="n_seleccionado">
+                                <!-- Número-->
+                                <p>X</p>
+                            </div>
+                            <button class="boton_menos pointer">
+                                <!-- Botón Menos-->
+                                -
+                            </button>
+                            <div class="papelera pointer">
+                                <!-- Papelera-->
+                                <img src="../images/trash-solid.svg" />
+                            </div>
+                            <div class="precio_total">
+                                <!-- Precio total-->
+                                <p>XX.XX€</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="carrito_15" class="contenedor">
+                        <!-- Crostata de Pollo-->
+                        <h3>Crostata de Pollo</h3>
+                        <div class="seleccion">
+                            <!-- Nº de Selección-->
+                            <button class="boton_mas pointer">
+                                <!-- Botón Mas-->
+                                +
+                            </button>
+                            <div class="n_seleccionado">
+                                <!-- Número-->
+                                <p>X</p>
+                            </div>
+                            <button class="boton_menos pointer">
+                                <!-- Botón Menos-->
+                                -
+                            </button>
+                            <div class="papelera pointer">
+                                <!-- Papelera-->
+                                <img src="../images/trash-solid.svg" />
+                            </div>
+                            <div class="precio_total">
+                                <!-- Precio total-->
+                                <p>XX.XX€</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="carrito_16" class="contenedor">
+                        <!-- Tiramisu-->
+                        <h3>Tiramisu</h3>
+                        <div class="seleccion">
+                            <!-- Nº de Selección-->
+                            <button class="boton_mas pointer">
+                                <!-- Botón Mas-->
+                                +
+                            </button>
+                            <div class="n_seleccionado">
+                                <!-- Número-->
+                                <p>X</p>
+                            </div>
+                            <button class="boton_menos pointer">
+                                <!-- Botón Menos-->
+                                -
+                            </button>
+                            <div class="papelera pointer">
+                                <!-- Papelera-->
+                                <img src="../images/trash-solid.svg" />
+                            </div>
+                            <div class="precio_total">
+                                <!-- Precio total-->
+                                <p>XX.XX€</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="carrito_17" class="contenedor">
+                        <!-- Bartolomeo Cheesecake-->
+                        <h3>Bartolomeo Cheesecake</h3>
+                        <div class="seleccion">
+                            <!-- Nº de Selección-->
+                            <button class="boton_mas pointer">
+                                <!-- Botón Mas-->
+                                +
+                            </button>
+                            <div class="n_seleccionado">
+                                <!-- Número-->
+                                <p>X</p>
+                            </div>
+                            <button class="boton_menos pointer">
+                                <!-- Botón Menos-->
+                                -
+                            </button>
+                            <div class="papelera pointer">
+                                <!-- Papelera-->
+                                <img src="../images/trash-solid.svg" />
+                            </div>
+                            <div class="precio_total">
+                                <!-- Precio total-->
+                                <p>XX.XX€</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="carrito_18" class="contenedor">
+                        <!-- Tarta de Queso Criolla-->
+                        <h3>Tarta de Queso Criolla</h3>
+                        <div class="seleccion">
+                            <!-- Nº de Selección-->
+                            <button class="boton_mas pointer">
+                                <!-- Botón Mas-->
+                                +
+                            </button>
+                            <div class="n_seleccionado">
+                                <!-- Número-->
+                                <p>X</p>
+                            </div>
+                            <button class="boton_menos pointer">
+                                <!-- Botón Menos-->
+                                -
+                            </button>
+                            <div class="papelera pointer">
+                                <!-- Papelera-->
+                                <img src="../images/trash-solid.svg" />
+                            </div>
+                            <div class="precio_total">
+                                <!-- Precio total-->
+                                <p>XX.XX€</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="fondo_negro"></div>
         </section>
-        <div id="pop_up_descr_prod">
-            <!-- Pop-up genérico de consultar pedido-->
-            <!-- Fijo al realizar el scroll-->
-            <div class="caja_pop_up">
-                <div id="nombre_plato">
-                    <!-- Nombre del plato-->
-                    <p>XXXXXXXXXXXXXXXXXXXX</p>
-                </div>
-                <div id="caja_añadir">
-                    <!-- Fila de Añadir-->
-                    <!-- Botón Mas-->
-                    <button class="boton_mas">+</button>
-                    <div class="n_seleccionado">
-                        <!-- Número-->
-                        <p>X</p>
-                    </div>
-                    <!-- Botón Menos-->
-                    <button class="boton_menos">-</button>
-                    <div class="precio_total">
-                        <!-- Precio-->
-                        <p>XX.XX€</p>
-                    </div>
-                    <!-- Botón Añadir-->
-                    <button class="boton" id="boton_add">Añadir</button>
-                </div>
-                <div id="descripcion_prod" class="contenedor">
-                    <!-- Descripción del producto-->
-                    <p>XXXXXXXXX XXXXXXXX XXXXXXXXX XXXXXXX XXXXXXXXXXX XXXXXX XXXXXXXXXX XXXXXX </p>
-                </div>
 
-            </div>
-        </div>
-        <div class="fondo_negro"></div>
+        <section id="sect_revision">
+            <!-- Revisión y Pago-->
+            <article id="resumen_pedido">
+                <!-- Resumen del pedido-->
+                <h2 id="titulo_revision">Resumen del pedido</h2>
+                <div id="caja_pedidos">
+                    <div class="ud_prod" id="res_1">
+                        <p class="nombre_prod">Bartolomeo Benedict</p>
+                        <p class="precio">18.95€</p>
+                        <p class="cantidad">xN</p>
+                        <p class="suma">XX.XX€</p>
+                    </div>
+                    <div class="ud_prod" id="res_2">
+                        <p class="nombre_prod">Penntucky Breakfast</p>
+                        <p class="precio">18.95€</p>
+                        <p class="cantidad">xN</p>
+                        <p class="suma">XX.XX€</p>
+                    </div>
+                    <div class="ud_prod" id="res_3">
+                        <p class="nombre_prod">Cachopa</p>
+                        <p class="precio">18.95€</p>
+                        <p class="cantidad">xN</p>
+                        <p class="suma">XX.XX€</p>
+                    </div>
+                    <div class="ud_prod" id="res_4">
+                        <p class="nombre_prod">Burrata</p>
+                        <p class="precio">16.50€</p>
+                        <p class="cantidad">xN</p>
+                        <p class="suma">XX.XX€</p>
+                    </div>
+                    <div class="ud_prod" id="res_5">
+                        <p class="nombre_prod">Carpaccio di Salmone</p>
+                        <p class="precio">18.50€</p>
+                        <p class="cantidad">xN</p>
+                        <p class="suma">XX.XX€</p>
+                    </div>
+                    <div class="ud_prod" id="res_6">
+                        <p class="nombre_prod">Tequeños</p>
+                        <p class="precio">10.00€</p>
+                        <p class="cantidad">xN</p>
+                        <p class="suma">XX.XX€</p>
+                    </div>
+                    <div class="ud_prod" id="res_7">
+                        <p class="nombre_prod">Mortadella e Pistacchio</p>
+                        <p class="precio">16.50€</p>
+                        <p class="cantidad">xN</p>
+                        <p class="suma">XX.XX€</p>
+                    </div>
+                    <div class="ud_prod" id="res_8">
+                        <p class="nombre_prod">Shakshouka</p>
+                        <p class="precio">15.00€</p>
+                        <p class="cantidad">xN</p>
+                        <p class="suma">XX.XX€</p>
+                    </div>
+                    <div class="ud_prod" id="res_9">
+                        <p class="nombre_prod">Fichi e Prosciutto</p>
+                        <p class="precio">15.50€</p>
+                        <p class="cantidad">xN</p>
+                        <p class="suma">XX.XX€</p>
+                    </div>
+                    <div class="ud_prod" id="res_10">
+                        <p class="nombre_prod">Pasta al Pesto di Salvia</p>
+                        <p class="precio">17.00€</p>
+                        <p class="cantidad">xN</p>
+                        <p class="suma">XX.XX€</p>
+                    </div>
+                    <div class="ud_prod" id="res_11">
+                        <p class="nombre_prod">
+                            Spaghetti Vongole al Cartoccio
+                        </p>
+                        <p class="precio">20.00€</p>
+                        <p class="cantidad">xN</p>
+                        <p class="suma">XX.XX€</p>
+                    </div>
+                    <div class="ud_prod" id="res_12">
+                        <p class="nombre_prod">
+                            Fettuccine nero ai Frutti di Mare
+                        </p>
+                        <p class="precio">20.00€</p>
+                        <p class="cantidad">xN</p>
+                        <p class="suma">XX.XX€</p>
+                    </div>
+                    <div class="ud_prod" id="res_13">
+                        <p class="nombre_prod">Ossobuco & Gnocchi de Plátano</p>
+                        <p class="precio">22.00€</p>
+                        <p class="cantidad">xN</p>
+                        <p class="suma">XX.XX€</p>
+                    </div>
+                    <div class="ud_prod" id="res_14">
+                        <p class="nombre_prod">Risotto Criollo</p>
+                        <p class="precio">18.00€</p>
+                        <p class="cantidad">xN</p>
+                        <p class="suma">XX.XX€</p>
+                    </div>
+                    <div class="ud_prod" id="res_15">
+                        <p class="nombre_prod">Crostata de Pollo</p>
+                        <p class="precio">19.00€</p>
+                        <p class="cantidad">xN</p>
+                        <p class="suma">XX.XX€</p>
+                    </div>
+                    <div class="ud_prod" id="res_16">
+                        <p class="nombre_prod">Tiramisu</p>
+                        <p class="precio">6.00€</p>
+                        <p class="cantidad">xN</p>
+                        <p class="suma">XX.XX€</p>
+                    </div>
+                    <div class="ud_prod" id="res_17">
+                        <p class="nombre_prod">Bartolomeo Cheesecake</p>
+                        <p class="precio">6.90€</p>
+                        <p class="cantidad">xN</p>
+                        <p class="suma">XX.XX€</p>
+                    </div>
+                    <div class="ud_prod" id="res_18">
+                        <p class="nombre_prod">Tarta de Queso Criolla</p>
+                        <p class="precio">7.70€</p>
+                        <p class="cantidad">xN</p>
+                        <p class="suma">XX.XX€</p>
+                    </div>
+                </div>
+                <h2 id="total">Total: XX.XX€</h2>
+            </article>
+            <section id="cuadro_pago">
+                <!-- Formulario de Pago-->
+                <div id="formulario_pago">
+                    <div>
+                        <input
+                            type="text"
+                            class="input_pago"
+                            id="titular"
+                            name="titular"
+                            placeholder="Titular"
+                            required
+                        />
+                        <input
+                            type="text"
+                            class="input_pago"
+                            id="n_tarjeta"
+                            name="n_tarjeta"
+                            placeholder="N° de tarjeta"
+                            required
+                        />
+                        <input
+                            type="text"
+                            class="input_pago"
+                            id="fecha"
+                            name="fecha"
+                            placeholder="MM/AA"
+                            required
+                        />
+                        <input
+                            type="text"
+                            class="input_pago"
+                            id="cvv"
+                            name="cvv"
+                            placeholder="CVV"
+                            required
+                        />
+                    </div>
 
-        <section id="pop_up_carrito">
-            <!-- Pop-up carrito de la compra-->
-            <!-- Fijo al realizar el scroll-->
-            <div class="caja_pop_up">
-                <h3>Tu Pedido</h3>
-                <div id="carrito_1" class="contenedor">
-                    <!-- Bartolomeo Benedict-->
-                    <h3>Bartolomeo Benedict</h3>
-                    <div class="seleccion">
-                        <!-- Nº de Selección-->
-                        <div class="boton_mas">
-                            <!-- Botón Más-->
-                            <p>+</p>
-                        </div>
-                        <div class="n_seleccionado">
-                            <!-- Número-->
-                            <p>X</p>
-                        </div>
-                        <div class="boton_menos">
-                            <!-- Botón Menos-->
-                            <p>-</p>
-                        </div>
-                        <div class="papelera">
-                            <!-- Papelera-->
-                            <img src="../images/trash-solid.svg">
-                        </div>
-                        <div class="precio_total">
-                            <!-- Precio total-->
-                            <p>XX.XX€</p>
-                        </div>
+                    <div id="botones_pago">
+                        <button class="boton" id="boton_cancelar">
+                            Cancelar
+                        </button>
+                        <button class="boton siguiente" id="boton_pagar">
+                            Pagar
+                        </button>
                     </div>
                 </div>
-                <div id="carrito_2" class="contenedor">
-                    <!-- Penntucky Breakfast-->
-                    <h3>Penntucky Breakfast</h3>
-                    <div class="seleccion">
-                        <!-- Nº de Selección-->
-                        <div class="boton_mas">
-                            <!-- Botón Más-->
-                            <p>+</p>
-                        </div>
-                        <div class="n_seleccionado">
-                            <!-- Número-->
-                            <p>X</p>
-                        </div>
-                        <div class="boton_menos">
-                            <!-- Botón Menos-->
-                            <p>-</p>
-                        </div>
-                        <div class="papelera">
-                            <!-- Papelera-->
-                            <img src="../images/trash-solid.svg">
-                        </div>
-                        <div class="precio_total">
-                            <!-- Precio total-->
-                            <p>XX.XX€</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="carrito_3" class="contenedor">
-                    <!-- Cachapas-->
-                    <h3>Cachapas</h3>
-                    <div class="seleccion">
-                        <!-- Nº de Selección-->
-                        <div class="boton_mas">
-                            <!-- Botón Más-->
-                            <p>+</p>
-                        </div>
-                        <div class="n_seleccionado">
-                            <!-- Número-->
-                            <p>X</p>
-                        </div>
-                        <div class="boton_menos">
-                            <!-- Botón Menos-->
-                            <p>-</p>
-                        </div>
-                        <div class="papelera">
-                            <!-- Papelera-->
-                            <img src="../images/trash-solid.svg">
-                        </div>
-                        <div class="precio_total">
-                            <!-- Precio total-->
-                            <p>XX.XX€</p>
-                        </div>
-                    </div>
-                </div>
-                <div id="carrito_4" class="contenedor">
-                    <!-- Burrata-->
-                    <h3>Burrata</h3>
-                    <div class="seleccion">
-                        <!-- Nº de Selección-->
-                        <div class="boton_mas">
-                            <!-- Botón Más-->
-                            <p>+</p>
-                        </div>
-                        <div class="n_seleccionado">
-                            <!-- Número-->
-                            <p>X</p>
-                        </div>
-                        <div class="boton_menos">
-                            <!-- Botón Menos-->
-                            <p>-</p>
-                        </div>
-                        <div class="papelera">
-                            <!-- Papelera-->
-                            <img src="../images/trash-solid.svg">
-                        </div>
-                        <div class="precio_total">
-                            <!-- Precio total-->
-                            <p>XX.XX€</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="carrito_5" class="contenedor">
-                    <!-- Carpaccio di Salmone-->
-                    <h3>Carpaccio di Salmone</h3>
-                    <div class="seleccion">
-                        <!-- Nº de Selección-->
-                        <div class="boton_mas">
-                            <!-- Botón Más-->
-                            <p>+</p>
-                        </div>
-                        <div class="n_seleccionado">
-                            <!-- Número-->
-                            <p>X</p>
-                        </div>
-                        <div class="boton_menos">
-                            <!-- Botón Menos-->
-                            <p>-</p>
-                        </div>
-                        <div class="papelera">
-                            <!-- Papelera-->
-                            <img src="../images/trash-solid.svg">
-                        </div>
-                        <div class="precio_total">
-                            <!-- Precio total-->
-                            <p>XX.XX€</p>
-                        </div>
-                    </div>
-                </div>
-                <div id="carrito_6" class="contenedor">
-                    <!-- Tequeños-->
-                    <h3>Tequeños</h3>
-                    <div class="seleccion">
-                        <!-- Nº de Selección-->
-                        <div class="boton_mas">
-                            <!-- Botón Más-->
-                            <p>+</p>
-                        </div>
-                        <div class="n_seleccionado">
-                            <!-- Número-->
-                            <p>X</p>
-                        </div>
-                        <div class="boton_menos">
-                            <!-- Botón Menos-->
-                            <p>-</p>
-                        </div>
-                        <div class="papelera">
-                            <!-- Papelera-->
-                            <img src="../images/trash-solid.svg">
-                        </div>
-                        <div class="precio_total">
-                            <!-- Precio total-->
-                            <p>XX.XX€</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="carrito_7" class="contenedor">
-                    <!-- Mortadella e Pistacchio-->
-                    <h3>Mortadella e Pistacchio</h3>
-                    <div class="seleccion">
-                        <!-- Nº de Selección-->
-                        <div class="boton_mas">
-                            <!-- Botón Más-->
-                            <p>+</p>
-                        </div>
-                        <div class="n_seleccionado">
-                            <!-- Número-->
-                            <p>X</p>
-                        </div>
-                        <div class="boton_menos">
-                            <!-- Botón Menos-->
-                            <p>-</p>
-                        </div>
-                        <div class="papelera">
-                            <!-- Papelera-->
-                            <img src="../images/trash-solid.svg">
-                        </div>
-                        <div class="precio_total">
-                            <!-- Precio total-->
-                            <p>XX.XX€</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="carrito_8" class="contenedor">
-                    <!-- Shakshouka-->
-                    <h3>Shakshouka</h3>
-                    <div class="seleccion">
-                        <!-- Nº de Selección-->
-                        <div class="boton_mas">
-                            <!-- Botón Más-->
-                            <p>+</p>
-                        </div>
-                        <div class="n_seleccionado">
-                            <!-- Número-->
-                            <p>X</p>
-                        </div>
-                        <div class="boton_menos">
-                            <!-- Botón Menos-->
-                            <p>-</p>
-                        </div>
-                        <div class="papelera">
-                            <!-- Papelera-->
-                            <img src="../images/trash-solid.svg">
-                        </div>
-                        <div class="precio_total">
-                            <!-- Precio total-->
-                            <p>XX.XX€</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="carrito_9" class="contenedor">
-                    <!-- Fichi e Prosciutto-->
-                    <h3>Fichi e Prosciutto</h3>
-                    <div class="seleccion">
-                        <!-- Nº de Selección-->
-                        <div class="boton_mas">
-                            <!-- Botón Más-->
-                            <p>+</p>
-                        </div>
-                        <div class="n_seleccionado">
-                            <!-- Número-->
-                            <p>X</p>
-                        </div>
-                        <div class="boton_menos">
-                            <!-- Botón Menos-->
-                            <p>-</p>
-                        </div>
-                        <div class="papelera">
-                            <!-- Papelera-->
-                            <img src="../images/trash-solid.svg">
-                        </div>
-                        <div class="precio_total">
-                            <!-- Precio total-->
-                            <p>XX.XX€</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="carrito_10" class="contenedor">
-                    <!-- Pasta al Pesto di Salvia-->
-                    <h3>Pasta al Pesto di Salvia</h3>
-                    <div class="seleccion">
-                        <!-- Nº de Selección-->
-                        <div class="boton_mas">
-                            <!-- Botón Más-->
-                            <p>+</p>
-                        </div>
-                        <div class="n_seleccionado">
-                            <!-- Número-->
-                            <p>X</p>
-                        </div>
-                        <div class="boton_menos">
-                            <!-- Botón Menos-->
-                            <p>-</p>
-                        </div>
-                        <div class="papelera">
-                            <!-- Papelera-->
-                            <img src="../images/trash-solid.svg">
-                        </div>
-                        <div class="precio_total">
-                            <!-- Precio total-->
-                            <p>XX.XX€</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="carrito_11" class="contenedor">
-                    <!-- Spaghetti Vongole al Cartoccio-->
-                    <h3>Spaghetti Vongole al Cartoccio</h3>
-                    <div class="seleccion">
-                        <!-- Nº de Selección-->
-                        <div class="boton_mas">
-                            <!-- Botón Más-->
-                            <p>+</p>
-                        </div>
-                        <div class="n_seleccionado">
-                            <!-- Número-->
-                            <p>X</p>
-                        </div>
-                        <div class="boton_menos">
-                            <!-- Botón Menos-->
-                            <p>-</p>
-                        </div>
-                        <div class="papelera">
-                            <!-- Papelera-->
-                            <img src="../images/trash-solid.svg">
-                        </div>
-                        <div class="precio_total">
-                            <!-- Precio total-->
-                            <p>XX.XX€</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="carrito_12" class="contenedor">
-                    <!-- Fettuccine nero ai Frutti di Mare-->
-                    <h3>Fettuccine nero ai Frutti di Mare</h3>
-                    <div class="seleccion">
-                        <!-- Nº de Selección-->
-                        <div class="boton_mas">
-                            <!-- Botón Más-->
-                            <p>+</p>
-                        </div>
-                        <div class="n_seleccionado">
-                            <!-- Número-->
-                            <p>X</p>
-                        </div>
-                        <div class="boton_menos">
-                            <!-- Botón Menos-->
-                            <p>-</p>
-                        </div>
-                        <div class="papelera">
-                            <!-- Papelera-->
-                            <img src="../images/trash-solid.svg">
-                        </div>
-                        <div class="precio_total">
-                            <!-- Precio total-->
-                            <p>XX.XX€</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="carrito_13" class="contenedor">
-                    <!-- Ossobuco in Gremolata & Gnocchi de Plátano Macho-->
-                    <h3>Ossobuco in Gremolata & Gnocchi de Plátano Macho</h3>
-                    <div class="seleccion">
-                        <!-- Nº de Selección-->
-                        <div class="boton_mas">
-                            <!-- Botón Más-->
-                            <p>+</p>
-                        </div>
-                        <div class="n_seleccionado">
-                            <!-- Número-->
-                            <p>X</p>
-                        </div>
-                        <div class="boton_menos">
-                            <!-- Botón Menos-->
-                            <p>-</p>
-                        </div>
-                        <div class="papelera">
-                            <!-- Papelera-->
-                            <img src="../images/trash-solid.svg">
-                        </div>
-                        <div class="precio_total">
-                            <!-- Precio total-->
-                            <p>XX.XX€</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="carrito_14" class="contenedor">
-                    <!-- Risotto Criollo-->
-                    <h3>Risotto Criollo</h3>
-                    <div class="seleccion">
-                        <!-- Nº de Selección-->
-                        <div class="boton_mas">
-                            <!-- Botón Más-->
-                            <p>+</p>
-                        </div>
-                        <div class="n_seleccionado">
-                            <!-- Número-->
-                            <p>X</p>
-                        </div>
-                        <div class="boton_menos">
-                            <!-- Botón Menos-->
-                            <p>-</p>
-                        </div>
-                        <div class="papelera">
-                            <!-- Papelera-->
-                            <img src="../images/trash-solid.svg">
-                        </div>
-                        <div class="precio_total">
-                            <!-- Precio total-->
-                            <p>XX.XX€</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="carrito_15" class="contenedor">
-                    <!-- Crostata de Pollo-->
-                    <h3>Crostata de Pollo</h3>
-                    <div class="seleccion">
-                        <!-- Nº de Selección-->
-                        <div class="boton_mas">
-                            <!-- Botón Más-->
-                            <p>+</p>
-                        </div>
-                        <div class="n_seleccionado">
-                            <!-- Número-->
-                            <p>X</p>
-                        </div>
-                        <div class="boton_menos">
-                            <!-- Botón Menos-->
-                            <p>-</p>
-                        </div>
-                        <div class="papelera">
-                            <!-- Papelera-->
-                            <img src="../images/trash-solid.svg">
-                        </div>
-                        <div class="precio_total">
-                            <!-- Precio total-->
-                            <p>XX.XX€</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="carrito_16" class="contenedor">
-                    <!-- Tiramisu-->
-                    <h3>Tiramisu</h3>
-                    <div class="seleccion">
-                        <!-- Nº de Selección-->
-                        <div class="boton_mas">
-                            <!-- Botón Más-->
-                            <p>+</p>
-                        </div>
-                        <div class="n_seleccionado">
-                            <!-- Número-->
-                            <p>X</p>
-                        </div>
-                        <div class="boton_menos">
-                            <!-- Botón Menos-->
-                            <p>-</p>
-                        </div>
-                        <div class="papelera">
-                            <!-- Papelera-->
-                            <img src="../images/trash-solid.svg">
-                        </div>
-                        <div class="precio_total">
-                            <!-- Precio total-->
-                            <p>XX.XX€</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="carrito_17" class="contenedor">
-                    <!-- Bartolomeo Cheesecake-->
-                    <h3>Bartolomeo Cheesecake</h3>
-                    <div class="seleccion">
-                        <!-- Nº de Selección-->
-                        <div class="boton_mas">
-                            <!-- Botón Más-->
-                            <p>+</p>
-                        </div>
-                        <div class="n_seleccionado">
-                            <!-- Número-->
-                            <p>X</p>
-                        </div>
-                        <div class="boton_menos">
-                            <!-- Botón Menos-->
-                            <p>-</p>
-                        </div>
-                        <div class="papelera">
-                            <!-- Papelera-->
-                            <img src="../images/trash-solid.svg">
-                        </div>
-                        <div class="precio_total">
-                            <!-- Precio total-->
-                            <p>XX.XX€</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="carrito_18" class="contenedor">
-                    <!-- Tarta de Queso Criolla-->
-                    <h3>Tarta de Queso Criolla</h3>
-                    <div class="seleccion">
-                        <!-- Nº de Selección-->
-                        <div class="boton_mas">
-                            <!-- Botón Más-->
-                            <p>+</p>
-                        </div>
-                        <div class="n_seleccionado">
-                            <!-- Número-->
-                            <p>X</p>
-                        </div>
-                        <div class="boton_menos">
-                            <!-- Botón Menos-->
-                            <p>-</p>
-                        </div>
-                        <div class="papelera">
-                            <!-- Papelera-->
-                            <img src="../images/trash-solid.svg">
-                        </div>
-                        <div class="precio_total">
-                            <!-- Precio total-->
-                            <p>XX.XX€</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="fondo_negro"></div>
-    </section>
-
-    <section id="sect_revision">
-        <!-- Revisión y Pago-->
-        <article id="resumen_pedido">
-            <!-- Resumen del pedido-->
-            <h2 id="titulo_revision">Resumen del pedido</h2>
-            <div id="caja_pedidos">
-                <div class="ud_prod" id="res_1">
-                    <p class="nombre_prod">Bartolomeo Benedict </p>
-                    <p class="precio">18.95€</p>
-                    <p class="cantidad">xN</p>
-                    <p class="suma">XX.XX€</p>
-                </div>
-                <div class="ud_prod" id="res_2">
-                    <p class="nombre_prod">Penntucky Breakfast </p>
-                    <p class="precio">18.95€</p>
-                    <p class="cantidad">xN</p>
-                    <p class="suma">XX.XX€</p>
-                </div>
-                <div class="ud_prod" id="res_3">
-                    <p class="nombre_prod">Cachopa </p>
-                    <p class="precio">18.95€</p>
-                    <p class="cantidad">xN</p>
-                    <p class="suma">XX.XX€</p>
-                </div>
-                <div class="ud_prod" id="res_4">
-                    <p class="nombre_prod">Burrata </p>
-                    <p class="precio">16.50€</p>
-                    <p class="cantidad">xN</p>
-                    <p class="suma">XX.XX€</p>
-                </div>
-                <div class="ud_prod" id="res_5">
-                    <p class="nombre_prod">Carpaccio di Salmone </p>
-                    <p class="precio">18.50€</p>
-                    <p class="cantidad">xN</p>
-                    <p class="suma">XX.XX€</p>
-                </div>
-                <div class="ud_prod" id="res_6">
-                    <p class="nombre_prod">Tequeños </p>
-                    <p class="precio">10.00€</p>
-                    <p class="cantidad">xN</p>
-                    <p class="suma">XX.XX€</p>
-                </div>
-                <div class="ud_prod" id="res_7">
-                    <p class="nombre_prod">Mortadella e Pistacchio </p>
-                    <p class="precio">16.50€</p>
-                    <p class="cantidad">xN</p>
-                    <p class="suma">XX.XX€</p>
-                </div>
-                <div class="ud_prod" id="res_8">
-                    <p class="nombre_prod">Shakshouka </p>
-                    <p class="precio">15.00€</p>
-                    <p class="cantidad">xN</p>
-                    <p class="suma">XX.XX€</p>
-                </div>
-                <div class="ud_prod" id="res_9">
-                    <p class="nombre_prod">Fichi e Prosciutto </p>
-                    <p class="precio">15.50€</p>
-                    <p class="cantidad">xN</p>
-                    <p class="suma">XX.XX€</p>
-                </div>
-                <div class="ud_prod" id="res_10">
-                    <p class="nombre_prod">Pasta al Pesto di Salvia </p>
-                    <p class="precio">17.00€</p>
-                    <p class="cantidad">xN</p>
-                    <p class="suma">XX.XX€</p>
-                </div>
-                <div class="ud_prod" id="res_11">
-                    <p class="nombre_prod">Spaghetti Vongole al Cartoccio </p>
-                    <p class="precio">20.00€</p>
-                    <p class="cantidad">xN</p>
-                    <p class="suma">XX.XX€</p>
-                </div>
-                <div class="ud_prod" id="res_12">
-                    <p class="nombre_prod">Fettuccine nero ai Frutti di Mare</p>
-                    <p class="precio">20.00€</p>
-                    <p class="cantidad">xN</p>
-                    <p class="suma">XX.XX€</p>
-                </div>
-                <div class="ud_prod" id="res_13">
-                    <p class="nombre_prod">Ossobuco & Gnocchi de Plátano </p>
-                    <p class="precio">22.00€</p>
-                    <p class="cantidad">xN</p>
-                    <p class="suma">XX.XX€</p>
-                </div>
-                <div class="ud_prod" id="res_14">
-                    <p class="nombre_prod">Risotto Criollo </p>
-                    <p class="precio">18.00€</p>
-                    <p class="cantidad">xN</p>
-                    <p class="suma">XX.XX€</p>
-                </div>
-                <div class="ud_prod" id="res_15">
-                    <p class="nombre_prod">Crostata de Pollo </p>
-                    <p class="precio">19.00€</p>
-                    <p class="cantidad">xN</p>
-                    <p class="suma">XX.XX€</p>
-                </div>
-                <div class="ud_prod" id="res_16">
-                    <p class="nombre_prod">Tiramisu </p>
-                    <p class="precio">6.00€ </p>
-                    <p class="cantidad">xN</p>
-                    <p class="suma">XX.XX€</p>
-                </div>
-                <div class="ud_prod" id="res_17">
-                    <p class="nombre_prod">Bartolomeo Cheesecake </p>
-                    <p class="precio">6.90€ </p>
-                    <p class="cantidad">xN</p>
-                    <p class="suma">XX.XX€</p>
-                </div>
-                <div class="ud_prod" id="res_18">
-                    <p class="nombre_prod">Tarta de Queso Criolla </p>
-                    <p class="precio">7.70€ </p>
-                    <p class="cantidad">xN</p>
-                    <p class="suma">XX.XX€</p>
-                </div>
-            </div>
-            <h2 id="total">Total: XX.XX€</h2>
-
-        </article>
-        <section id="cuadro_pago">
-            <!-- Formulario de Pago-->
-            <div id="formulario_pago">
+            </section>
+            <div>
+                <!-- Confirmación de Pago-->
                 <div>
-                    <input type="text" class="input_pago" id="titular" name="titular" placeholder="Titular" required>
-                    <input type="text" class="input_pago" id="n_tarjeta" name="n_tarjeta" placeholder="N° de tarjeta"
-                        required>
-                    <input type="text" class="input_pago" id="fecha" name="fecha" placeholder="MM/AA" required>
-                    <input type="text" class="input_pago" id="cvv" name="cvv" placeholder="CVV" required>
+                    <!-- Texto de Confirmación-->
                 </div>
-
-                <div id="botones_pago">
-                    <button class="boton siguiente" id="boton_pagar">Pagar</button>
-                    <button class="boton" id="boton_cancelar">Cancelar</button>
+                <div>
+                    <!-- Botón de Pagar-->
+                </div>
+                <div>
+                    <!-- Botón de Modificar-->
                 </div>
             </div>
         </section>
-        <div>
-            <!-- Confirmación de Pago-->
-            <div>
-                <!-- Texto de Confirmación-->
-            </div>
-            <div>
-                <!-- Botón de Pagar-->
-            </div>
-            <div>
-                <!-- Botón de Modificar-->
-            </div>
-        </div>
-    </section>
 
-    <section id="sect_completado">
-        <!-- Sección de Pedido Realizado-->
-        <section class="contendedor_centrado">
-            <!-- Confirmación de pedido-->
-            <div class="contenedor contendedor_centrado" id="confirmacion_pedido">
-                <!-- Texto de Confirmación-->
-                <img id="img_pedido_confirmado" src="../images/logo-pedido-realizado-removebg-preview.png">
-                <h2>¡Pedido realizado!</h2>
-            </div>
+        <section id="sect_completado">
+            <!-- Sección de Pedido Realizado-->
+            <section class="contendedor_centrado">
+                <!-- Confirmación de pedido-->
+                <div
+                    class="contenedor contendedor_centrado"
+                    id="confirmacion_pedido"
+                >
+                    <!-- Texto de Confirmación-->
+                    <img
+                        id="img_pedido_confirmado"
+                        src="../images/logo-pedido-realizado-removebg-preview.png"
+                    />
+                    <h2>¡Pedido realizado!</h2>
+                </div>
+            </section>
+            <article>
+                <div class="rectangulo-fondo" id="rectangulo_1"></div>
+                <div class="rectangulo-fondo" id="rectangulo_2"></div>
+                <div class="rectangulo-fondo" id="rectangulo_3"></div>
+                <div class="rectangulo-fondo" id="rectangulo_4"></div>
+                <div class="rectangulo-fondo" id="rectangulo_5"></div>
+                <div class="rectangulo-fondo" id="rectangulo_6"></div>
+
+                <div></div>
+            </article>
         </section>
-        <article>
-            <div class="rectangulo-fondo" id="rectangulo_1"></div>
-            <div class="rectangulo-fondo" id="rectangulo_2"></div>
-            <div class="rectangulo-fondo" id="rectangulo_3"></div>
-            <div class="rectangulo-fondo" id="rectangulo_4"></div>
-            <div class="rectangulo-fondo" id="rectangulo_5"></div>
-            <div class="rectangulo-fondo" id="rectangulo_6"></div>
+        <script src="./scripts/shared.js"></script>
+        <script src="./scripts/pedidos.js"></script>
+        <script>
+            const contenedor = document.getElementById("filtros");
 
-            <div></div>
-        </article>
-    </section>
-    <script src="./scripts/shared.js"></script>
-    <script src="./scripts/pedidos.js"></script>
-    <script>
-        const contenedor = document.getElementById("filtros");
-
-        contenedor.addEventListener("wheel", (event) => {
-            // Verifica si el evento de rueda es un scroll vertical
-            if (event.deltaY !== 0) {
-                // Realiza un scroll horizontal equivalente al scroll vertical
-                contenedor.scrollLeft += 0.4 * event.deltaY;
-                // Detén el comportamiento predeterminado del scroll vertical
-                event.preventDefault();
-            }
-        });
-    </script>
-
-    <script src="./scripts/shared.js"></script>
-
-</body>
+            contenedor.addEventListener("wheel", (event) => {
+                // Verifica si el evento de rueda es un scroll vertical
+                if (event.deltaY !== 0) {
+                    // Realiza un scroll horizontal equivalente al scroll vertical
+                    contenedor.scrollLeft += 0.4 * event.deltaY;
+                    // Detén el comportamiento predeterminado del scroll vertical
+                    event.preventDefault();
+                }
+            });
+        </script>
+    </body>
+</html>
