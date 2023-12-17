@@ -4,7 +4,12 @@
     margin-top: 4.9%;
 }
 
-/*Fondos*/
+h1 {
+    font-size: medium;
+    font-weight: normal;
+    text-align: left;
+  }
+
 .fondo-home {
     background-color: #F9D7A0;
     height: auto;
@@ -54,7 +59,7 @@
     font-size: 2.4rem;
     padding-left: 8%;
     margin-top: 10%;
-    text-align: justify;
+    text-align: left;
 }
 
 .separar{
@@ -106,6 +111,10 @@
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
 
 }
+
+h1 {font-size: 2.8rem;
+    text-align: center;
+    color: beige;}
 
 .pedido-reserva-img {
     width:60%;
@@ -220,9 +229,6 @@
     float:left;
     width:90%;
     background-color: #977236;
-    font-size: 2.8rem;
-    text-align: justify;
-    color: beige;
     margin-left: 5%;
     margin-bottom: 4%;
     border-radius: 10px;
@@ -233,6 +239,10 @@
     width:90%;
     float: left;
     margin-left: 1%;
+}
+
+#platos-txt h1 {
+    text-align: left;
 }
 
 .platos-img {
@@ -286,9 +296,6 @@
     float:left;
     width:90%;
     background-color: #333333;
-    font-size: 2.8rem;
-    text-align: justify;
-    color: beige;
     margin-left: 5%;
     margin-bottom: 3%;
     border-radius: 10px;
@@ -299,6 +306,11 @@
     width:30%;
     float: left;
     margin-left: 1%;
+    color: beige;
+}
+
+#contactanos-txt h1 {
+    text-align: left;
 }
 
 #logo-correo {
@@ -316,12 +328,17 @@
 
 #telf {
     margin-top: 13%;
-    font-size: 2.2rem;
 }
 #direccion {
     margin-top: 2%;
-    font-size: 2.2rem;
 }
+
+#contactanos-txt h2 {
+    font-size: 2.2rem;
+    font-weight: normal;
+    color: beige;
+}
+
 
 /*Cuadro de opiniones y dejar reseña*/
 #opiniones{
@@ -329,7 +346,7 @@
     width:90%;
     background-color: #904E00;
     font-size: 2.8rem;
-    text-align: justify;
+    text-align: left;
     color: beige;
     margin-left: 5%;
     margin-bottom: 3%;
@@ -342,6 +359,10 @@
     float: left;
     margin-left: 3%;
     margin-top: 9%;
+}
+
+#opiniones-txt h1 {
+    text-align: left;
 }
 
 #caja-opinion {
@@ -366,10 +387,13 @@ footer {
 
 #pol-priv {
     float:right;
-    font-size: 1.5rem;
-    color: beige;
     margin-top: 3%;
     margin-right: 3%;
+}
+
+#pol-priv h1 {
+    font-size: 1.5rem;
+    color: beige;
 }
 
 /*Botones de pedido, reserva y ver carta*/
@@ -379,13 +403,16 @@ footer {
     padding: 1.25%;
     padding-top: 1.5%;
     padding-bottom: 1.5%;
-    font-size: 2rem;
     border-radius: 10px;
     top: 325px;
     left: 16%;
     box-shadow: -6px -6px 5px rgba(0, 0, 0, 0.3);
-    color:#333333;
     text-decoration: none;
+}
+
+#boton-pedido h1 {
+    color:#333333;
+    font-size: 2rem;
 }
 
 #fondo-boton-pedido{
@@ -394,10 +421,14 @@ footer {
     padding: 1.25%;
     padding-top: 1.5%;
     padding-bottom: 1.5%;
-    font-size: 2rem;
     border-radius: 10px;
     top: 330px;
     left: 16%;
+}
+
+#fondo-boton-pedido h1 {
+    font-size: 2rem;
+    color:#333333;
 }
 
 #boton-reserva{
@@ -406,13 +437,16 @@ footer {
     padding: 1.25%;
     padding-top: 1.5%;
     padding-bottom: 1.5%;
-    font-size: 2rem;
     border-radius: 10px;
     top: 325px;
     left: 64%;
     box-shadow: -6px -6px 5px rgba(0, 0, 0, 0.3);
-    color:#333333;
     text-decoration: none;
+}
+
+#boton-reserva h1 {
+    color:#333333;
+    font-size: 2rem;
 }
 
 #fondo-boton-reserva{
@@ -421,10 +455,14 @@ footer {
     padding: 1.25%;
     padding-top: 1.5%;
     padding-bottom: 1.5%;
-    font-size: 2rem;
     border-radius: 10px;
     top: 330px;
     left: 64%;
+}
+
+#fondo-boton-reserva h1 {
+    font-size: 2rem;
+    color:#333333;
 }
 
 #boton-carta{
@@ -433,13 +471,16 @@ footer {
     padding: 2.5%;
     padding-top: 1.5%;
     padding-bottom: 1.5%;
-    font-size: 2rem;
     border-radius: 10px;
     top: 365px;
     right: 2%;
     box-shadow: -6px -6px 5px rgba(0, 0, 0, 0.3);
-    color:#333333;
     text-decoration: none;
+}
+
+#boton-carta h1 {
+    color:#333333;
+    font-size: 2rem;
 }
 
 #fondo-boton-carta{
@@ -448,10 +489,14 @@ footer {
     padding: 2.5%;
     padding-top: 1.5%;
     padding-bottom: 1.5%;
-    font-size: 2rem;
     border-radius: 10px;
     top: 370px;
     right: 2%;
+}
+
+#fondo-boton-carta h1 {
+    font-size: 2rem;
+    color:#333333;
 }
 
 /*Galería grande de mejores platos*/
