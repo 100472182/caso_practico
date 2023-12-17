@@ -3,9 +3,9 @@
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <title>Bartolomeo</title>
-        <link rel="stylesheet" href="style/pedidos.css" />
-        <link rel="stylesheet" href="style/shared.css" />
-        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="style/pedidos.css" >
+        <link rel="stylesheet" href="style/shared.css" >
+        <meta charset="UTF-8" >
     </head>
 
     <body>
@@ -16,7 +16,7 @@
                         id="logo_bartolomeo"
                         src="./images/logo-bartolomeo.png"
                         alt="Logo Bartolomeo"
-                    />
+                    >
                 </a>
             </div>
             <ul>
@@ -48,7 +48,7 @@
                 </div>
             </div>
         </header>
-        <section class="contendedor_centrado">
+        <div class="contendedor_centrado">
             <!-- Barra de Progreso-->
             <div id="barra_progreso">
                 <div class="nodo" id="progreso_nodo_bolsa">
@@ -56,7 +56,8 @@
                     <img
                         class="img_nodo"
                         src="./images/bag-shopping-solid.svg"
-                    />
+                        alt="Bolsa de la compra"
+                    >
                 </div>
                 <div class="barra" id="progreso_barra_bolsa_tarjeta">
                     <!-- Barra de Bolsa a Tarjeta-->
@@ -66,20 +67,25 @@
                     <img
                         id="img_n_tarjeta"
                         src="./images/credit-card-solid.svg"
-                    />
+                        alt="Tarjeta de Pago"
+                    >
                 </div>
                 <div class="barra" id="progreso_barra_tarjeta_completo">
                     <!-- Barra de Tarjeta a Pedido Completo-->
                 </div>
                 <div class="nodo" id="progreso_nodo_completo">
                     <!-- Pedido Completo-->
-                    <img class="img_nodo" src="./images/check-solid.svg" />
+                    <img
+                        class="img_nodo"
+                        src="./images/check-solid.svg"
+                        alt="Check"
+                    >
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section id="sect_pedidos">
-            <section id="filtros" class="contenedor">
+        <div id="sect_pedidos">
+            <div id="filtros" class="contenedor">
                 <!-- Barra de Filtros/Categorias-->
 
                 <!-- No tienen que entrar todas las categorías, debe de ser scrolleable, este div no sé si es necesario-->
@@ -112,7 +118,7 @@
                     <!-- Postres-->
                     Postres
                 </div>
-            </section>
+            </div>
             <div id="contenedor_control_pedido">
                 <!-- Sección Seleccionar Pedidos-->
                 <div id="control_pedido" class="contenedor">
@@ -133,7 +139,8 @@
                                 id="img_cesta"
                                 class="pointer"
                                 src="./images/Cesta.png"
-                            />
+                                alt="Cesta"
+                            >
                         </li>
                         <li>
                             <!--Img Tarjeta-->
@@ -141,12 +148,13 @@
                                 id="img_tarjeta"
                                 class="siguiente pointer"
                                 src="./images/Tarjeta_de_credito.png"
-                            />
+                                alt="Tarjeta de crédito"
+                            >
                         </li>
                     </ul>
                 </div>
             </div>
-            <section class="contendedor_centrado">
+            <div class="contendedor_centrado">
                 <section id="productos">
                     <!-- Productos -->
                     <div id="prod_1" class="contenedor producto pointer">
@@ -155,7 +163,8 @@
                         <img
                             class="imagen_producto"
                             src="./images/desayuno1.jpg"
-                        />
+                            alt="Bartolomeo Benedict"
+                        >
                     </div>
                     <div id="prod_2" class="contenedor producto pointer">
                         <!-- Penntucky Breakfast-->
@@ -163,7 +172,8 @@
                         <img
                             class="imagen_producto"
                             src="./images/desayuno2.jpg"
-                        />
+                            alt="Penntucky Breakfast"
+                        >
                     </div>
                     <div id="prod_3" class="contenedor producto pointer">
                         <!-- Cachapas-->
@@ -171,7 +181,8 @@
                         <img
                             class="imagen_producto"
                             src="./images/desayuno3.jpg"
-                        />
+                            alt="Cachapas"
+                        >
                     </div>
                     <div id="prod_4" class="contenedor producto pointer">
                         <!-- Burrata-->
@@ -179,7 +190,8 @@
                         <img
                             class="imagen_producto"
                             src="./images/entrante1.jpg"
-                        />
+                            alt="Burrata"
+                        >
                     </div>
                     <div id="prod_5" class="contenedor producto pointer">
                         <!-- Carpaccio di Salmone-->
@@ -187,7 +199,8 @@
                         <img
                             class="imagen_producto"
                             src="./images/entrante2.jpg"
-                        />
+                            alt="Carpaccio di Salmone"
+                        >
                     </div>
                     <div id="prod_6" class="contenedor producto pointer">
                         <!-- Tequeños-->
@@ -195,7 +208,8 @@
                         <img
                             class="imagen_producto"
                             src="./images/entrante3.jpg"
-                        />
+                            alt="Tequeños"
+                        >
                     </div>
                     <div id="prod_7" class="contenedor producto pointer">
                         <!-- Mortadella e Pistacchio-->
@@ -203,7 +217,8 @@
                         <img
                             class="imagen_producto"
                             src="./images/pizza1.jpg"
-                        />
+                            alt="Mortadella e Pistacchio"
+                        >
                     </div>
                     <div id="prod_8" class="contenedor producto pointer">
                         <!-- Shakshouka-->
@@ -211,7 +226,8 @@
                         <img
                             class="imagen_producto"
                             src="./images/pizza2.jpg"
-                        />
+                            alt="Shakshouka"
+                        >
                     </div>
                     <div id="prod_9" class="contenedor producto pointer">
                         <!-- Fichi e Prosciutto-->
@@ -219,7 +235,8 @@
                         <img
                             class="imagen_producto"
                             src="./images/pizza3.jpg"
-                        />
+                            alt="Fichi e Prosciutto"
+                        >
                     </div>
                     <div id="prod_10" class="contenedor producto pointer">
                         <!-- Pasta al Pesto di Salvia-->
@@ -227,7 +244,8 @@
                         <img
                             class="imagen_producto"
                             src="./images/pasta1.jpg"
-                        />
+                            alt="Pasta al Pesto di Salvia"
+                        >
                     </div>
                     <div id="prod_11" class="contenedor producto pointer">
                         <!-- Spaghetti Vongole al Cartoccio-->
@@ -235,7 +253,8 @@
                         <img
                             class="imagen_producto"
                             src="./images/pasta2.jpg"
-                        />
+                            alt="Spaghetti Vongole al Cartoccio"
+                        >
                     </div>
                     <div id="prod_12" class="contenedor producto pointer">
                         <!-- Fettuccine nero ai Frutti di Mare-->
@@ -243,7 +262,8 @@
                         <img
                             class="imagen_producto"
                             src="./images/pasta3.jpg"
-                        />
+                            alt="Fettuccine nero ai Frutti di Mare"
+                        >
                     </div>
                     <div id="prod_13" class="contenedor producto pointer">
                         <!-- Ossobuco in Gremolata & Gnocchi de Plátano Macho-->
@@ -253,7 +273,8 @@
                         <img
                             class="imagen_producto"
                             src="./images/fusion1.jpg"
-                        />
+                            alt="Ossobuco in Gremolata & Gnocchi de Plátano Macho"
+                        >
                     </div>
                     <div id="prod_14" class="contenedor producto pointer">
                         <!-- Risotto Criollo-->
@@ -261,7 +282,8 @@
                         <img
                             class="imagen_producto"
                             src="./images/fusion2.jpg"
-                        />
+                            alt="Risotto Criollo"
+                        >
                     </div>
                     <div id="prod_15" class="contenedor producto pointer">
                         <!-- Crostata de Pollo-->
@@ -269,7 +291,8 @@
                         <img
                             class="imagen_producto"
                             src="./images/fusion3.jpg"
-                        />
+                            alt="Crostata de Pollo"
+                        >
                     </div>
                     <div id="prod_16" class="contenedor producto pointer">
                         <!-- Tiramisu-->
@@ -277,7 +300,8 @@
                         <img
                             class="imagen_producto"
                             src="./images/postre1.jpg"
-                        />
+                            alt="Tiramisu"
+                        >
                     </div>
                     <div id="prod_17" class="contenedor producto pointer">
                         <!-- Bartolomeo Cheesecake-->
@@ -285,7 +309,8 @@
                         <img
                             class="imagen_producto"
                             src="./images/postre2.jpg"
-                        />
+                            alt="Bartolomeo Cheesecake"
+                        >
                     </div>
                     <div id="prod_18" class="contenedor producto pointer">
                         <!-- Tarta de Queso Criolla-->
@@ -293,10 +318,11 @@
                         <img
                             class="imagen_producto"
                             src="./images/postre3.jpg"
-                        />
+                            alt="Tarta de Queso Criolla"
+                        >
                     </div>
                 </section>
-            </section>
+            </div>
             <div id="pop_up_descr_prod">
                 <!-- Pop-up genérico de consultar pedido-->
                 <!-- Fijo al realizar el scroll-->
@@ -357,7 +383,10 @@
                             </button>
                             <div class="papelera pointer">
                                 <!-- Papelera-->
-                                <img src="./images/trash-solid.svg" />
+                                <img
+                                    src="./images/trash-solid.svg"
+                                    alt="Papelera"
+                                >
                             </div>
                             <div class="precio_total">
                                 <!-- Precio total-->
@@ -384,7 +413,10 @@
                             </button>
                             <div class="papelera pointer">
                                 <!-- Papelera-->
-                                <img src="./images/trash-solid.svg" />
+                                <img
+                                    src="./images/trash-solid.svg"
+                                    alt="Papelera"
+                                >
                             </div>
                             <div class="precio_total">
                                 <!-- Precio total-->
@@ -412,7 +444,10 @@
                             </button>
                             <div class="papelera pointer">
                                 <!-- Papelera-->
-                                <img src="./images/trash-solid.svg" />
+                                <img
+                                    src="./images/trash-solid.svg"
+                                    alt="Papelera"
+                                >
                             </div>
                             <div class="precio_total">
                                 <!-- Precio total-->
@@ -439,7 +474,10 @@
                             </button>
                             <div class="papelera pointer">
                                 <!-- Papelera-->
-                                <img src="./images/trash-solid.svg" />
+                                <img
+                                    src="./images/trash-solid.svg"
+                                    alt="Papelera"
+                                >
                             </div>
                             <div class="precio_total">
                                 <!-- Precio total-->
@@ -467,7 +505,10 @@
                             </button>
                             <div class="papelera pointer">
                                 <!-- Papelera-->
-                                <img src="./images/trash-solid.svg" />
+                                <img
+                                    src="./images/trash-solid.svg"
+                                    alt="Papelera"
+                                >
                             </div>
                             <div class="precio_total">
                                 <!-- Precio total-->
@@ -494,7 +535,10 @@
                             </button>
                             <div class="papelera pointer">
                                 <!-- Papelera-->
-                                <img src="./images/trash-solid.svg" />
+                                <img
+                                    src="./images/trash-solid.svg"
+                                    alt="Papelera"
+                                >
                             </div>
                             <div class="precio_total">
                                 <!-- Precio total-->
@@ -522,7 +566,10 @@
                             </button>
                             <div class="papelera pointer">
                                 <!-- Papelera-->
-                                <img src="./images/trash-solid.svg" />
+                                <img
+                                    src="./images/trash-solid.svg"
+                                    alt="Papelera"
+                                >
                             </div>
                             <div class="precio_total">
                                 <!-- Precio total-->
@@ -550,7 +597,10 @@
                             </button>
                             <div class="papelera pointer">
                                 <!-- Papelera-->
-                                <img src="./images/trash-solid.svg" />
+                                <img
+                                    src="./images/trash-solid.svg"
+                                    alt="Papelera"
+                                >
                             </div>
                             <div class="precio_total">
                                 <!-- Precio total-->
@@ -578,7 +628,10 @@
                             </button>
                             <div class="papelera pointer">
                                 <!-- Papelera-->
-                                <img src="./images/trash-solid.svg" />
+                                <img
+                                    src="./images/trash-solid.svg"
+                                    alt="Papelera"
+                                >
                             </div>
                             <div class="precio_total">
                                 <!-- Precio total-->
@@ -606,7 +659,10 @@
                             </button>
                             <div class="papelera pointer">
                                 <!-- Papelera-->
-                                <img src="./images/trash-solid.svg" />
+                                <img
+                                    src="./images/trash-solid.svg"
+                                    alt="Papelera"
+                                >
                             </div>
                             <div class="precio_total">
                                 <!-- Precio total-->
@@ -634,7 +690,10 @@
                             </button>
                             <div class="papelera pointer">
                                 <!-- Papelera-->
-                                <img src="./images/trash-solid.svg" />
+                                <img
+                                    src="./images/trash-solid.svg"
+                                    alt="Papelera"
+                                >
                             </div>
                             <div class="precio_total">
                                 <!-- Precio total-->
@@ -662,7 +721,10 @@
                             </button>
                             <div class="papelera pointer">
                                 <!-- Papelera-->
-                                <img src="./images/trash-solid.svg" />
+                                <img
+                                    src="./images/trash-solid.svg"
+                                    alt="Papelera"
+                                >
                             </div>
                             <div class="precio_total">
                                 <!-- Precio total-->
@@ -692,7 +754,10 @@
                             </button>
                             <div class="papelera pointer">
                                 <!-- Papelera-->
-                                <img src="./images/trash-solid.svg" />
+                                <img
+                                    src="./images/trash-solid.svg"
+                                    alt="Papelera"
+                                >
                             </div>
                             <div class="precio_total">
                                 <!-- Precio total-->
@@ -720,7 +785,10 @@
                             </button>
                             <div class="papelera pointer">
                                 <!-- Papelera-->
-                                <img src="./images/trash-solid.svg" />
+                                <img
+                                    src="./images/trash-solid.svg"
+                                    alt="Papelera"
+                                >
                             </div>
                             <div class="precio_total">
                                 <!-- Precio total-->
@@ -748,7 +816,10 @@
                             </button>
                             <div class="papelera pointer">
                                 <!-- Papelera-->
-                                <img src="./images/trash-solid.svg" />
+                                <img
+                                    src="./images/trash-solid.svg"
+                                    alt="Papelera"
+                                >
                             </div>
                             <div class="precio_total">
                                 <!-- Precio total-->
@@ -776,7 +847,10 @@
                             </button>
                             <div class="papelera pointer">
                                 <!-- Papelera-->
-                                <img src="./images/trash-solid.svg" />
+                                <img
+                                    src="./images/trash-solid.svg"
+                                    alt="Papelera"
+                                >
                             </div>
                             <div class="precio_total">
                                 <!-- Precio total-->
@@ -804,7 +878,10 @@
                             </button>
                             <div class="papelera pointer">
                                 <!-- Papelera-->
-                                <img src="./images/trash-solid.svg" />
+                                <img
+                                    src="./images/trash-solid.svg"
+                                    alt="Papelera"
+                                >
                             </div>
                             <div class="precio_total">
                                 <!-- Precio total-->
@@ -832,7 +909,10 @@
                             </button>
                             <div class="papelera pointer">
                                 <!-- Papelera-->
-                                <img src="./images/trash-solid.svg" />
+                                <img
+                                    src="./images/trash-solid.svg"
+                                    alt="Papelera"
+                                >
                             </div>
                             <div class="precio_total">
                                 <!-- Precio total-->
@@ -843,9 +923,9 @@
                 </div>
             </section>
             <div class="fondo_negro"></div>
-        </section>
+        </div>
 
-        <section id="sect_revision">
+        <div id="sect_revision">
             <!-- Revisión y Pago-->
             <article id="resumen_pedido">
                 <!-- Resumen del pedido-->
@@ -966,7 +1046,7 @@
                 </div>
                 <h2 id="total">Total: XX.XX€</h2>
             </article>
-            <section id="cuadro_pago">
+            <div id="cuadro_pago">
                 <!-- Formulario de Pago-->
                 <div id="formulario_pago">
                     <div>
@@ -977,7 +1057,7 @@
                             name="titular"
                             placeholder="Titular"
                             required
-                        />
+                        >
                         <input
                             type="text"
                             class="input_pago"
@@ -985,7 +1065,7 @@
                             name="n_tarjeta"
                             placeholder="N° de tarjeta"
                             required
-                        />
+                        >
                         <input
                             type="text"
                             class="input_pago"
@@ -993,7 +1073,7 @@
                             name="fecha"
                             placeholder="MM/AA"
                             required
-                        />
+                        >
                         <input
                             type="text"
                             class="input_pago"
@@ -1001,7 +1081,7 @@
                             name="cvv"
                             placeholder="CVV"
                             required
-                        />
+                        >
                     </div>
 
                     <div id="botones_pago">
@@ -1013,10 +1093,10 @@
                         </button>
                     </div>
                 </div>
-            </section>
-        </section>
+            </div>
+        </div>
 
-        <section id="sect_completado">
+        <div id="sect_completado">
             <!-- Sección de Pedido Realizado-->
             <section class="contendedor_centrado">
                 <!-- Confirmación de pedido-->
@@ -1028,11 +1108,12 @@
                     <img
                         id="img_pedido_confirmado"
                         src="./images/logo-pedido-realizado-removebg-preview.png"
-                    />
+                        alt="Pedido Realizado"
+                    >
                     <h2>¡Pedido realizado!</h2>
                 </div>
             </section>
-            <article>
+            <div>
                 <div class="rectangulo-fondo" id="rectangulo_1"></div>
                 <div class="rectangulo-fondo" id="rectangulo_2"></div>
                 <div class="rectangulo-fondo" id="rectangulo_3"></div>
@@ -1041,8 +1122,8 @@
                 <div class="rectangulo-fondo" id="rectangulo_6"></div>
 
                 <div></div>
-            </article>
-        </section>
+            </div>
+        </div>
         <script src="./scripts/shared.js"></script>
         <script src="./scripts/pedidos.js"></script>
         <script>

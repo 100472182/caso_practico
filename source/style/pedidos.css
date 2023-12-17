@@ -30,7 +30,7 @@ body {
 /* Círculos  */
 .nodo {
     width: 15vmin;
-    aspect-ratio: 1;
+    height: 15vmin;
     border-radius: 50%;
     position: relative;
     z-index: 2;
@@ -272,16 +272,24 @@ body {
     padding-bottom: 2.5%;
 }
 /* Formato del boton más  */
+
 .boton_mas {
     width: 50px;
-    aspect-ratio: 1;
-    border-radius: 50%;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #d07402;
+    border-radius: 50%;
 }
 
+.boton_mas::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+    border-radius: 50%;
+    background-color: #d07402;
+}
 .boton_mas:hover {
     background-color: #ab5e01;
 }
@@ -293,11 +301,19 @@ body {
 /* Formato del botón menos */
 .boton_menos {
     width: 50px;
-    aspect-ratio: 1;
-    border-radius: 50%;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #d07402;
+    border-radius: 50%;
+}
+
+.boton_menos::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+    border-radius: 50%;
     background-color: #d07402;
 }
 
@@ -444,11 +460,13 @@ capacidad de añadir un producto */
         width: 90%;
     }
     .boton_mas {
-        min-width: 25px;
+        min-width: 30px;
+        min-height: 30px;
         font-size: 1.5rem;
     }
     .boton_menos {
-        min-width: 25px;
+        min-width: 30px;
+        min-height: 30px;
         font-size: 1.5rem;
     }
     #sect_revision {
