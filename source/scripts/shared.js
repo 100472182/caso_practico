@@ -86,7 +86,7 @@ function cambiarIdioma_nav(selectedLanguage){
     $('#cerrar_sesion button').text('Cerrar sesión');
 }
 else if (selectedLanguage ==="EN"){
-    /*Navegacion*/
+    //Navegacion
     $("#hacer_pedido").text("Make your order");
     $("#hacer_reserva").text("Reserve your table");
     $("#nuestra_carta").text("Our menu");

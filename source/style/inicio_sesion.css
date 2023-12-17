@@ -1,5 +1,6 @@
 /*Inicio de sesion*/
 
+/*Utilizado para dejar margen superior y evitar que el navegador cubra el contenido*/
 #primer_section_inicio{
     margin-top: 25vh;
 }
@@ -9,12 +10,12 @@
     align-content: center;
     justify-content: center;
 }
-
+/*Imagen de usuario*/
 #image_user{
     max-height: 4%;
     width: 15%;
 }
-
+/*Utilizado para centrar y aplicar color de fondo box_inicio_sesion_2*/
 #box_inicio_sesion_1{
     display: flex;
     align-items: center;
@@ -33,6 +34,7 @@
     width: 40vw;
 }
 
+/*Los campos a rellenar*/
 #campos_inicio_sesion{
     display: flex;
     flex-direction: column;
@@ -50,6 +52,7 @@
     font-family: "Times New Roman", Times, serif;
 }
 
+/*Boton para iniciar sesion*/
 #botones-inicio{
     display: flex;
     justify-content: space-between;
@@ -57,8 +60,8 @@
     margin-top: 2%;
 }
 
+/*Boton para registrar*/
 #button_registrar{
-    /*margin-left: 35%;*/
     display: flex;
     justify-content: right;
 
@@ -84,11 +87,12 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 250px; /* Ajusta la altura según tus necesidades */
-    background-color: #C0732B; /* Color del rectángulo */
-    z-index: -1; /* Coloca el rectángulo detrás del contenido */
+    height: 250px; 
+    background-color: #C0732B; 
+    z-index: -1; 
 }
 
+/*Las figuras en el fondo*/
 .circulo-fondo {
     position: fixed;
     bottom: 0%;

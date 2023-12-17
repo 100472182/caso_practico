@@ -116,7 +116,7 @@ input[type=text] {
     padding: 15px 32px;
     background-color: #F2A121;
     border-radius: 50px;
-    background-image: url(/images/calendar-days-solid.svg);
+    background-image: url(/source/images/calendar-days-solid.svg);
     background-repeat: no-repeat;
     background-position: calc(100% - 25px) center;
 }
@@ -135,7 +135,7 @@ select {
     font-weight: bold;
     cursor: pointer;
     appearance: none;
-    background-image: url(/images/caret-down-solid.svg);
+    background-image: url(/source/images/caret-down-solid.svg);
     background-repeat: no-repeat;
     background-position: calc(100% - 20px) center;
 }

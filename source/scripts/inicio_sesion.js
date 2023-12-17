@@ -40,7 +40,7 @@ function cambiarIdioma_ini(selectedLanguage){
     }
     else if (selectedLanguage ==="EN"){
         //El inicio de sesion
-        $("#title_iniciar").text("Start session");
+        $("#title_iniciar").text("Log in");
         $("#correo").attr("placeholder", "Email");
         $("#password").attr("placeholder", "Password");
 
