@@ -25,6 +25,7 @@ $("#hacer_reserva").css("background-color", "");
   });
 });
 
+//Función de las galerías de imagenes
 function mostrarImagen(indice1, indice2) {
   imagenes.forEach((imagen, index) => {
     if (index === indice1) {
@@ -42,12 +43,14 @@ function mostrarImagen(indice1, indice2) {
   });
 }
 
+//Funcion de cambiar a la imagen siguiente en la galeria principal
 function nextImagen() {
   indiceActual = (indiceActual + 1) % imagenes.length;
   mostrarImagen(indiceActual, indiceActualPlatos);
 
 }
 
+//Funcion de cambiar a la imagen anterior en la galeria principal
 function prevImagen() {
     indiceActual = indiceActual - 1;
     if (indiceActual < 0) {
@@ -56,12 +59,14 @@ function prevImagen() {
     mostrarImagen(indiceActual, indiceActualPlatos);
   }
 
+//Funcion de cambiar a la imagen siguiente en la galeria de platos
 function nextImagenPlatos() {
   indiceActualPlatos = (indiceActualPlatos + 1) % imagenesPlatos.length;
   mostrarImagen(indiceActual, indiceActualPlatos);
 
 }
 
+//Funcion de cambiar a la imagen anterior en la galeria de platos
 function prevImagenPlatos() {
     indiceActualPlatos = indiceActualPlatos - 1;
     if (indiceActualPlatos < 0) {
@@ -70,7 +75,7 @@ function prevImagenPlatos() {
     mostrarImagen(indiceActual, indiceActualPlatos);
   }
 
-
+//Funcion para que los botones del home tengan apariencia de pulsarse
   function bajarBoton(idBoton) {
     const boton = document.getElementById(idBoton);
     const estiloActual = getComputedStyle(boton);
@@ -85,6 +90,7 @@ function prevImagenPlatos() {
     });
   }
 
+//Funcion que hace visible la galería de platos
 function abrirGaleriaPlatos(index){
   let galeria = document.getElementById('galeria-platos');
   galeria.style.display = 'block';
@@ -92,11 +98,13 @@ function abrirGaleriaPlatos(index){
   mostrarImagen(indiceActual, index);
 }
 
+//Funcion que oculta la galería de platos
 function cerrarGaleriaPlatos(){
   let galeria = document.getElementById('galeria-platos');
   galeria.style.display = 'none';
 }
 
+//Funcion que define reserva como proximo enlace
 function abrirReserva(){
   if (localStorage.getItem('inicio_sesion') === 'true') {
     event.preventDefault();
@@ -107,6 +115,7 @@ function abrirReserva(){
   }
 }
 
+//Funcion que define pedidos como proximo enlace
 function abrirPedidos(){
   if (localStorage.getItem('inicio_sesion') === 'true') {
     event.preventDefault();
@@ -118,7 +127,7 @@ function abrirPedidos(){
 }
 
 
-
+//Funcion de traduccion para el home
 function cambiarIdioma_home(selectedLanguage){
   if(selectedLanguage==="ES") {/*Navegacion*/
       $("#txt4").text("Vive una verdadera experiencia italiana en Bartolomeo.")
