@@ -597,7 +597,8 @@ footer {
     }
     
     .platos-img:hover {
-        width:29%;
+        width:28.5%;
+        opacity: 85%;
     }
 
     #boton-carta{
@@ -735,22 +736,22 @@ footer {
     }
 
     #boton-pedido{
-        top: 325px;
+        top: 365px;
         left: 22%;
     }
     
     #fondo-boton-pedido{
-        top: 330px;
+        top: 370px;
         left: 22%;
     }
     
     #boton-reserva{
-        top: 735px;
+        top: 825px;
         left: 22%;
     }
     
     #fondo-boton-reserva{
-        top: 740px;
+        top: 830px;
         left: 22%;
     }
     
@@ -778,7 +779,8 @@ footer {
     }
     
     .platos-img:hover {
-        width:28%;
+        width:27.8%;
+        opacity: 85%;
     }
 
     #boton-carta{
@@ -870,5 +872,12 @@ footer {
     
     #flecha-right-platos {
         width: 12%;
+    }
+
+    .linea-vertical-left {
+        height: 340px;
+    }
+    .linea-vertical-right {
+        height: 340px;
     }
 }
