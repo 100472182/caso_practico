@@ -101,8 +101,7 @@ class pedidos {
     // etapa = 0: pedidos; etapa = 1: revision; etapa = 2: completado
     crearFiltros() {
         // Función que se encarga de crear los filtros
-        this.filtros["por_ti"] = [];
-        this.filtros["vegetariano"] = [];
+        this.filtros["vegetariano"] = [3, 4, 6, 8, 10];
         this.filtros["desayunos"] = [1, 2, 3];
         this.filtros["entrantes"] = [4, 5, 6];
         this.filtros["pizzas"] = [7, 8, 9];
@@ -121,19 +120,20 @@ class pedidos {
         // En la que se está ahora mismo se muestra la siguiente
         $(".siguiente").click(() => {
             if (this.etapa_actual == this.etapa_max && this.etapa_max < 2) {
-                this.etapa_max += 1;
-            }
-
-            if (this.etapa_actual == 1) {
-                if (
-                    this.checkRevision(
-                        document.getElementById("titular").value,
-                        document.getElementById("n_tarjeta").value,
-                        document.getElementById("fecha").value,
-                        document.getElementById("cvv").value
-                    )
-                ) {
-                    this.mostrarCompletado();
+                if (this.etapa_actual == 1) {
+                    if (
+                        this.checkRevision(
+                            document.getElementById("titular").value,
+                            document.getElementById("n_tarjeta").value,
+                            document.getElementById("fecha").value,
+                            document.getElementById("cvv").value
+                        )
+                    ) {
+                        this.etapa_max += 1;
+                        this.mostrarCompletado();
+                    }
+                } else {
+                    this.etapa_max += 1;
                 }
             }
 
@@ -161,6 +161,7 @@ class pedidos {
         });
     }
     actualizarControlPedido() {
+        // Función que actualiza el contenedor de control de pedidos
         let num = 0;
         let precio = 0;
         for (let i = 0; i < this.n_platos; i++) {
@@ -204,6 +205,7 @@ class pedidos {
     seleccionarProducto() {
         // Función que se encarga de cambiar los datos dentro del pop-up de cada producto
         $("#pop_up_descr_prod .boton_mas").click((e) => {
+            // Si se clicka en el botón más se aumenta la variable aux_pedir
             e.stopPropagation();
             this.aux_pedir += 1;
             $(".caja_pop_up .n_seleccionado p").text(this.aux_pedir);
@@ -215,6 +217,7 @@ class pedidos {
         });
 
         $("#pop_up_descr_prod .boton_menos").click((e) => {
+            // Si se clicka en el botón menos disminuye la variable aux_pedir
             e.stopPropagation();
             if (this.aux_pedir > 0) {
                 this.aux_pedir -= 1;
@@ -228,6 +231,7 @@ class pedidos {
         });
 
         $("#boton_add").click((e) => {
+            // Si se clicka en añadir se vuelca el valor de aux_pedir en el array
             e.stopPropagation();
             this.n_platos_pedidos[this.prod_actual] = this.aux_pedir;
             $("#pop_up_descr_prod").hide();
@@ -235,7 +239,7 @@ class pedidos {
             this.actualizarControlPedido();
         });
     }
-
+    // Se encarga de mostrar el pop-up de la cesta con solo los productos pedidos
     mostrarPopUpCesta() {
         $("#img_cesta").click(() => {
             $("#pop_up_carrito").show();
@@ -257,7 +261,7 @@ class pedidos {
             }
         });
     }
-
+    // Se encarga de esconder si se clicka fuera del pop-up
     esconderPopUpCesta() {
         $("#pop_up_carrito #pop_up_descr_prod").click(() => {
             return;
@@ -267,7 +271,7 @@ class pedidos {
             $(".fondo_negro").hide();
         });
     }
-
+    // Se encarga de toda la manipulación de los productos dentro de la cesta
     modificarCesta() {
         for (let i = 1; i <= this.n_platos; i++) {
             $("#carrito_" + i + " .boton_mas").click((e) => {
@@ -317,7 +321,7 @@ class pedidos {
         this.esconderPopUpCesta();
         this.modificarCesta();
     }
-
+    // Se encarga de filtrar los platos según el filtro que se haya clickado
     filtrarPlatos() {
         let self = this;
         $("[id^=filtro_]").click(function () {
@@ -343,6 +347,7 @@ class pedidos {
             self.filtro_actual = key;
         });
     }
+    // Se encarga de cambiar los colores de la barra de progreso
     cambioColoresBarra() {
         if (this.etapa_max == 0) {
             $("#progreso_nodo_bolsa").css("background-color", "#6B3907");
@@ -382,7 +387,7 @@ class pedidos {
             );
         }
     }
-
+    // Se encarga de mostrar la página de la selección de los platos
     mostrarPedidos() {
         // Función que se encarga de mostrar la página de pedidos
         if (this.etapa_max == 1) {
@@ -532,6 +537,7 @@ class pedidos {
 $(document).ready(Funciones);
 
 function cambiarIdioma_pedidos(selectedLanguage, ped) {
+    // Función que se encarga de cambiar el idioma de la página de pedidos
     if (selectedLanguage === "ES") {
         $("#filtro_vegetariano").text("Vegetariano");
         $("#filtro_desayunos").text("Desayunos");
